@@ -33,10 +33,10 @@ class BBNewHotelView: BBBaseHotelView {
     
     lazy var tableview : UITableView = {
         
-        let tableview = UITableView.init(frame: CGRectMake(0, 60, self.width, self.height - 60))
+        let tableview = UITableView.init(frame: CGRectMake(0, self.headerLine.bottom, self.width, self.height - 60))
         tableview.tableFooterView = UIView()
         tableview.separatorStyle = .None
+        tableview.backgroundColor = UIColor.kBasis_Purple_Color()
         return tableview
     }()
-    
 }

@@ -42,7 +42,6 @@ class BBTextField: UIView {
         let textField = UITextField()
         textField.frame = CGRectMake(self.icon.right, self.icon.top, self.width - self.icon.width, 30)
         textField.backgroundColor = UIColor.clearColor()
-        textField.backgroundColor = UIColor.clearColor()
         textField.keyboardType = .NumbersAndPunctuation;
         textField.clearButtonMode = .WhileEditing;
         return textField

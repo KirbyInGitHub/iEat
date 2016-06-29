@@ -15,6 +15,7 @@ class BBBaseHotelView: UIView {
         
         backgroundColor = UIColor.kBasis_Purple_Color()
         addSubview(closeBtn)
+        addSubview(confirmBtn)
         addSubview(headerLine)
         addSubview(titleLabel)
     }
@@ -35,7 +36,15 @@ class BBBaseHotelView: UIView {
         return closeBtn
     }()
     
-    private lazy var headerLine : UIView = {
+    lazy var confirmBtn : UIButton = {
+        
+        let confirmBtn = UIButton()
+        confirmBtn.frame = CGRectMake(self.width - 40, 20, 30, 30)
+        confirmBtn.setImage(UIImage.init(named: "icon_confirm"), forState: .Normal)
+        return confirmBtn
+    }()
+    
+    lazy var headerLine : UIView = {
         
         let headerLine = UIView()
         headerLine.frame = CGRectMake(0, 60, self.width, 0.5)
