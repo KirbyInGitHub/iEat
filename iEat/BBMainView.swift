@@ -26,7 +26,7 @@ class BBMainView: UIView {
     private lazy var addNewFoodView : UIView = {
         
         let h = (screenHeight - 80 - 20) * 0.5
-        let addNewFoodView = UIView.init(frame: CGRectMake(10, 15, self.width - 20, h))
+        let addNewFoodView = UIView.init(frame: CGRectMake(10, 10, self.width - 20, h))
         addNewFoodView.backgroundColor = UIColor.whiteColor()
         addNewFoodView.tag = 1
         return addNewFoodView

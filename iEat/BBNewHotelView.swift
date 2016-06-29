@@ -38,5 +38,5 @@ class BBNewHotelView: BBBaseHotelView {
         tableview.separatorStyle = .None
         return tableview
     }()
-
+    
 }
