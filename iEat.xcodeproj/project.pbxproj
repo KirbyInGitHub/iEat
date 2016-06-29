@@ -12,6 +12,7 @@
 		405CDF6C1D23D70D00A12BB0 /* BBUseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CDF6B1D23D70D00A12BB0 /* BBUseAnimation.swift */; };
 		405CDF6E1D23FF2800A12BB0 /* BBAddNewRestaurantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CDF6D1D23FF2800A12BB0 /* BBAddNewRestaurantItem.swift */; };
 		405CDF701D242D1E00A12BB0 /* restaurantCuisineList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 405CDF6F1D242D1E00A12BB0 /* restaurantCuisineList.plist */; };
+		405CDF721D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CDF711D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift */; };
 		40E0A6151D23A23F00CC74AE /* BBDeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */; };
 		40E0A6171D23A72900CC74AE /* BBUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6161D23A72900CC74AE /* BBUserInfo.swift */; };
 		40E0A61B1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A61A1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift */; };
@@ -69,6 +70,7 @@
 		405CDF6B1D23D70D00A12BB0 /* BBUseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBUseAnimation.swift; sourceTree = "<group>"; };
 		405CDF6D1D23FF2800A12BB0 /* BBAddNewRestaurantItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBAddNewRestaurantItem.swift; sourceTree = "<group>"; };
 		405CDF6F1D242D1E00A12BB0 /* restaurantCuisineList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurantCuisineList.plist; sourceTree = "<group>"; };
+		405CDF711D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantCuisineItem.swift; sourceTree = "<group>"; };
 		40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDeliveryService.swift; sourceTree = "<group>"; };
 		40E0A6161D23A72900CC74AE /* BBUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBUserInfo.swift; sourceTree = "<group>"; };
 		40E0A61A1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBNewRestaurantInfoCell.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			children = (
 				40E0A6161D23A72900CC74AE /* BBUserInfo.swift */,
 				405CDF6D1D23FF2800A12BB0 /* BBAddNewRestaurantItem.swift */,
+				405CDF711D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				40E1D3171D22285E003970C6 /* BBInputMessageController.swift in Sources */,
 				40E1D2CF1D2222D4003970C6 /* AppDelegate.swift in Sources */,
 				40E1D3191D2228E8003970C6 /* BBMainView.swift in Sources */,
+				405CDF721D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

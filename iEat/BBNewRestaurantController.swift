@@ -17,6 +17,7 @@ class BBNewRestaurantController: BBBaseRestaurantController {
     
     var currentSelectedCell : BBRestaurantCuisineCell?
     var addNewRestaurantItem : BBAddNewRestaurantItem?
+    var restaurantCuisineArray = [BBRestaurantCuisineItem]()
     
     override func loadView() {
         super.loadView()
@@ -35,9 +36,15 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         newRestaurantView.tableview.delegate = self
         newRestaurantView.tableview.dataSource = self
         
+        
+        let path = NSBundle.mainBundle().pathForResource("restaurantCuisineList.plist", ofType: nil)
+        let array = NSArray.init(contentsOfFile: path!)
+        for dict in array! {
+            let item = BBRestaurantCuisineItem.init(dict: dict as! [String : AnyObject])
+            restaurantCuisineArray.append(item)
+        }
         newRestaurantView.pickerView.dataSource = self
         newRestaurantView.pickerView.delegate = self
-        
     }
     
     @objc private func onClcikConfirmBtn(){
@@ -110,7 +117,7 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             }
             
             restaurantCuisineCell?.titleLbl.text = "餐厅菜系:"
-            restaurantCuisineCell?.selectedRestaurantCuisineLbl.text = "东北菜"
+            restaurantCuisineCell?.selectedRestaurantCuisineLbl.text = "未选择"
             
             return restaurantCuisineCell!
         }
@@ -141,17 +148,22 @@ extension BBNewRestaurantController : UIPickerViewDelegate,UIPickerViewDataSourc
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return restaurantCuisineArray.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return titleArray[row]
+        
+        let restaurantCuisineItem = restaurantCuisineArray[row]
+        return restaurantCuisineItem.name
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        currentSelectedCell?.selectedRestaurantCuisineLbl.text = titleArray[row]
+      
+        let restaurantCuisineItem = restaurantCuisineArray[row]
+        currentSelectedCell?.selectedRestaurantCuisineLbl.text = restaurantCuisineItem.name
     }
+
+    
 }
 
 
