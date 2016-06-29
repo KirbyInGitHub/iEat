@@ -37,6 +37,7 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         
         newRestaurantView.pickerView.dataSource = self
         newRestaurantView.pickerView.delegate = self
+        
     }
     
     @objc private func onClcikConfirmBtn(){
