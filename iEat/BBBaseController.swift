@@ -9,12 +9,6 @@
 import UIKit
 
 class BBBaseController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-
-    }
     
     func isTelNumber(num:NSString)->Bool
     {

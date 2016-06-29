@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		401E25571D2254AC00C9C5E8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401E25561D2254AC00C9C5E8 /* Pods.framework */; };
 		401E255C1D225D2700C9C5E8 /* BBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401E255B1D225D2700C9C5E8 /* BBTextField.swift */; };
+		40E0A6151D23A23F00CC74AE /* BBDeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */; };
+		40E0A6171D23A72900CC74AE /* BBUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6161D23A72900CC74AE /* BBUserInfo.swift */; };
 		40E1D2CF1D2222D4003970C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E1D2CE1D2222D4003970C6 /* AppDelegate.swift */; };
 		40E1D2D61D2222D4003970C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40E1D2D51D2222D4003970C6 /* Assets.xcassets */; };
 		40E1D2E41D2222D4003970C6 /* iEatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E1D2E31D2222D4003970C6 /* iEatTests.swift */; };
@@ -55,6 +57,8 @@
 		401E25541D22549D00C9C5E8 /* US2FormValidator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = US2FormValidator.framework; path = "../../../Library/Developer/Xcode/DerivedData/iEat-adrblktvcmzgwscfosfftpdfzhhv/Build/Products/Debug-iphonesimulator/US2FormValidator.framework"; sourceTree = "<group>"; };
 		401E25561D2254AC00C9C5E8 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "../../../Library/Developer/Xcode/DerivedData/iEat-adrblktvcmzgwscfosfftpdfzhhv/Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
 		401E255B1D225D2700C9C5E8 /* BBTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBTextField.swift; sourceTree = "<group>"; };
+		40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDeliveryService.swift; sourceTree = "<group>"; };
+		40E0A6161D23A72900CC74AE /* BBUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBUserInfo.swift; sourceTree = "<group>"; };
 		40E1D2CB1D2222D4003970C6 /* iEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E1D2CE1D2222D4003970C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40E1D2D51D2222D4003970C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 		40E1D3031D222410003970C6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */,
 				40E1D30E1D22268F003970C6 /* BBSettings.swift */,
 			);
 			name = Services;
@@ -215,6 +220,7 @@
 		40E1D3041D22241B003970C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				40E0A6161D23A72900CC74AE /* BBUserInfo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -488,12 +494,14 @@
 				40EC1BA61D237FFA00D4817D /* BBBaseHotelView.swift in Sources */,
 				40EC1B961D236AD200D4817D /* BBBaseController.swift in Sources */,
 				40EC1BA21D237FE800D4817D /* BBOldHotelView.swift in Sources */,
+				40E0A6151D23A23F00CC74AE /* BBDeliveryService.swift in Sources */,
 				40EC1B821D227BD600D4817D /* UIFont+Category.swift in Sources */,
 				40E1D3151D22281A003970C6 /* BBMainController.swift in Sources */,
 				40EC1B9E1D237FB100D4817D /* BBOldHotelController.swift in Sources */,
 				40EC1B9C1D237F9F00D4817D /* BBNewHotelController.swift in Sources */,
 				40EC1BA41D237FF100D4817D /* BBNewHotelView.swift in Sources */,
 				40E1D30A1D222470003970C6 /* UIView+Frame.m in Sources */,
+				40E0A6171D23A72900CC74AE /* BBUserInfo.swift in Sources */,
 				40EC1BA01D237FBB00D4817D /* BBBaseHotelController.swift in Sources */,
 				40E1D3061D222432003970C6 /* BBNetworkManager.swift in Sources */,
 				40E1D3171D22285E003970C6 /* BBInputMessageController.swift in Sources */,

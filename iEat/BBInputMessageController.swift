@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class BBInputMessageController: BBBaseController {
 
@@ -27,11 +28,24 @@ class BBInputMessageController: BBBaseController {
         print(isTelNumber((inputMessageView.phoneStr)!))
         
         if isTelNumber((inputMessageView.phoneStr)!){
+
+            BBDeliveryService.getUserInfo(inputMessageView.phoneStr, success: { (result) in
+                
+                    let userInfo = Mapper<BBUserInfo>().map(result)
+                    
+                    if userInfo?.phone == nil{
+                        self.inputMessageView.showRemindLabel()
+                    }else{
+                        let mainVC = BBMainController()
+                        let nav = UINavigationController.init(rootViewController: mainVC)
+                        nav.modalTransitionStyle = .FlipHorizontal
+                        self.presentViewController(nav, animated: true, completion: nil)
+                    }
+                
+                }, failure: { (error) in
+                    print(error)
+            })
             
-            let mainVC = BBMainController()
-            let nav = UINavigationController.init(rootViewController: mainVC)
-            nav.modalTransitionStyle = .FlipHorizontal
-            self.presentViewController(nav, animated: true, completion: nil)
         }else{
             
             inputMessageView.showRemindLabel()
