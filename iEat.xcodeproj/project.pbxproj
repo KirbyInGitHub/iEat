@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		401E25571D2254AC00C9C5E8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401E25561D2254AC00C9C5E8 /* Pods.framework */; };
 		401E255C1D225D2700C9C5E8 /* BBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401E255B1D225D2700C9C5E8 /* BBTextField.swift */; };
+		405CDF6C1D23D70D00A12BB0 /* BBUseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CDF6B1D23D70D00A12BB0 /* BBUseAnimation.swift */; };
 		40E0A6151D23A23F00CC74AE /* BBDeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */; };
 		40E0A6171D23A72900CC74AE /* BBUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6161D23A72900CC74AE /* BBUserInfo.swift */; };
 		40E0A61B1D23AC9D00CC74AE /* BBNewHotelInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A61A1D23AC9D00CC74AE /* BBNewHotelInfoCell.swift */; };
@@ -63,6 +64,7 @@
 		401E25541D22549D00C9C5E8 /* US2FormValidator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = US2FormValidator.framework; path = "../../../Library/Developer/Xcode/DerivedData/iEat-adrblktvcmzgwscfosfftpdfzhhv/Build/Products/Debug-iphonesimulator/US2FormValidator.framework"; sourceTree = "<group>"; };
 		401E25561D2254AC00C9C5E8 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "../../../Library/Developer/Xcode/DerivedData/iEat-adrblktvcmzgwscfosfftpdfzhhv/Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
 		401E255B1D225D2700C9C5E8 /* BBTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBTextField.swift; sourceTree = "<group>"; };
+		405CDF6B1D23D70D00A12BB0 /* BBUseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBUseAnimation.swift; sourceTree = "<group>"; };
 		40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDeliveryService.swift; sourceTree = "<group>"; };
 		40E0A6161D23A72900CC74AE /* BBUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBUserInfo.swift; sourceTree = "<group>"; };
 		40E0A61A1D23AC9D00CC74AE /* BBNewHotelInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBNewHotelInfoCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		405CDF6A1D23D6EA00A12BB0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				40E1D30E1D22268F003970C6 /* BBSettings.swift */,
+				405CDF6B1D23D70D00A12BB0 /* BBUseAnimation.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		40E1D2C21D2222D4003970C6 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +172,7 @@
 				40E1D2CE1D2222D4003970C6 /* AppDelegate.swift */,
 				40E1D2FE1D222326003970C6 /* UI */,
 				40E1D3041D22241B003970C6 /* Models */,
+				405CDF6A1D23D6EA00A12BB0 /* Tools */,
 				40E1D3031D222410003970C6 /* Services */,
 				40E1D3021D222406003970C6 /* Category */,
 				40E1D3011D2223FD003970C6 /* Network */,
@@ -224,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */,
-				40E1D30E1D22268F003970C6 /* BBSettings.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -521,6 +532,7 @@
 				40EC1B9E1D237FB100D4817D /* BBOldHotelController.swift in Sources */,
 				40E0A6211D23B54F00CC74AE /* BBBaseHotelCell.swift in Sources */,
 				40E0A6271D23CDDB00CC74AE /* BBSelectedSpicyLeveView.swift in Sources */,
+				405CDF6C1D23D70D00A12BB0 /* BBUseAnimation.swift in Sources */,
 				40EC1B9C1D237F9F00D4817D /* BBNewHotelController.swift in Sources */,
 				40EC1BA41D237FF100D4817D /* BBNewHotelView.swift in Sources */,
 				40E1D30A1D222470003970C6 /* UIView+Frame.m in Sources */,

@@ -35,7 +35,8 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
     
     @objc private func onClickSelectedConfirmBtn(){
         
-        changeSelectedStatusView(newHotelView.selectedSpicyLeveView)
+//        BBUseAnimation.defaultUseAnimation.changeSelectedStatusView(newHotelView.selectedSpicyLeveView)
+        BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newHotelView.selectedSpicyLeveView)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,26 +96,11 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
         
         if indexPath.row == 3 {
             
-            changeSelectedStatusView(newHotelView.selectedSpicyLeveView)
-            
+//            BBUseAnimation.defaultUseAnimation.changeSelectedStatusView(newHotelView.selectedSpicyLeveView)
+            BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newHotelView.selectedSpicyLeveView)
         }else if indexPath.row == 4{
             print("4")
         }
-    }
-    
-    private func changeSelectedStatusView(selectedView:UIView?){
-        
-        let springAnimation = POPSpringAnimation.init(propertyNamed: kPOPLayerSize)
-        let rect = selectedView!.frame
-        if rect.size.width == 0 {
-            springAnimation.toValue = NSValue.init(CGSize: CGSizeMake(300, 300))
-        }else{
-            springAnimation.toValue = NSValue.init(CGSize: CGSizeMake(0, 0))
-        }
-        
-        springAnimation.springBounciness = 20.0
-        springAnimation.springSpeed = 20.0
-        selectedView!.layer.pop_addAnimation(springAnimation, forKey: "changeSize")
     }
     
     private lazy var newHotelView : BBNewHotelView = {
