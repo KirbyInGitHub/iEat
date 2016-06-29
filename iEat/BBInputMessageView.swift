@@ -1,0 +1,172 @@
+//
+//  BBInputMessageView.swift
+//  iEat
+//
+//  Created by wave on 16/6/28.
+//  Copyright © 2016年 wave. All rights reserved.
+//
+
+import UIKit
+import AFViewShaker
+
+class BBInputMessageView: UIView {
+
+    var originalPoint : CGPoint?
+    
+    
+    var phoneStr : String?{
+        get{
+            return userPhone.textField.text
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addSubview(backgroundImage)
+        backgroundImage.addSubview(userPhone)
+        backgroundImage.addSubview(nextActionBtn)
+        backgroundImage.addSubview(remindLabel)
+        
+        //代码view
+        backgroundImage.addSubview(iOSMan)
+        backgroundImage.addSubview(pythonMan)
+        
+        let time: NSTimeInterval = 0.5
+        let delay = dispatch_time(DISPATCH_TIME_NOW,Int64(time * Double(NSEC_PER_SEC)))
+        dispatch_after(delay, dispatch_get_main_queue()) {
+            
+            self.updateFrame()
+        }
+        
+        //监听键盘动态
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBInputMessageView.keyboardWasShown(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBInputMessageView.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    //showKeyboard
+    @objc private func keyboardWasShown(aNotification:NSNotification){
+    
+        let info = aNotification.userInfo
+        let kbSize = info![UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size
+        originalPoint = userPhone.origin
+        
+        let kbTop = self.height - (kbSize?.height)!
+        userPhone.bottom = kbTop - 15
+        remindLabel.bottom = userPhone.top - 5
+    }
+    
+    //hiddenKeyboard
+    @objc private func keyboardWillBeHidden(aNotification:NSNotification){
+        userPhone.origin = originalPoint!
+        remindLabel.bottom = userPhone.top - 5
+    }
+    
+    private func updateFrame(){
+    
+        UIView.animateWithDuration(2.0) {
+            
+            self.backgroundImage.alpha = 1
+            self.userPhone.alpha = 1
+            self.userPhone.left = (self.width - self.userPhone.width) * 0.5
+            self.iOSMan.left = (self.width - self.iOSMan.width) * 0.5
+            self.pythonMan.left = (self.width - self.pythonMan.width) * 0.5
+        }
+    }
+    
+    func showRemindLabel(){
+        
+        remindLabel.hidden = false
+        let viewShaker = AFViewShaker.init(view: userPhone)
+        viewShaker.shake()
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        userPhone.textField.resignFirstResponder()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //用户电话cell
+    private lazy var userPhone : BBTextField = {
+        
+        let userPhone = BBTextField.init(frame: CGRectMake(self.width - 210, self.height * 0.6, 200, 30))
+        userPhone.textField.placeholder = "Phone"
+        userPhone.iconString = "phoneIcon"
+        userPhone.alpha = 0
+        return userPhone
+    }()
+    
+    //输入错时hidden为false
+    private lazy var remindLabel : UILabel = {
+        
+        let remindLabel = UILabel()
+        remindLabel.text = "Please check the phone number"
+        remindLabel.sizeToFit()
+        remindLabel.left = (self.width - remindLabel.width) * 0.5
+        remindLabel.top = self.userPhone.top - remindLabel.height - 5
+        remindLabel.textColor = UIColor.redColor()
+        remindLabel.hidden = true
+        return remindLabel
+    }()
+
+    //背景imageView
+    private lazy var backgroundImage : UIImageView = {
+        
+        let backgroundImage = UIImageView.init(frame: self.bounds)
+        backgroundImage.backgroundColor = UIColor.kBasis_Purple_Color()
+        backgroundImage.alpha = 0
+        backgroundImage.userInteractionEnabled = true
+        return backgroundImage
+    }()
+    
+    //下一步按钮
+    lazy var nextActionBtn : UIButton = {
+        
+        let nextActionBtn = UIButton.init(frame: CGRectMake(0, self.height - 50, self.width, 50))
+        nextActionBtn.setTitle("Next", forState:.Normal)
+        nextActionBtn.backgroundColor = UIColor.kBasis_Blue_Color()
+        return nextActionBtn
+    }()
+    
+    //iOS攻城狮:
+    private lazy var iOSMan : UILabel = {
+        
+        let iOSMan = UILabel()
+        iOSMan.text = "let iOSMan = Wave"
+        iOSMan.sizeToFit()
+        iOSMan.left = 0
+        iOSMan.top = self.pythonMan.bottom + 5
+        
+        let str = NSMutableAttributedString.init(string: iOSMan.text!)
+        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_Let_Color(), range: NSMakeRange(0, 3))
+        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor(), range: NSMakeRange(4, 8))
+        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_Wave_Color(), range: NSMakeRange(12,5))
+        //        [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Courier-BoldOblique" size:20.0] range:NSMakeRange(10, 6)];
+        iOSMan.attributedText = str
+        
+        return iOSMan
+    }()
+    
+    //python攻城狮:
+    private lazy var pythonMan : UILabel = {
+        
+        let pythonMan = UILabel()
+        pythonMan.text = "let pythonMan = Zack"
+        pythonMan.sizeToFit()
+        pythonMan.left = self.width - pythonMan.width
+        pythonMan.top = self.height * 0.2
+        
+        let str = NSMutableAttributedString.init(string: pythonMan.text!)
+        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_Let_Color(), range: NSMakeRange(0, 3))
+        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor(), range: NSMakeRange(4, 11))
+        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_Orange_COLOR(), range: NSMakeRange(16, 4))
+        pythonMan.attributedText = str
+        
+        return pythonMan
+    }()
+    
+    
+}
