@@ -11,7 +11,6 @@
 		401E255C1D225D2700C9C5E8 /* BBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401E255B1D225D2700C9C5E8 /* BBTextField.swift */; };
 		40E1D2CF1D2222D4003970C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E1D2CE1D2222D4003970C6 /* AppDelegate.swift */; };
 		40E1D2D61D2222D4003970C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40E1D2D51D2222D4003970C6 /* Assets.xcassets */; };
-		40E1D2D91D2222D4003970C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40E1D2D71D2222D4003970C6 /* LaunchScreen.storyboard */; };
 		40E1D2E41D2222D4003970C6 /* iEatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E1D2E31D2222D4003970C6 /* iEatTests.swift */; };
 		40E1D2EF1D2222D4003970C6 /* iEatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E1D2EE1D2222D4003970C6 /* iEatUITests.swift */; };
 		40E1D3061D222432003970C6 /* BBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E1D3051D222432003970C6 /* BBNetworkManager.swift */; };
@@ -32,6 +31,7 @@
 		40EC1BA21D237FE800D4817D /* BBOldHotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC1BA11D237FE800D4817D /* BBOldHotelView.swift */; };
 		40EC1BA41D237FF100D4817D /* BBNewHotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC1BA31D237FF100D4817D /* BBNewHotelView.swift */; };
 		40EC1BA61D237FFA00D4817D /* BBBaseHotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC1BA51D237FFA00D4817D /* BBBaseHotelView.swift */; };
+		40EC1BA81D239ED800D4817D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40EC1BA71D239ED800D4817D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		40E1D2CB1D2222D4003970C6 /* iEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E1D2CE1D2222D4003970C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40E1D2D51D2222D4003970C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		40E1D2D81D2222D4003970C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40E1D2DA1D2222D4003970C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40E1D2DF1D2222D4003970C6 /* iEatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iEatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E1D2E31D2222D4003970C6 /* iEatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iEatTests.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		40EC1BA11D237FE800D4817D /* BBOldHotelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBOldHotelView.swift; sourceTree = "<group>"; };
 		40EC1BA31D237FF100D4817D /* BBNewHotelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBNewHotelView.swift; sourceTree = "<group>"; };
 		40EC1BA51D237FFA00D4817D /* BBBaseHotelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBaseHotelView.swift; sourceTree = "<group>"; };
+		40EC1BA71D239ED800D4817D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD866E2CEB6C83978E3E0C7F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D033BAD6A376FA2D0ED51B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E357EBCD3EC2ED1F2D059171 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 				40E1D3031D222410003970C6 /* Services */,
 				40E1D3011D2223FD003970C6 /* Network */,
 				40E1D2D51D2222D4003970C6 /* Assets.xcassets */,
-				40E1D2D71D2222D4003970C6 /* LaunchScreen.storyboard */,
+				40EC1BA71D239ED800D4817D /* LaunchScreen.storyboard */,
 				40E1D2DA1D2222D4003970C6 /* Info.plist */,
 			);
 			path = iEat;
@@ -405,7 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E1D2D91D2222D4003970C6 /* LaunchScreen.storyboard in Resources */,
+				40EC1BA81D239ED800D4817D /* LaunchScreen.storyboard in Resources */,
 				40E1D2D61D2222D4003970C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,17 +532,6 @@
 			targetProxy = 40E1D2EB1D2222D4003970C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		40E1D2D71D2222D4003970C6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40E1D2D81D2222D4003970C6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		40E1D2F11D2222D4003970C6 /* Debug */ = {
