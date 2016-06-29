@@ -9,8 +9,14 @@
 import UIKit
 import pop
 
-class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableViewDelegate {
-
+class BBNewHotelController: BBBaseHotelController {
+    
+    deinit{
+        print("BBNewHotelController释放了")
+    }
+    
+    var currentSelectedCell : BBHotelCuisineCell?
+    
     override func loadView() {
         super.loadView()
         
@@ -27,6 +33,9 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
         
         newHotelView.tableview.delegate = self
         newHotelView.tableview.dataSource = self
+        
+        newHotelView.pickerView.dataSource = self
+        newHotelView.pickerView.delegate = self
     }
     
     @objc private func onClcikConfirmBtn(){
@@ -35,25 +44,40 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
     
     @objc private func onClickSelectedConfirmBtn(){
         
-//        BBUseAnimation.defaultUseAnimation.changeSelectedStatusView(newHotelView.selectedSpicyLeveView)
         BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newHotelView.selectedSpicyLeveView)
     }
+
+    private lazy var newHotelView : BBNewHotelView = {
+        
+        let addNewFoodView = BBNewHotelView.init(frame: self.view.bounds)
+        return addNewFoodView
+    }()
+
+    private lazy var titleArray : [String] = {
+        
+        let titleArray = ["餐厅名称:","餐厅简介:","餐厅地址:"]
+        return titleArray
+    }()
+    
+}
+
+extension BBNewHotelController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
-
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //餐厅名称 餐厅简介 餐厅地址
         if indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2  {
-        
+            
             var newHotelInfoCell = tableView.dequeueReusableCellWithIdentifier("newHotelInfoCell") as? BBNewHotelInfoCell
             
             if newHotelInfoCell == nil {
                 newHotelInfoCell = BBNewHotelInfoCell(style: .Default,reuseIdentifier: "newHotelInfoCell")
             }
-        
+            
             newHotelInfoCell?.titleLbl.text = titleArray[indexPath.row]
             
             return newHotelInfoCell!
@@ -71,7 +95,7 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
             spicyLevelCell?.selectedSpicyLevelLbl.text = "中辣"
             
             return spicyLevelCell!
-
+            
             //菜系
         }else{
             
@@ -91,28 +115,41 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 54
     }
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if indexPath.row == 3 {
             
-//            BBUseAnimation.defaultUseAnimation.changeSelectedStatusView(newHotelView.selectedSpicyLeveView)
             BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newHotelView.selectedSpicyLeveView)
         }else if indexPath.row == 4{
-            print("4")
+            
+            currentSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as? BBHotelCuisineCell
+            BBUseAnimation.defaultUseAnimation.changePickerViewInPosition(newHotelView.pickerView)
         }
     }
     
-    private lazy var newHotelView : BBNewHotelView = {
-        
-        let addNewFoodView = BBNewHotelView.init(frame: self.view.bounds)
-        return addNewFoodView
-    }()
-
-    private lazy var titleArray : [String] = {
-        
-        let titleArray = ["餐厅名称:","餐厅简介:","餐厅地址:"]
-        return titleArray
-    }()
-    
 }
+
+extension BBNewHotelController : UIPickerViewDelegate,UIPickerViewDataSource{
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return titleArray[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        currentSelectedCell?.selectedHotelCuisineLbl.text = titleArray[row]
+    }
+}
+
+
+
+

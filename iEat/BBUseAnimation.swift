@@ -47,4 +47,16 @@ class BBUseAnimation: NSObject {
         springAnimation.springSpeed = 20.0
         view?.pop_addAnimation(springAnimation, forKey: "changePosition")
     }
+    
+    func changePickerViewInPosition(view:UIView?) {
+        UIView.animateWithDuration(0.25) { 
+            
+            if view?.top == screenHeight{
+                
+                view?.top = screenHeight - 200
+            }else{
+                view?.top = screenHeight
+            }
+        }
+    }
 }

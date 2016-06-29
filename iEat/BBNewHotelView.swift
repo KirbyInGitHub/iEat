@@ -15,6 +15,7 @@ class BBNewHotelView: BBBaseHotelView {
         
         addSubview(tableview)
         addSubview(selectedSpicyLeveView)
+        addSubview(pickerView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,5 +41,14 @@ class BBNewHotelView: BBBaseHotelView {
         selectedSpicyLeveView.frame = CGRectMake((self.width - 300) * 0.5, -300, 300, 300)
         selectedSpicyLeveView.hidden = true
         return selectedSpicyLeveView
+    }()
+    
+    lazy var pickerView : UIPickerView = {
+        
+        let pickerView = UIPickerView()
+        pickerView.frame = CGRectMake(0, self.height, self.width, 200)
+        pickerView.backgroundColor = UIColor.whiteColor()
+        pickerView.showsSelectionIndicator = true
+        return pickerView
     }()
 }

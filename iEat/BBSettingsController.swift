@@ -10,6 +10,10 @@ import UIKit
 
 class BBSettingsController: BBBaseController {
 
+    deinit{
+        print("BBSettingsController释放了")
+    }
+
     override func loadView() {
         super.loadView()
         

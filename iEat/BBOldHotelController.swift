@@ -10,6 +10,10 @@ import UIKit
 
 class BBOldHotelController: BBBaseHotelController {
 
+    deinit{
+        print("BBOldHotelController释放了")
+    }
+    
     override func loadView() {
         super.loadView()
         
