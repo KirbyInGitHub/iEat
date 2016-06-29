@@ -35,9 +35,9 @@ class BBNewHotelView: BBBaseHotelView {
         return tableview
     }()
     
-    lazy var selectedSpicyLeveView : BBSelectedSpicyLeveView = {
+    lazy var selectedSpicyLeveView : BBSelectedSpicyLevelView = {
         
-        let selectedSpicyLeveView = BBSelectedSpicyLeveView()
+        let selectedSpicyLeveView = BBSelectedSpicyLevelView()
         selectedSpicyLeveView.frame = CGRectMake((self.width - 300) * 0.5, -300, 300, 300)
         selectedSpicyLeveView.hidden = true
         return selectedSpicyLeveView

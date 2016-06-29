@@ -1,5 +1,5 @@
 //
-//  BBSelectedSpicyLeveView.swift
+//  BBSelectedSpicyLevelView.swift
 //  iEat
 //
 //  Created by wave on 16/6/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBSelectedSpicyLeveView: UIView {
+class BBSelectedSpicyLevelView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

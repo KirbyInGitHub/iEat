@@ -16,6 +16,7 @@ class BBNewHotelController: BBBaseHotelController {
     }
     
     var currentSelectedCell : BBHotelCuisineCell?
+    var addNewRestaurantItem : BBAddNewRestaurantItem?
     
     override func loadView() {
         super.loadView()
@@ -40,6 +41,8 @@ class BBNewHotelController: BBBaseHotelController {
     
     @objc private func onClcikConfirmBtn(){
         print("添加成功")
+        
+        print(addNewRestaurantItem)
     }
     
     @objc private func onClickSelectedConfirmBtn(){
