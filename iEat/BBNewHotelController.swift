@@ -20,9 +20,14 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
         super.viewDidLoad()
         
         newHotelView.closeBtn.addTarget(self, action: #selector(BBBaseHotelController.onClickCloseBtn), forControlEvents: .TouchUpInside)
+        newHotelView.confirmBtn.addTarget(self, action: #selector(BBNewHotelController.onClcikConfirmBtn), forControlEvents: .TouchUpInside)
         
         newHotelView.tableview.delegate = self
         newHotelView.tableview.dataSource = self
+    }
+    
+    @objc private func onClcikConfirmBtn(){
+        print("添加成功")
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +59,7 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
             }
             
             spicyLevelCell?.titleLbl.text = "辛辣程度:"
-
+            spicyLevelCell?.selectedSpicyLevelLbl.text = "中辣"
             return spicyLevelCell!
 
             //菜系
@@ -67,6 +72,7 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
             }
             
             hotelCuisineCell?.titleLbl.text = "餐厅菜系:"
+            hotelCuisineCell?.selectedHotelCuisineLbl.text = "东北菜"
             
             return hotelCuisineCell!
         }
@@ -77,7 +83,11 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
+        if indexPath.row == 3 {
+            print("3")
+        }else if indexPath.row == 4{
+            print("4")
+        }
     }
     
     private lazy var newHotelView : BBNewHotelView = {

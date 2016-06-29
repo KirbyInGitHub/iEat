@@ -29,18 +29,18 @@ class BBInputMessageController: BBBaseController {
 
             BBDeliveryService.getUserInfo(inputMessageView.phoneStr, success: { (result) in
                 
-                    let userInfo = Mapper<BBUserInfo>().map(result)
-                    
-                    if userInfo?.phone == nil{
-                        
-                        self.inputMessageView.showRemindLabel()
-                    }else{
-                        
+//                    let userInfo = Mapper<BBUserInfo>().map(result)
+//                    
+//                    if userInfo?.phone == nil{
+//                        
+//                        self.inputMessageView.showRemindLabel()
+//                    }else{
+                
                         let mainVC = BBMainController()
                         let nav = UINavigationController.init(rootViewController: mainVC)
                         nav.modalTransitionStyle = .FlipHorizontal
                         self.presentViewController(nav, animated: true, completion: nil)
-                    }
+//                    }
                 
                 }, failure: { (error) in
                     print(error)

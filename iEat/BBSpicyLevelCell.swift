@@ -22,6 +22,15 @@ class BBSpicyLevelCell: BBBaseHotelCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        addSubview(selectedSpicyLevelLbl)
     }
     
+    lazy var selectedSpicyLevelLbl : UILabel = {
+        
+        let selectedSpicyLevelLbl = UILabel()
+        selectedSpicyLevelLbl.textColor = UIColor.whiteColor()
+        selectedSpicyLevelLbl.frame = CGRectMake(self.width - 110, (self.height - 30) * 0.5, 100, 30)
+        selectedSpicyLevelLbl.textAlignment = .Center
+        return selectedSpicyLevelLbl
+    }()
 }

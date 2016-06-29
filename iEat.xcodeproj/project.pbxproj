@@ -15,6 +15,8 @@
 		40E0A61D1D23AE9700CC74AE /* BBHotelCuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A61C1D23AE9700CC74AE /* BBHotelCuisineCell.swift */; };
 		40E0A6211D23B54F00CC74AE /* BBBaseHotelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6201D23B54F00CC74AE /* BBBaseHotelCell.swift */; };
 		40E0A6231D23C37700CC74AE /* BBSpicyLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6221D23C37700CC74AE /* BBSpicyLevelCell.swift */; };
+		40E0A6271D23CDDB00CC74AE /* BBSelectedSpicyLeveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6261D23CDDB00CC74AE /* BBSelectedSpicyLeveView.swift */; };
+		40E0A6291D23CEFF00CC74AE /* BBSelectedHotelCuisineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6281D23CEFF00CC74AE /* BBSelectedHotelCuisineView.swift */; };
 		40E1D2CF1D2222D4003970C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E1D2CE1D2222D4003970C6 /* AppDelegate.swift */; };
 		40E1D2D61D2222D4003970C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40E1D2D51D2222D4003970C6 /* Assets.xcassets */; };
 		40E1D2E41D2222D4003970C6 /* iEatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E1D2E31D2222D4003970C6 /* iEatTests.swift */; };
@@ -67,6 +69,8 @@
 		40E0A61C1D23AE9700CC74AE /* BBHotelCuisineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBHotelCuisineCell.swift; sourceTree = "<group>"; };
 		40E0A6201D23B54F00CC74AE /* BBBaseHotelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBaseHotelCell.swift; sourceTree = "<group>"; };
 		40E0A6221D23C37700CC74AE /* BBSpicyLevelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSpicyLevelCell.swift; sourceTree = "<group>"; };
+		40E0A6261D23CDDB00CC74AE /* BBSelectedSpicyLeveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSelectedSpicyLeveView.swift; sourceTree = "<group>"; };
+		40E0A6281D23CEFF00CC74AE /* BBSelectedHotelCuisineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSelectedHotelCuisineView.swift; sourceTree = "<group>"; };
 		40E1D2CB1D2222D4003970C6 /* iEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E1D2CE1D2222D4003970C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40E1D2D51D2222D4003970C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				401E255B1D225D2700C9C5E8 /* BBTextField.swift */,
+				40E0A6261D23CDDB00CC74AE /* BBSelectedSpicyLeveView.swift */,
+				40E0A6281D23CEFF00CC74AE /* BBSelectedHotelCuisineView.swift */,
 			);
 			name = ComponentViews;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				40EC1B9A1D236F7700D4817D /* BBSettingsView.swift in Sources */,
 				40E1D30D1D222666003970C6 /* UIColor+Category.swift in Sources */,
 				40E1D31B1D2228F6003970C6 /* BBInputMessageView.swift in Sources */,
+				40E0A6291D23CEFF00CC74AE /* BBSelectedHotelCuisineView.swift in Sources */,
 				401E255C1D225D2700C9C5E8 /* BBTextField.swift in Sources */,
 				40EC1BA61D237FFA00D4817D /* BBBaseHotelView.swift in Sources */,
 				40EC1B961D236AD200D4817D /* BBBaseController.swift in Sources */,
@@ -513,6 +520,7 @@
 				40E1D3151D22281A003970C6 /* BBMainController.swift in Sources */,
 				40EC1B9E1D237FB100D4817D /* BBOldHotelController.swift in Sources */,
 				40E0A6211D23B54F00CC74AE /* BBBaseHotelCell.swift in Sources */,
+				40E0A6271D23CDDB00CC74AE /* BBSelectedSpicyLeveView.swift in Sources */,
 				40EC1B9C1D237F9F00D4817D /* BBNewHotelController.swift in Sources */,
 				40EC1BA41D237FF100D4817D /* BBNewHotelView.swift in Sources */,
 				40E1D30A1D222470003970C6 /* UIView+Frame.m in Sources */,
