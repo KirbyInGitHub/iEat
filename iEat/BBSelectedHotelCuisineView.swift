@@ -10,6 +10,10 @@ import UIKit
 
 class BBSelectedHotelCuisineView: UIView {
 
-   
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        backgroundColor = UIColor.whiteColor()
+    }
 
 }

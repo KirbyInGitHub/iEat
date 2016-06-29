@@ -14,6 +14,7 @@ class BBNewHotelView: BBBaseHotelView {
         super.init(frame: frame)
         
         addSubview(tableview)
+        addSubview(selectedSpicyLeveView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,5 +32,13 @@ class BBNewHotelView: BBBaseHotelView {
         tableview.separatorStyle = .None
         tableview.backgroundColor = UIColor.kBasis_Purple_Color()
         return tableview
+    }()
+    
+    lazy var selectedSpicyLeveView : BBSelectedSpicyLeveView = {
+        
+        let selectedSpicyLeveView = BBSelectedSpicyLeveView()
+        selectedSpicyLeveView.frame = CGRectMake(self.width * 0.5, self.height * 0.5, 0, 0)
+        selectedSpicyLeveView.backgroundColor = UIColor.redColor()
+        return selectedSpicyLeveView
     }()
 }

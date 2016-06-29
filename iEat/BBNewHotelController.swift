@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableViewDelegate {
 
@@ -22,12 +23,19 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
         newHotelView.closeBtn.addTarget(self, action: #selector(BBBaseHotelController.onClickCloseBtn), forControlEvents: .TouchUpInside)
         newHotelView.confirmBtn.addTarget(self, action: #selector(BBNewHotelController.onClcikConfirmBtn), forControlEvents: .TouchUpInside)
         
+        newHotelView.selectedSpicyLeveView.selectedConfirmBtn.addTarget(self, action: #selector(BBNewHotelController.onClickSelectedConfirmBtn), forControlEvents: .TouchUpInside)
+        
         newHotelView.tableview.delegate = self
         newHotelView.tableview.dataSource = self
     }
     
     @objc private func onClcikConfirmBtn(){
         print("添加成功")
+    }
+    
+    @objc private func onClickSelectedConfirmBtn(){
+        
+        changeSelectedStatusView(newHotelView.selectedSpicyLeveView)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,6 +68,7 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
             
             spicyLevelCell?.titleLbl.text = "辛辣程度:"
             spicyLevelCell?.selectedSpicyLevelLbl.text = "中辣"
+            
             return spicyLevelCell!
 
             //菜系
@@ -83,11 +92,29 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         if indexPath.row == 3 {
-            print("3")
+            
+            changeSelectedStatusView(newHotelView.selectedSpicyLeveView)
+            
         }else if indexPath.row == 4{
             print("4")
         }
+    }
+    
+    private func changeSelectedStatusView(selectedView:UIView?){
+        
+        let springAnimation = POPSpringAnimation.init(propertyNamed: kPOPLayerSize)
+        let rect = selectedView!.frame
+        if rect.size.width == 0 {
+            springAnimation.toValue = NSValue.init(CGSize: CGSizeMake(300, 300))
+        }else{
+            springAnimation.toValue = NSValue.init(CGSize: CGSizeMake(0, 0))
+        }
+        
+        springAnimation.springBounciness = 20.0
+        springAnimation.springSpeed = 20.0
+        selectedView!.layer.pop_addAnimation(springAnimation, forKey: "changeSize")
     }
     
     private lazy var newHotelView : BBNewHotelView = {
@@ -101,4 +128,5 @@ class BBNewHotelController: BBBaseHotelController,UITableViewDataSource,UITableV
         let titleArray = ["餐厅名称:","餐厅简介:","餐厅地址:"]
         return titleArray
     }()
+    
 }
