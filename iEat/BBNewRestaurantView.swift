@@ -1,5 +1,5 @@
 //
-//  BBNewHotelView.swift
+//  BBNewRestaurantView.swift
 //  iEat
 //
 //  Created by wave on 16/6/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBNewHotelView: BBBaseHotelView {
+class BBNewRestaurantView: BBBaseRestaurantView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +23,7 @@ class BBNewHotelView: BBBaseHotelView {
     }
     
     override func showHeadTitle() -> String {
-        return "Add a new hotel"
+        return "Add a new Restaurant"
     }
     
     lazy var tableview : UITableView = {

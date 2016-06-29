@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBSpicyLevelCell: BBBaseHotelCell {
+class BBSpicyLevelCell: BBBaseRestaurantCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

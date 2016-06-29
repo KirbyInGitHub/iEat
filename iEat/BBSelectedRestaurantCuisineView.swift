@@ -1,5 +1,5 @@
 //
-//  BBSelectedHotelCuisineView.swift
+//  BBSelectedRestaurantCuisineView.swift
 //  iEat
 //
 //  Created by wave on 16/6/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBSelectedHotelCuisineView: UIView {
+class BBSelectedRestaurantCuisineView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()

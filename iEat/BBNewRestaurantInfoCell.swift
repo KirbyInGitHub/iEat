@@ -1,5 +1,5 @@
 //
-//  BBNewHotelInfoCell.swift
+//  BBNewRestaurantInfoCell.swift
 //  iEat
 //
 //  Created by wave on 16/6/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBNewHotelInfoCell: BBBaseHotelCell {
+class BBNewRestaurantInfoCell: BBBaseRestaurantCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

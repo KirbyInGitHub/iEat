@@ -1,5 +1,5 @@
 //
-//  BBOldHotelView.swift
+//  BBOldRestaurantView.swift
 //  iEat
 //
 //  Created by wave on 16/6/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBOldHotelView: BBBaseHotelView {
+class BBOldRestaurantView: BBBaseRestaurantView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +20,6 @@ class BBOldHotelView: BBBaseHotelView {
     }
     
     override func showHeadTitle() -> String {
-        return "Find Hotel"
+        return "Find Restaurant"
     }
 }

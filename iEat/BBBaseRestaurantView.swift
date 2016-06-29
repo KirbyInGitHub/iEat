@@ -1,5 +1,5 @@
 //
-//  BBBaseHotelView.swift
+//  BBBaseRestaurantView.swift
 //  iEat
 //
 //  Created by wave on 16/6/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBBaseHotelView: UIView {
+class BBBaseRestaurantView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

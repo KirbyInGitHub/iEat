@@ -1,5 +1,5 @@
 //
-//  BBBaseHotelCell.swift
+//  BBBaseRestaurantCell.swift
 //  iEat
 //
 //  Created by wave on 16/6/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBBaseHotelCell: UITableViewCell {
+class BBBaseRestaurantCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()

@@ -1,5 +1,5 @@
 //
-//  BBNewHotelController.swift
+//  BBNewRestaurantController.swift
 //  iEat
 //
 //  Created by wave on 16/6/29.
@@ -9,34 +9,34 @@
 import UIKit
 import pop
 
-class BBNewHotelController: BBBaseHotelController {
+class BBNewRestaurantController: BBBaseRestaurantController {
     
     deinit{
-        print("BBNewHotelController释放了")
+        print("BBNewRestaurantController释放了")
     }
     
-    var currentSelectedCell : BBHotelCuisineCell?
+    var currentSelectedCell : BBRestaurantCuisineCell?
     var addNewRestaurantItem : BBAddNewRestaurantItem?
     
     override func loadView() {
         super.loadView()
         
-        view = newHotelView
+        view = newRestaurantView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newHotelView.closeBtn.addTarget(self, action: #selector(BBBaseHotelController.onClickCloseBtn), forControlEvents: .TouchUpInside)
-        newHotelView.confirmBtn.addTarget(self, action: #selector(BBNewHotelController.onClcikConfirmBtn), forControlEvents: .TouchUpInside)
+        newRestaurantView.closeBtn.addTarget(self, action: #selector(BBBaseRestaurantController.onClickCloseBtn), forControlEvents: .TouchUpInside)
+        newRestaurantView.confirmBtn.addTarget(self, action: #selector(BBNewRestaurantController.onClcikConfirmBtn), forControlEvents: .TouchUpInside)
         
-        newHotelView.selectedSpicyLeveView.selectedConfirmBtn.addTarget(self, action: #selector(BBNewHotelController.onClickSelectedConfirmBtn), forControlEvents: .TouchUpInside)
+        newRestaurantView.selectedSpicyLeveView.selectedConfirmBtn.addTarget(self, action: #selector(BBNewRestaurantController.onClickSelectedConfirmBtn), forControlEvents: .TouchUpInside)
         
-        newHotelView.tableview.delegate = self
-        newHotelView.tableview.dataSource = self
+        newRestaurantView.tableview.delegate = self
+        newRestaurantView.tableview.dataSource = self
         
-        newHotelView.pickerView.dataSource = self
-        newHotelView.pickerView.delegate = self
+        newRestaurantView.pickerView.dataSource = self
+        newRestaurantView.pickerView.delegate = self
     }
     
     @objc private func onClcikConfirmBtn(){
@@ -47,13 +47,13 @@ class BBNewHotelController: BBBaseHotelController {
     
     @objc private func onClickSelectedConfirmBtn(){
         
-        BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newHotelView.selectedSpicyLeveView)
+        BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newRestaurantView.selectedSpicyLeveView)
     }
 
-    private lazy var newHotelView : BBNewHotelView = {
+    private lazy var newRestaurantView : BBNewRestaurantView = {
         
-        let addNewFoodView = BBNewHotelView.init(frame: self.view.bounds)
-        return addNewFoodView
+        let addNewRestaurantView = BBNewRestaurantView.init(frame: self.view.bounds)
+        return addNewRestaurantView
     }()
 
     private lazy var titleArray : [String] = {
@@ -64,7 +64,7 @@ class BBNewHotelController: BBBaseHotelController {
     
 }
 
-extension BBNewHotelController : UITableViewDelegate,UITableViewDataSource{
+extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -75,15 +75,15 @@ extension BBNewHotelController : UITableViewDelegate,UITableViewDataSource{
         //餐厅名称 餐厅简介 餐厅地址
         if indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2  {
             
-            var newHotelInfoCell = tableView.dequeueReusableCellWithIdentifier("newHotelInfoCell") as? BBNewHotelInfoCell
+            var newRestaurantInfoCell = tableView.dequeueReusableCellWithIdentifier("newRestaurantInfoCell") as? BBNewRestaurantInfoCell
             
-            if newHotelInfoCell == nil {
-                newHotelInfoCell = BBNewHotelInfoCell(style: .Default,reuseIdentifier: "newHotelInfoCell")
+            if newRestaurantInfoCell == nil {
+                newRestaurantInfoCell = BBNewRestaurantInfoCell(style: .Default,reuseIdentifier: "newRestaurantInfoCell")
             }
             
-            newHotelInfoCell?.titleLbl.text = titleArray[indexPath.row]
+            newRestaurantInfoCell?.titleLbl.text = titleArray[indexPath.row]
             
-            return newHotelInfoCell!
+            return newRestaurantInfoCell!
             
             //辛辣程度
         }else if indexPath.row == 3{
@@ -102,16 +102,16 @@ extension BBNewHotelController : UITableViewDelegate,UITableViewDataSource{
             //菜系
         }else{
             
-            var hotelCuisineCell = tableView.dequeueReusableCellWithIdentifier("hotelCuisineCell") as? BBHotelCuisineCell
+            var restaurantCuisineCell = tableView.dequeueReusableCellWithIdentifier("restaurantCuisineCell") as? BBRestaurantCuisineCell
             
-            if hotelCuisineCell == nil {
-                hotelCuisineCell = BBHotelCuisineCell.init(style: .Default, reuseIdentifier: "hotelCuisineCell")
+            if restaurantCuisineCell == nil {
+                restaurantCuisineCell = BBRestaurantCuisineCell.init(style: .Default, reuseIdentifier: "restaurantCuisineCell")
             }
             
-            hotelCuisineCell?.titleLbl.text = "餐厅菜系:"
-            hotelCuisineCell?.selectedHotelCuisineLbl.text = "东北菜"
+            restaurantCuisineCell?.titleLbl.text = "餐厅菜系:"
+            restaurantCuisineCell?.selectedRestaurantCuisineLbl.text = "东北菜"
             
-            return hotelCuisineCell!
+            return restaurantCuisineCell!
         }
     }
     
@@ -123,17 +123,17 @@ extension BBNewHotelController : UITableViewDelegate,UITableViewDataSource{
         
         if indexPath.row == 3 {
             
-            BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newHotelView.selectedSpicyLeveView)
+            BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newRestaurantView.selectedSpicyLeveView)
         }else if indexPath.row == 4{
             
-            currentSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as? BBHotelCuisineCell
-            BBUseAnimation.defaultUseAnimation.changePickerViewInPosition(newHotelView.pickerView)
+            currentSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as? BBRestaurantCuisineCell
+            BBUseAnimation.defaultUseAnimation.changePickerViewInPosition(newRestaurantView.pickerView)
         }
     }
     
 }
 
-extension BBNewHotelController : UIPickerViewDelegate,UIPickerViewDataSource{
+extension BBNewRestaurantController : UIPickerViewDelegate,UIPickerViewDataSource{
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -149,7 +149,7 @@ extension BBNewHotelController : UIPickerViewDelegate,UIPickerViewDataSource{
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        currentSelectedCell?.selectedHotelCuisineLbl.text = titleArray[row]
+        currentSelectedCell?.selectedRestaurantCuisineLbl.text = titleArray[row]
     }
 }
 

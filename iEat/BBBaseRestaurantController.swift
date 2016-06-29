@@ -1,5 +1,5 @@
 //
-//  BBBaseHotelController.swift
+//  BBBaseRestaurantController.swift
 //  iEat
 //
 //  Created by wave on 16/6/29.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class BBBaseHotelController: BBBaseController {
+class BBBaseRestaurantController: BBBaseController {
 
     override func loadView() {
         super.loadView()
         
-        view = baseHotelView
+        view = baseRestaurantView
     }
     
     override func viewDidLoad() {
@@ -26,9 +26,9 @@ class BBBaseHotelController: BBBaseController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    private lazy var baseHotelView : BBBaseHotelView = {
+    private lazy var baseRestaurantView : BBBaseRestaurantView = {
         
-        let baseFoodView = BBBaseHotelView.init(frame: self.view.bounds)
+        let baseFoodView = BBBaseRestaurantView.init(frame: self.view.bounds)
         return baseFoodView
     }()
 
