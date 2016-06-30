@@ -8,6 +8,9 @@ PODS:
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
   - SVProgressHUD (2.0.3)
+  - YYImage (1.0.2):
+    - YYImage/Core (= 1.0.2)
+  - YYImage/Core (1.0.2)
 
 DEPENDENCIES:
   - AFViewShaker (~> 0.0.2)
@@ -17,6 +20,7 @@ DEPENDENCIES:
   - pop
   - SDWebImage
   - SVProgressHUD
+  - YYImage
 
 SPEC CHECKSUMS:
   AFViewShaker: 7e4bc215ca3e92347b78da436fca74e1730b52e8
@@ -26,5 +30,6 @@ SPEC CHECKSUMS:
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
 
 COCOAPODS: 0.39.0

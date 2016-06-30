@@ -15,6 +15,7 @@ class BBLogoutCell: UITableViewCell {
         
         addSubview(titleLbl)
         addSubview(bottomLine)
+        self.selectionStyle = .None
     }
     
     required init?(coder aDecoder: NSCoder) {

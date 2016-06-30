@@ -90,6 +90,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/ObjectMapper.framework"
   install_framework "Pods/SDWebImage.framework"
   install_framework "Pods/SVProgressHUD.framework"
+  install_framework "Pods/YYImage.framework"
   install_framework "Pods/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -99,5 +100,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/ObjectMapper.framework"
   install_framework "Pods/SDWebImage.framework"
   install_framework "Pods/SVProgressHUD.framework"
+  install_framework "Pods/YYImage.framework"
   install_framework "Pods/pop.framework"
 fi
