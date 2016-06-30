@@ -12,6 +12,7 @@ import Alamofire
 enum Method:String {
     case GET  = "GET"
     case POST = "POST"
+    case PUT  = "PUT"
 }
 
 class BBNetworkManager {
@@ -50,6 +51,9 @@ class BBNetworkManager {
                 // callback
                 success(result: response.result.value)
             }
+        }else if method == .PUT{
+            
+            print("put请求")
         }
     }
     

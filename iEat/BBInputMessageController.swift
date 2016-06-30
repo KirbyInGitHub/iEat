@@ -71,7 +71,9 @@ extension BBInputMessageController{
                 
                 let userInfo = Mapper<BBSignupModel>().map(result)
                 
-                if userInfo?.name != nil{
+                if userInfo?.userId != nil{
+                    
+                    BBSettings.defaultSettings.userId = userInfo?.userId
                     
                     let mainVC = BBMainController()
                     let nav = UINavigationController.init(rootViewController: mainVC)
@@ -102,8 +104,10 @@ extension BBInputMessageController{
                 
                 let userInfo = Mapper<BBLoginModel>().map(result)
                 
-                if userInfo?.name != nil{
+                if userInfo?.userId != nil{
                     
+                    BBSettings.defaultSettings.userId = userInfo?.userId
+
                     let mainVC = BBMainController()
                     let nav = UINavigationController.init(rootViewController: mainVC)
                     nav.modalTransitionStyle = .FlipHorizontal

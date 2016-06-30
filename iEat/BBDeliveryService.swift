@@ -9,16 +9,19 @@
 import UIKit
 
 //BaseUrl
-let API_BASE_URL     = "http://123.57.132.228:8800/api/"
+let API_BASE_URL          = "http://123.57.132.228:8800/api/"
 
 //signup
-let API_SIGNUP_URL = "signup"
+let API_SIGNUP_URL        = "signup"
 
 //login
-let API_LOGIN_URL = "login"
+let API_LOGIN_URL         = "login"
 
 //logout
-let API_LOGOUT_URL = "logout"
+let API_LOGOUT_URL        = "logout"
+
+//addNewRestaurant
+let API_ADDRESTAURANT_URL = "newrestaurant"
 
 class BBDeliveryService: NSObject {
 
@@ -41,5 +44,27 @@ class BBDeliveryService: NSObject {
         params["password"] = userPassword;
         BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
     }
+    
+    //logout
+//    class func userLogout(success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
+//        let api = NSURL(string: API_BASE_URL + API_LOGOUT_URL)
+//    }
+    
+    //addNewRestaurant
+    class func addNewRestaurant(restaurantItem:BBAddNewRestaurantItem,success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
+        
+        let api = NSURL(string: API_BASE_URL + API_ADDRESTAURANT_URL)
+        var params         = [String: AnyObject]();
+        params["toekn"] = BBSettings.defaultSettings.userId
+        
+        params["name"] = restaurantItem.restaurantName;
+        params["content"] = restaurantItem.restaurantContent;
+        params["address"] = restaurantItem.restaurantAddress;
+        params["spicy_level"] = "1";
+        params["cuisine"] = restaurantItem.restaurantCuisine;
+        
+        BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
+    }
+    
     
 }

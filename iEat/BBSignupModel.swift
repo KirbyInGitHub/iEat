@@ -11,6 +11,8 @@ import ObjectMapper
 
 class BBSignupModel: Mappable {
 
+    var userId : String?
+    
     var content : String?
     
     var name : String?
@@ -22,6 +24,7 @@ class BBSignupModel: Mappable {
     }
     
     func mapping(map: Map) {
+        userId <- map["id"]
         content <- map["content"]
         name <- map["name"]
         phone <- map["phone"]

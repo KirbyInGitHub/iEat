@@ -17,6 +17,7 @@ let screenHeight = UIScreen.mainScreen().bounds.size.height
 
 //NSUserDefaultsKey
 let kFirstInstall = "firstInstall";
+let kUserId = "userId"
 
 
 class BBSettings: NSObject {
@@ -30,6 +31,16 @@ class BBSettings: NSObject {
         }
         set{
             NSUserDefaults.standardUserDefaults().setBool(newValue!, forKey: kFirstInstall)
+        }
+    }
+    
+    //userId
+    var userId : String?{
+        get{
+            return NSUserDefaults.standardUserDefaults().stringForKey(kUserId)
+        }
+        set{
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kUserId)
         }
     }
     
