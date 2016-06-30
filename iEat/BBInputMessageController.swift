@@ -36,10 +36,11 @@ class BBInputMessageController: BBBaseController {
 //                        self.inputMessageView.showRemindLabel()
 //                    }else{
                 
-                        let mainVC = BBMainController()
-                        let nav = UINavigationController.init(rootViewController: mainVC)
-                        nav.modalTransitionStyle = .FlipHorizontal
-                        self.presentViewController(nav, animated: true, completion: nil)
+                self.inputMessageView.showRemindLabel(true)
+//                        let mainVC = BBMainController()
+//                        let nav = UINavigationController.init(rootViewController: mainVC)
+//                        nav.modalTransitionStyle = .FlipHorizontal
+//                        self.presentViewController(nav, animated: true, completion: nil)
 //                    }
                 
                 }, failure: { (error) in
@@ -48,7 +49,7 @@ class BBInputMessageController: BBBaseController {
             
         }else{
             
-            inputMessageView.showRemindLabel()
+            inputMessageView.showRemindLabel(false)
         }
     }
     

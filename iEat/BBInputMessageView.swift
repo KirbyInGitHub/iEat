@@ -50,8 +50,6 @@ class BBInputMessageView: UIView {
 
         let info = aNotification.userInfo
         let kbSize = info![UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size
-        userPasswordOriginalPoint = userPassword.origin
-        userPhoneOriginalPoint = userPhone.origin
         
         let kbTop = self.height - (kbSize?.height)!
         userPassword.bottom = kbTop - 15
@@ -78,13 +76,22 @@ class BBInputMessageView: UIView {
             self.iOSMan.left = (self.width - self.iOSMan.width) * 0.5
             self.pythonMan.left = (self.width - self.pythonMan.width) * 0.5
         }
+        
+        userPasswordOriginalPoint = userPassword.origin
+        userPhoneOriginalPoint = userPhone.origin
     }
     
-    func showRemindLabel(){
+    func showRemindLabel(isPasswordMistake : Bool){
         
         remindLabel.hidden = false
-        let viewShaker = AFViewShaker.init(view: userPhone)
-        viewShaker.shake()
+        
+        if isPasswordMistake {
+            let viewShaker = AFViewShaker.init(view: userPassword)
+            viewShaker.shake()
+        }else{
+            let viewShaker = AFViewShaker.init(view: userPhone)
+            viewShaker.shake()
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -110,7 +117,7 @@ class BBInputMessageView: UIView {
     private lazy var userPassword : BBTextField = {
         
         let userPassword = BBTextField.init(frame: CGRectMake(0, self.userPhone.bottom + 5, self.userPhone.width, self.userPhone.height))
-        userPassword.textField.placeholder = "Passwordk"
+        userPassword.textField.placeholder = "Password"
         userPassword.iconString = "passwordIcon"
         userPassword.alpha = 0
         return userPassword
