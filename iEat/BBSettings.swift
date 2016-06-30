@@ -16,21 +16,21 @@ let screenHeight = UIScreen.mainScreen().bounds.size.height
 //notificationName
 
 //NSUserDefaultsKey
-let kFirstInstall = "firstInstall";
-let kUserId = "userId"
+let kIsSelectedSettingsLogout = "isSelectedSettingsLogout"
+let kUserId                   = "userId"
 
 
 class BBSettings: NSObject {
 
     static let defaultSettings = BBSettings();
     
-    //isFirstInstall
-    var firstInstall : Bool?{
+    //isSelectedSettingsLogout
+    var isSelectedSettingsLogout : Bool?{
         get{
-            return NSUserDefaults.standardUserDefaults().boolForKey(kFirstInstall)
+            return NSUserDefaults.standardUserDefaults().boolForKey(kIsSelectedSettingsLogout)
         }
         set{
-            NSUserDefaults.standardUserDefaults().setBool(newValue!, forKey: kFirstInstall)
+            NSUserDefaults.standardUserDefaults().setBool(newValue!, forKey: kIsSelectedSettingsLogout)
         }
     }
     

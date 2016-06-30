@@ -70,6 +70,7 @@ extension BBSettingsController: UITableViewDelegate,UITableViewDataSource{
         BBSettings.defaultSettings.userId = nil
         vc.modalTransitionStyle = .CoverVertical
         self.presentViewController(vc, animated: true, completion: nil)
+        BBSettings.defaultSettings.isSelectedSettingsLogout = true
     }
 
 }

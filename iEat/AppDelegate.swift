@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let nav = UINavigationController.init(rootViewController: vc)
             window?.rootViewController = nav
         }else{
+            BBSettings.defaultSettings.isSelectedSettingsLogout = false
             vc = BBInputMessageController()
             window?.rootViewController = vc
         }

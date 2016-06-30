@@ -19,8 +19,6 @@ class BBMainController: BBBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        BBSettings.defaultSettings.firstInstall = true
-
         setNavBar()
     }
     

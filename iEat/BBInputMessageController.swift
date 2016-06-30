@@ -74,11 +74,17 @@ extension BBInputMessageController{
                 if userInfo?.userId != nil{
                     
                     BBSettings.defaultSettings.userId = userInfo?.userId
-                    
-                    let mainVC = BBMainController()
-                    let nav = UINavigationController.init(rootViewController: mainVC)
-                    nav.modalTransitionStyle = .FlipHorizontal
-                    self.presentViewController(nav, animated: true, completion: nil)
+
+                    //这里判断是否是从设置里边退出登录
+                    if BBSettings.defaultSettings.isSelectedSettingsLogout == true{
+                        
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }else{
+                        let mainVC = BBMainController()
+                        let nav = UINavigationController.init(rootViewController: mainVC)
+                        nav.modalTransitionStyle = .FlipHorizontal
+                        self.presentViewController(nav, animated: true, completion: nil)
+                    }
                 }
             
                 }, failure: { (error) in
@@ -108,10 +114,17 @@ extension BBInputMessageController{
                     
                     BBSettings.defaultSettings.userId = userInfo?.userId
 
-                    let mainVC = BBMainController()
-                    let nav = UINavigationController.init(rootViewController: mainVC)
-                    nav.modalTransitionStyle = .FlipHorizontal
-                    self.presentViewController(nav, animated: true, completion: nil)
+                    //这里判断是否是从设置里边退出登录
+                    if BBSettings.defaultSettings.isSelectedSettingsLogout == true{
+                    
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }else{
+                        let mainVC = BBMainController()
+                        let nav = UINavigationController.init(rootViewController: mainVC)
+                        nav.modalTransitionStyle = .FlipHorizontal
+                        self.presentViewController(nav, animated: true, completion: nil)
+                    }
+
                 }else{
                     
                     self.inputMessageView.showRemindLabel(true)
