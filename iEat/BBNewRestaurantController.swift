@@ -169,8 +169,6 @@ extension BBNewRestaurantController : UIPickerViewDelegate,UIPickerViewDataSourc
         let restaurantCuisineItem = restaurantCuisineArray[row]
         currentSelectedCell?.selectedRestaurantCuisineLbl.text = restaurantCuisineItem.name
     }
-
-    
 }
 
 

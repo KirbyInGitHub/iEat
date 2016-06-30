@@ -24,7 +24,7 @@ class BBNewRestaurantView: BBBaseRestaurantView {
     }
     
     override func showHeadTitle() -> String {
-        return "Add a new Restaurant"
+        return "添加新餐厅"
     }
     
     lazy var tableview : UITableView = {

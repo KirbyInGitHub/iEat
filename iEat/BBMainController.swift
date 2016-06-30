@@ -26,7 +26,7 @@ class BBMainController: BBBaseController {
     
     //navBarStyle
     private func setNavBar(){
-        self.navigationItem.title = "What to eat today?"
+        self.navigationItem.title = "今天吃什么?"
         let navigationTitleAttribute: NSDictionary = NSDictionary(object: UIColor.whiteColor(), forKey: NSForegroundColorAttributeName)
         self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
         

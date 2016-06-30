@@ -20,6 +20,6 @@ class BBOldRestaurantView: BBBaseRestaurantView {
     }
     
     override func showHeadTitle() -> String {
-        return "Find Restaurant"
+        return "查看餐厅"
     }
 }

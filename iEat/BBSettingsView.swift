@@ -14,10 +14,19 @@ class BBSettingsView: UIView {
         super.init(frame: frame)
         
         backgroundColor = UIColor.whiteColor()
+        
+        tableview.tableFooterView = UIView()
+        addSubview(tableview)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    lazy var tableview : UITableView = {
+        
+        let tableview = UITableView.init(frame: self.bounds)
+        return tableview
+    }()
 
 }
