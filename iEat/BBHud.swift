@@ -15,7 +15,7 @@ class BBHud: UIView {
     override init(frame: CGRect) {
         super.init(frame: CGRectMake(0, -75, screenWidth, 75))
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.kBasis_Blue_Color()
        
         addSubview(messageLabel)
         UIApplication.sharedApplication().keyWindow?.addSubview(self)

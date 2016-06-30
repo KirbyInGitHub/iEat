@@ -67,6 +67,12 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         var spicyLevelTitleDict:Dictionary<String,String>=["0":"稍微辣","1":"一般辣","2":"很辣","3":"变态辣"];
         return spicyLevelTitleDict
     }()
+    
+    private lazy var spicyLevelTitleDictList : [String:String] = {
+        
+        var spicyLevelTitleDictList:Dictionary<String,String>=["稍微辣":"0","一般辣":"1","很辣":"2","变态辣":"3"];
+        return spicyLevelTitleDictList
+    }()
 
     private lazy var titleArray : [String] = {
         
@@ -87,17 +93,17 @@ extension BBNewRestaurantController{
         addNewRestaurantItem.restaurantContent = newRestaurantInfoCell?.textFieldStr
         
         newRestaurantInfoCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 2, inSection: 0)) as? BBNewRestaurantInfoCell
-        addNewRestaurantItem.restaurantAddress = newRestaurantInfoCell?.textFieldStr
+        addNewRestaurantItem.restaurantAddress = spicyLevelTitleDictList[(newRestaurantInfoCell?.textFieldStr)!]
         
         let spicyLevelCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
-        if spicyLevelCell?.selectedSpicyLevelLbl.text == "未选择" {
+        if spicyLevelCell?.selectedSpicyLevelLbl.text == "请选择" {
             addNewRestaurantItem.restaurantSpicyLevel = ""
         }else{
             addNewRestaurantItem.restaurantSpicyLevel = spicyLevelCell?.selectedSpicyLevelLbl.text
         }
         
         let restaurantCuisineCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 4, inSection: 0)) as? BBRestaurantCuisineCell
-        if  restaurantCuisineCell?.selectedRestaurantCuisineLbl.text == "未选择" {
+        if  restaurantCuisineCell?.selectedRestaurantCuisineLbl.text == "请选择" {
             addNewRestaurantItem.restaurantCuisine = ""
         }else{
             addNewRestaurantItem.restaurantCuisine = restaurantCuisineCell?.selectedRestaurantCuisineLbl.text
@@ -163,7 +169,7 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             }
             
             spicyLevelCell?.titleLbl.text = "辛辣程度:"
-            spicyLevelCell?.selectedSpicyLevelLbl.text = "未选择"
+            spicyLevelCell?.selectedSpicyLevelLbl.text = "请选择"
             
             return spicyLevelCell!
             
@@ -177,7 +183,7 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             }
             
             restaurantCuisineCell?.titleLbl.text = "餐厅菜系:"
-            restaurantCuisineCell?.selectedRestaurantCuisineLbl.text = "未选择"
+            restaurantCuisineCell?.selectedRestaurantCuisineLbl.text = "请选择"
             
             return restaurantCuisineCell!
         }
