@@ -48,7 +48,6 @@ class BBNewRestaurantController: BBBaseRestaurantController {
     }
     
     @objc private func onClcikConfirmBtn(){
-        print("添加成功")
         
         print(addNewRestaurantItem)
     }

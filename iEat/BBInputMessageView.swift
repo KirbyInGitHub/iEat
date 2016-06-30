@@ -20,14 +20,23 @@ class BBInputMessageView: UIView {
         }
     }
     
+    var passwordStr : String?{
+        get{
+            return userPassword.textField.text
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         addSubview(backgroundImage)
         backgroundImage.addSubview(userPhone)
         backgroundImage.addSubview(userPassword)
-        backgroundImage.addSubview(nextActionBtn)
+        backgroundImage.addSubview(loginBtn)
+        backgroundImage.addSubview(signupBtn)
         backgroundImage.addSubview(remindLabel)
+        
+        backgroundImage.addSubview(createAccountBtn)
         
         //代码view
         backgroundImage.addSubview(iOSMan)
@@ -146,13 +155,34 @@ class BBInputMessageView: UIView {
         return backgroundImage
     }()
     
-    //下一步按钮
-    lazy var nextActionBtn : UIButton = {
+    //创建账户
+    lazy var createAccountBtn : UIButton = {
         
-        let nextActionBtn = UIButton.init(frame: CGRectMake(0, self.height - 50, self.width, 50))
-        nextActionBtn.setTitle("Next", forState:.Normal)
-        nextActionBtn.backgroundColor = UIColor.kBasis_Blue_Color()
-        return nextActionBtn
+        let createAccountBtn = UIButton()
+        createAccountBtn.setTitle("Create Account", forState: .Normal)
+        createAccountBtn.setTitleColor(UIColor.kBasis_Orange_COLOR(), forState: .Normal)
+        createAccountBtn.sizeToFit()
+        createAccountBtn.left = (self.width - createAccountBtn.width) * 0.5
+        createAccountBtn.top = self.userPassword.bottom + 5
+        return createAccountBtn
+    }()
+    
+    //登录按钮
+    lazy var loginBtn : UIButton = {
+        
+        let loginBtn = UIButton.init(frame: CGRectMake(0, self.height - 50, self.width, 50))
+        loginBtn.setTitle("Login", forState:.Normal)
+        loginBtn.backgroundColor = UIColor.kBasis_Blue_Color()
+        return loginBtn
+    }()
+    
+    //注册按钮
+    lazy var signupBtn : UIButton = {
+        
+        let signupBtn = UIButton.init(frame: CGRectMake(0, self.height, self.width, 50))
+        signupBtn.setTitle("Signup", forState:.Normal)
+        signupBtn.backgroundColor = UIColor.kBasis_Blue_Color()
+        return signupBtn
     }()
     
     //iOS攻城狮:

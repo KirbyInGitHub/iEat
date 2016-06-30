@@ -11,17 +11,35 @@ import UIKit
 //BaseUrl
 let API_BASE_URL     = "http://123.57.132.228:8800/api/"
 
-//UserInfo
-let API_USERINFO_URL = "login/"
+//signup
+let API_SIGNUP_URL = "signup"
+
+//login
+let API_LOGIN_URL = "login"
+
+//logout
+let API_LOGOUT_URL = "logout"
 
 class BBDeliveryService: NSObject {
 
-    //UserInfo
-    class func getUserInfo(userPhone:String?,success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
+    //signup
+    class func userSignup(userPhone:String?,userPassword:String?,success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
         
-        let api = NSURL(string: API_BASE_URL + API_USERINFO_URL + userPhone!);
-        BBNetworkManager.sharedNetworkTools.requestJSON(.GET, URLString: api, parameters: nil, success: success, failure: failure)
+        let api = NSURL(string: API_BASE_URL + API_SIGNUP_URL)
+        var params         = [String: AnyObject]();
+        params["phone"] = userPhone;
+        params["password"] = userPassword;
+        BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
     }
     
+    //login
+    class func userLogin(userPhone:String?,userPassword:String?,success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
+        
+        let api = NSURL(string: API_BASE_URL + API_LOGIN_URL)
+        var params         = [String: AnyObject]();
+        params["phone"] = userPhone;
+        params["password"] = userPassword;
+        BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
+    }
     
 }

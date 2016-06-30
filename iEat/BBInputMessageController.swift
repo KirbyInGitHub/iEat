@@ -11,6 +11,8 @@ import ObjectMapper
 
 class BBInputMessageController: BBBaseController {
 
+    var isLoginStatus : Bool?
+    
     override func loadView() {
         super.loadView()
         
@@ -20,30 +22,65 @@ class BBInputMessageController: BBBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        inputMessageView.nextActionBtn.addTarget(self, action: #selector(BBInputMessageController.onClickNextBtn), forControlEvents: .TouchUpInside)
+        inputMessageView.signupBtn.addTarget(self, action: #selector(BBInputMessageController.onClickSignupAction), forControlEvents: .TouchUpInside)
+        
+        inputMessageView.loginBtn.addTarget(self, action: #selector(BBInputMessageController.onClickLoginAction), forControlEvents: .TouchUpInside)
+        
+        inputMessageView.createAccountBtn.addTarget(self, action: #selector(BBInputMessageController.onClickCreateAccountAction), forControlEvents: .TouchUpInside)
     }
     
-    @objc private func onClickNextBtn(){
+    private lazy var inputMessageView : BBInputMessageView = {
+        
+        let inputMessageView = BBInputMessageView.init(frame: self.view.bounds)
+        return inputMessageView
+    }()
+    
+}
+
+//点击创建账户
+extension BBInputMessageController{
+
+    @objc private func onClickCreateAccountAction(){
+        
+        UIView.animateWithDuration(0.8, delay: 0, options: .CurveEaseOut, animations: {
+            
+            if self.isLoginStatus == true{
+                
+                self.inputMessageView.createAccountBtn.setTitle("Create Account", forState: .Normal)
+                self.inputMessageView.signupBtn.top = screenHeight
+                self.isLoginStatus = false
+            }else{
+                
+                self.inputMessageView.createAccountBtn.setTitle("Login Account", forState: .Normal)
+                self.inputMessageView.signupBtn.top = screenHeight - 50
+                self.isLoginStatus = true
+            }
+        }, completion: nil)
+    }
+
+}
+
+//注册
+extension BBInputMessageController{
+    
+    @objc private func onClickSignupAction(){
         
         if isTelNumber((inputMessageView.phoneStr)!){
-
-            BBDeliveryService.getUserInfo(inputMessageView.phoneStr, success: { (result) in
+            
+            BBDeliveryService.userSignup(inputMessageView.phoneStr, userPassword: inputMessageView.passwordStr, success: { (result) in
                 
-//                    let userInfo = Mapper<BBUserInfo>().map(result)
-//                    
-//                    if userInfo?.phone == nil{
-//                        
-//                        self.inputMessageView.showRemindLabel()
-//                    }else{
+                let userInfo = Mapper<BBSignupModel>().map(result)
                 
-                self.inputMessageView.showRemindLabel(true)
-//                        let mainVC = BBMainController()
-//                        let nav = UINavigationController.init(rootViewController: mainVC)
-//                        nav.modalTransitionStyle = .FlipHorizontal
-//                        self.presentViewController(nav, animated: true, completion: nil)
-//                    }
-                
+                if userInfo?.name != nil{
+                    
+                    let mainVC = BBMainController()
+                    let nav = UINavigationController.init(rootViewController: mainVC)
+                    nav.modalTransitionStyle = .FlipHorizontal
+                    self.presentViewController(nav, animated: true, completion: nil)
+                }
+            
                 }, failure: { (error) in
+                    
                     print(error)
             })
             
@@ -52,10 +89,40 @@ class BBInputMessageController: BBBaseController {
             inputMessageView.showRemindLabel(false)
         }
     }
-    
-    private lazy var inputMessageView : BBInputMessageView = {
-        
-        let inputMessageView = BBInputMessageView.init(frame: self.view.bounds)
-        return inputMessageView
-    }()
 }
+
+//登录
+extension BBInputMessageController{
+    
+    @objc private func onClickLoginAction(){
+    
+        if isTelNumber((inputMessageView.phoneStr)!){
+            
+            BBDeliveryService.userLogin(inputMessageView.phoneStr, userPassword: inputMessageView.passwordStr, success: { (result) in
+                
+                let userInfo = Mapper<BBLoginModel>().map(result)
+                
+                if userInfo?.name != nil{
+                    
+                    let mainVC = BBMainController()
+                    let nav = UINavigationController.init(rootViewController: mainVC)
+                    nav.modalTransitionStyle = .FlipHorizontal
+                    self.presentViewController(nav, animated: true, completion: nil)
+                }else{
+                    
+                    self.inputMessageView.showRemindLabel(true)
+                }
+                
+            }) { (error) in
+                
+                print(error)
+            }
+            
+        }else{
+            inputMessageView.showRemindLabel(false)
+        }
+    }
+}
+
+
+
