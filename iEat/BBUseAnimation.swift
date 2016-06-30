@@ -43,7 +43,7 @@ class BBUseAnimation: NSObject {
             view?.hidden = false
         }
         
-        springAnimation.springBounciness = 15.0
+        springAnimation.springBounciness = 12.0
         springAnimation.springSpeed = 20.0
         view?.pop_addAnimation(springAnimation, forKey: "changePosition")
     }

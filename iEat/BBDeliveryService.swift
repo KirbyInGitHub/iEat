@@ -21,7 +21,7 @@ let API_LOGIN_URL         = "login"
 let API_LOGOUT_URL        = "logout"
 
 //addNewRestaurant
-let API_ADDRESTAURANT_URL = "newrestaurant"
+let API_ADDRESTAURANT_URL = "newrestaurant?token="
 
 class BBDeliveryService: NSObject {
 
@@ -29,9 +29,9 @@ class BBDeliveryService: NSObject {
     class func userSignup(userPhone:String?,userPassword:String?,success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
         
         let api = NSURL(string: API_BASE_URL + API_SIGNUP_URL)
-        var params         = [String: AnyObject]();
-        params["phone"] = userPhone;
-        params["password"] = userPassword;
+        var params         = [String: AnyObject]()
+        params["phone"] = userPhone
+        params["password"] = userPassword
         BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
     }
     
@@ -39,9 +39,9 @@ class BBDeliveryService: NSObject {
     class func userLogin(userPhone:String?,userPassword:String?,success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
         
         let api = NSURL(string: API_BASE_URL + API_LOGIN_URL)
-        var params         = [String: AnyObject]();
-        params["phone"] = userPhone;
-        params["password"] = userPassword;
+        var params         = [String: AnyObject]()
+        params["phone"] = userPhone
+        params["password"] = userPassword
         BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
     }
     
@@ -53,15 +53,14 @@ class BBDeliveryService: NSObject {
     //addNewRestaurant
     class func addNewRestaurant(restaurantItem:BBAddNewRestaurantItem,success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
         
-        let api = NSURL(string: API_BASE_URL + API_ADDRESTAURANT_URL)
+        let api = NSURL(string: API_BASE_URL + API_ADDRESTAURANT_URL + BBSettings.defaultSettings.userId!)
         var params         = [String: AnyObject]();
-        params["toekn"] = BBSettings.defaultSettings.userId
         
-        params["name"] = restaurantItem.restaurantName;
-        params["content"] = restaurantItem.restaurantContent;
-        params["address"] = restaurantItem.restaurantAddress;
-        params["spicy_level"] = "1";
-        params["cuisine"] = restaurantItem.restaurantCuisine;
+        params["name"] = restaurantItem.restaurantName
+        params["content"] = restaurantItem.restaurantContent
+        params["address"] = restaurantItem.restaurantAddress
+        params["spicy_level"] = restaurantItem.restaurantSpicyLevel
+        params["cuisine"] = restaurantItem.restaurantCuisine
         
         BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
     }

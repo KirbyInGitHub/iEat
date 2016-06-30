@@ -47,6 +47,7 @@ class BBSelectedSpicyLevelView: UIView {
     lazy var tableview : UITableView = {
         
         let tableview = UITableView()
+        tableview.scrollEnabled = false
         return tableview
     }()
     
@@ -82,8 +83,7 @@ extension BBSelectedSpicyLevelView : UITableViewDelegate,UITableViewDataSource{
             spicyImage.image = UIImage.init(named: "chilliIcon")
             selectedSpicyLevelCell?.addSubview(spicyImage)
         }
-        
-        
+    
         return selectedSpicyLevelCell!
     }
     
