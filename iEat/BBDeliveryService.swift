@@ -23,6 +23,9 @@ let API_LOGOUT_URL        = "logout"
 //addNewRestaurant
 let API_ADDRESTAURANT_URL = "newrestaurant?token="
 
+//getRestaurantInfo
+let API_GETRESTAURANTINFO_URL = "myrestaurants?token="
+
 class BBDeliveryService: NSObject {
 
     //signup
@@ -59,10 +62,22 @@ class BBDeliveryService: NSObject {
         params["name"] = restaurantItem.restaurantName
         params["content"] = restaurantItem.restaurantContent
         params["address"] = restaurantItem.restaurantAddress
-        params["spicy_level"] = restaurantItem.restaurantSpicyLevel
-        params["cuisine"] = restaurantItem.restaurantCuisine
+        if restaurantItem.restaurantSpicyLevel != "请选择" {
+            params["spicy_level"] = restaurantItem.restaurantSpicyLevel
+        }
+        if restaurantItem.restaurantCuisine != "请选择"{
+            params["cuisine"] = restaurantItem.restaurantCuisine
+        }
+        
+        print(params)
         
         BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
+    }
+    
+    class func getRestaurantInfo(success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
+        
+        let api = NSURL(string: API_BASE_URL + API_GETRESTAURANTINFO_URL + BBSettings.defaultSettings.userId!)
+        BBNetworkManager.sharedNetworkTools.requestJSON(.GET, URLString: api, parameters: nil, success: success, failure: failure)
     }
     
     

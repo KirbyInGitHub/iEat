@@ -24,6 +24,13 @@ class BBOldRestaurantController: BBBaseRestaurantController {
         super.viewDidLoad()
         
         oldRestaurantView.closeBtn.addTarget(self, action: #selector(BBBaseRestaurantController.onClickCloseBtn), forControlEvents: .TouchUpInside)
+        
+        BBDeliveryService.getRestaurantInfo({ (result) in
+            
+            print(result)
+            }) { (error) in
+                print(error)
+        }
     }
     
     private lazy var oldRestaurantView : BBOldRestaurantView = {
