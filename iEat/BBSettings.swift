@@ -12,8 +12,10 @@ let screenWidth = UIScreen.mainScreen().bounds.size.width
 let screenHeight = UIScreen.mainScreen().bounds.size.height
 
 //notificationKey
+let kSelectedSpicyLevelKey = "selectedSpicyLevelKey"
 
 //notificationName
+let kSelectedSpicyLevelNotification = "selectedSpicyLevelNotification"
 
 //NSUserDefaultsKey
 let kIsSelectedSettingsLogout = "isSelectedSettingsLogout"

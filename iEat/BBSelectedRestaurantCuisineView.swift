@@ -15,5 +15,6 @@ class BBSelectedRestaurantCuisineView: UIView {
         
         backgroundColor = UIColor.whiteColor()
     }
+    
 
 }

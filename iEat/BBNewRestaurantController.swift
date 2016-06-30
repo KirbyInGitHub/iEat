@@ -44,12 +44,28 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         }
         newRestaurantView.pickerView.dataSource = self
         newRestaurantView.pickerView.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewRestaurantController.acceptSelectedSpicyLevel(_:)), name: kSelectedSpicyLevelNotification, object: nil)
+    }
+    
+    @objc private func acceptSelectedSpicyLevel(not:NSNotification){
+        
+        let info = not.userInfo
+        let selectedSpicyLevel = info![kSelectedSpicyLevelKey] as? String
+        let spicyLevelCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
+        spicyLevelCell?.selectedSpicyLevelLbl.text = spicyLevelTitleDict[selectedSpicyLevel!]
     }
 
     private lazy var newRestaurantView : BBNewRestaurantView = {
         
         let addNewRestaurantView = BBNewRestaurantView.init(frame: self.view.bounds)
         return addNewRestaurantView
+    }()
+
+    private lazy var spicyLevelTitleDict : [String:String] = {
+        
+        var spicyLevelTitleDict:Dictionary<String,String>=["0":"稍微辣","1":"一般辣","2":"很辣","3":"变态辣"];
+        return spicyLevelTitleDict
     }()
 
     private lazy var titleArray : [String] = {
@@ -135,7 +151,7 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             }
             
             spicyLevelCell?.titleLbl.text = "辛辣程度:"
-            spicyLevelCell?.selectedSpicyLevelLbl.text = "中辣"
+            spicyLevelCell?.selectedSpicyLevelLbl.text = "未选择"
             
             return spicyLevelCell!
             

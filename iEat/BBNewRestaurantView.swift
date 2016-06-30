@@ -15,7 +15,6 @@ class BBNewRestaurantView: BBBaseRestaurantView {
         
         addSubview(tableview)
         addSubview(maskTempView)        
-        addSubview(selectedSpicyLeveView)
         addSubview(pickerView)
     }
     
@@ -25,6 +24,12 @@ class BBNewRestaurantView: BBBaseRestaurantView {
     
     override func showHeadTitle() -> String {
         return "添加新餐厅"
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        addSubview(selectedSpicyLeveView)
     }
     
     lazy var tableview : UITableView = {
