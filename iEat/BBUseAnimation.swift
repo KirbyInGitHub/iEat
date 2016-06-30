@@ -48,6 +48,7 @@ class BBUseAnimation: NSObject {
         view?.pop_addAnimation(springAnimation, forKey: "changePosition")
     }
     
+    //选择菜系的pickerview动画
     func changePickerViewInPosition(view:UIView?) {
         UIView.animateWithDuration(0.25) { 
             

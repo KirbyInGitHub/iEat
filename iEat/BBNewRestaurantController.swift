@@ -72,6 +72,12 @@ class BBNewRestaurantController: BBBaseRestaurantController {
     
 }
 
+extension BBNewRestaurantController{
+    
+
+}
+
+// MARK: - UITableViewDelegate,UITableViewDataSource
 extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,9 +145,9 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             BBUseAnimation.defaultUseAnimation.changePickerViewInPosition(newRestaurantView.pickerView)
         }
     }
-    
 }
 
+// MARK: - UIPickerViewDelegate,UIPickerViewDataSource
 extension BBNewRestaurantController : UIPickerViewDelegate,UIPickerViewDataSource{
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
