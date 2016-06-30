@@ -79,14 +79,20 @@ extension BBNewRestaurantController{
         let restaurantCuisineCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 4, inSection: 0)) as? BBRestaurantCuisineCell
         addNewRestaurantItem.restaurantCuisine = restaurantCuisineCell?.selectedRestaurantCuisineLbl.text
         
-        BBDeliveryService.addNewRestaurant(addNewRestaurantItem, success: { (result) in
+        if addNewRestaurantItem.restaurantName == "" {
             
-            print(result)
-            self.dismissViewControllerAnimated(true, completion: nil)
+            BBHud.defaultHud.showMessage("请务必填写饭店名称")
+        }else{
             
+            BBDeliveryService.addNewRestaurant(addNewRestaurantItem, success: { (result) in
+                
+                print(result)
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
             }) { (error) in
-         
+                
                 print(error)
+            }
         }
     }
 
