@@ -19,14 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let vc : UIViewController;
         
-//        if BBSettings.defaultSettings.firstInstall == true{
-//            vc = BBMainController()
-//            let nav = UINavigationController.init(rootViewController: vc)
-//            window?.rootViewController = nav
-//        }else{
+        if BBSettings.defaultSettings.firstInstall == true{
+            vc = BBMainController()
+            let nav = UINavigationController.init(rootViewController: vc)
+            window?.rootViewController = nav
+        }else{
             vc = BBInputMessageController()
             window?.rootViewController = vc
-//        }
+        }
         
         window?.makeKeyAndVisible()
         

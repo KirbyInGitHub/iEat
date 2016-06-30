@@ -14,6 +14,7 @@ class BBNewRestaurantView: BBBaseRestaurantView {
         super.init(frame: frame)
         
         addSubview(tableview)
+        addSubview(maskTempView)        
         addSubview(selectedSpicyLeveView)
         addSubview(pickerView)
     }
@@ -50,5 +51,13 @@ class BBNewRestaurantView: BBBaseRestaurantView {
         pickerView.backgroundColor = UIColor.whiteColor()
         pickerView.showsSelectionIndicator = true
         return pickerView
+    }()
+    
+    lazy var maskTempView : UIView = {
+        
+        let maskTempView = UIView.init(frame: UIScreen.mainScreen().bounds)
+        maskTempView.backgroundColor = UIColor.clearColor()
+        maskTempView.hidden = true
+        return maskTempView
     }()
 }

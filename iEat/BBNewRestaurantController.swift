@@ -54,6 +54,7 @@ class BBNewRestaurantController: BBBaseRestaurantController {
     
     @objc private func onClickSelectedConfirmBtn(){
         
+        newRestaurantView.maskTempView.hidden = true
         BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newRestaurantView.selectedSpicyLeveView)
     }
 
@@ -130,6 +131,7 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
         
         if indexPath.row == 3 {
             
+            newRestaurantView.maskTempView.hidden = false
             BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newRestaurantView.selectedSpicyLeveView)
         }else if indexPath.row == 4{
             
