@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let vc : UIViewController;
         
-        if BBSettings.defaultSettings.firstInstall == true{
+        if BBSettings.defaultSettings.userId != nil{
             vc = BBMainController()
             let nav = UINavigationController.init(rootViewController: vc)
             window?.rootViewController = nav

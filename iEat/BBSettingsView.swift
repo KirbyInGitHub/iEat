@@ -15,7 +15,6 @@ class BBSettingsView: UIView {
         
         backgroundColor = UIColor.whiteColor()
         
-        tableview.tableFooterView = UIView()
         addSubview(tableview)
     }
     
@@ -26,7 +25,8 @@ class BBSettingsView: UIView {
     lazy var tableview : UITableView = {
         
         let tableview = UITableView.init(frame: self.bounds)
+        tableview.tableFooterView = UIView()
+        tableview.separatorStyle = .None
         return tableview
     }()
-
 }

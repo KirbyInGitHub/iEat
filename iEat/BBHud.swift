@@ -32,6 +32,7 @@ class BBHud: UIView {
     }
     
     private func showMessageStr(message:String?){
+        
         messageLabel.text = message
         
         UIView.animateWithDuration(0.25) {
@@ -42,9 +43,11 @@ class BBHud: UIView {
         let delay = dispatch_time(DISPATCH_TIME_NOW,Int64(time * Double(NSEC_PER_SEC)))
         dispatch_after(delay, dispatch_get_main_queue()) {
             
-            UIView.animateWithDuration(0.25) {
+            UIView.animateWithDuration(0.25, animations: {
                 self.top = -75
-            }
+                }, completion: { (isDismiss) in
+                    self.removeFromSuperview()
+            })
         }
     }
     

@@ -53,20 +53,22 @@ extension BBSettingsController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell")
+        var logoutCell = tableView.dequeueReusableCellWithIdentifier("logoutCell") as? BBLogoutCell
         
-        if cell == nil {
-            cell = UITableViewCell(style: .Default,reuseIdentifier: "cell")
+        if logoutCell == nil {
+            logoutCell = BBLogoutCell(style: .Default,reuseIdentifier: "logoutCell")
         }
         
-        cell?.textLabel?.text = "退出登录"
+        logoutCell?.titleLbl.text = "退出登录"
         
-        return cell!
+        return logoutCell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let vc = BBInputMessageController()
+        BBSettings.defaultSettings.userId = nil
+        vc.modalTransitionStyle = .CoverVertical
         self.presentViewController(vc, animated: true, completion: nil)
     }
 

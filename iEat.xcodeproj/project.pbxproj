@@ -16,6 +16,7 @@
 		40DE80B31D24C22300D660E3 /* BBSignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80B21D24C22300D660E3 /* BBSignupModel.swift */; };
 		40DE80B51D24CCA200D660E3 /* BBLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80B41D24CCA200D660E3 /* BBLoginModel.swift */; };
 		40DE80B71D24FF7E00D660E3 /* BBHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80B61D24FF7E00D660E3 /* BBHud.swift */; };
+		40DE80B91D2504CE00D660E3 /* BBLogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80B81D2504CD00D660E3 /* BBLogoutCell.swift */; };
 		40E0A6151D23A23F00CC74AE /* BBDeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */; };
 		40E0A61B1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A61A1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift */; };
 		40E0A61D1D23AE9700CC74AE /* BBRestaurantCuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A61C1D23AE9700CC74AE /* BBRestaurantCuisineCell.swift */; };
@@ -76,6 +77,7 @@
 		40DE80B21D24C22300D660E3 /* BBSignupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSignupModel.swift; sourceTree = "<group>"; };
 		40DE80B41D24CCA200D660E3 /* BBLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBLoginModel.swift; sourceTree = "<group>"; };
 		40DE80B61D24FF7E00D660E3 /* BBHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBHud.swift; sourceTree = "<group>"; };
+		40DE80B81D2504CD00D660E3 /* BBLogoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBLogoutCell.swift; sourceTree = "<group>"; };
 		40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDeliveryService.swift; sourceTree = "<group>"; };
 		40E0A61A1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBNewRestaurantInfoCell.swift; sourceTree = "<group>"; };
 		40E0A61C1D23AE9700CC74AE /* BBRestaurantCuisineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantCuisineCell.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				40E0A61A1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift */,
 				40E0A6221D23C37700CC74AE /* BBSpicyLevelCell.swift */,
 				40E0A61C1D23AE9700CC74AE /* BBRestaurantCuisineCell.swift */,
+				40DE80B81D2504CD00D660E3 /* BBLogoutCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				40E0A6151D23A23F00CC74AE /* BBDeliveryService.swift in Sources */,
 				40E0A61D1D23AE9700CC74AE /* BBRestaurantCuisineCell.swift in Sources */,
 				40EC1B821D227BD600D4817D /* UIFont+Category.swift in Sources */,
+				40DE80B91D2504CE00D660E3 /* BBLogoutCell.swift in Sources */,
 				40E1D3151D22281A003970C6 /* BBMainController.swift in Sources */,
 				40EC1B9E1D237FB100D4817D /* BBOldRestaurantController.swift in Sources */,
 				40E0A6211D23B54F00CC74AE /* BBBaseRestaurantCell.swift in Sources */,
