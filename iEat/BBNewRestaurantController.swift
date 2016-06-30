@@ -90,10 +90,18 @@ extension BBNewRestaurantController{
         addNewRestaurantItem.restaurantAddress = newRestaurantInfoCell?.textFieldStr
         
         let spicyLevelCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
-        addNewRestaurantItem.restaurantSpicyLevel = spicyLevelCell?.selectedSpicyLevelLbl.text
+        if spicyLevelCell?.selectedSpicyLevelLbl.text == "未选择" {
+            addNewRestaurantItem.restaurantSpicyLevel = ""
+        }else{
+            addNewRestaurantItem.restaurantSpicyLevel = spicyLevelCell?.selectedSpicyLevelLbl.text
+        }
         
         let restaurantCuisineCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 4, inSection: 0)) as? BBRestaurantCuisineCell
-        addNewRestaurantItem.restaurantCuisine = restaurantCuisineCell?.selectedRestaurantCuisineLbl.text
+        if  restaurantCuisineCell?.selectedRestaurantCuisineLbl.text == "未选择" {
+            addNewRestaurantItem.restaurantCuisine = ""
+        }else{
+            addNewRestaurantItem.restaurantCuisine = restaurantCuisineCell?.selectedRestaurantCuisineLbl.text
+        }
         
         if addNewRestaurantItem.restaurantName == "" {
             
@@ -102,8 +110,12 @@ extension BBNewRestaurantController{
             
             BBDeliveryService.addNewRestaurant(addNewRestaurantItem, success: { (result) in
                 
-                print(result)
-                self.dismissViewControllerAnimated(true, completion: nil)
+                if result == nil{
+                    BBHud.defaultHud.showMessage("添加失败")
+                }else{
+                    BBHud.defaultHud.showMessage("添加成功")
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
                 
             }) { (error) in
                 
