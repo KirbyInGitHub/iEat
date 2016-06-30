@@ -58,7 +58,7 @@ class BBNewRestaurantInfoCell: BBBaseRestaurantCell {
         
         let textFieldBottomLine = UIView()
         textFieldBottomLine.frame = CGRectMake(self.textField.left, self.textField.bottom, self.textField.width, 1)
-        textFieldBottomLine.backgroundColor = UIColor.blackColor()
+        textFieldBottomLine.backgroundColor = UIColor.kBasis_MiddleGray_COLOR()
         return textFieldBottomLine
     }()
 }
