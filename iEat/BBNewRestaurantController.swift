@@ -165,6 +165,9 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             
             newRestaurantView.maskTempView.hidden = false
             BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newRestaurantView.selectedSpicyLeveView)
+            if newRestaurantView.pickerView.top != screenHeight {
+               BBUseAnimation.defaultUseAnimation.changePickerViewInPosition(newRestaurantView.pickerView)
+            }
         }else if indexPath.row == 4{
             
             currentSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as? BBRestaurantCuisineCell
