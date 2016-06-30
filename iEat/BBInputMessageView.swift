@@ -11,8 +11,8 @@ import AFViewShaker
 
 class BBInputMessageView: UIView {
 
-    var originalPoint : CGPoint?
-    
+    var userPhoneOriginalPoint : CGPoint?
+    var userPasswordOriginalPoint : CGPoint?
     
     var phoneStr : String?{
         get{
@@ -25,6 +25,7 @@ class BBInputMessageView: UIView {
         
         addSubview(backgroundImage)
         backgroundImage.addSubview(userPhone)
+        backgroundImage.addSubview(userPassword)
         backgroundImage.addSubview(nextActionBtn)
         backgroundImage.addSubview(remindLabel)
         
@@ -46,19 +47,22 @@ class BBInputMessageView: UIView {
     
     //showKeyboard
     @objc private func keyboardWasShown(aNotification:NSNotification){
-    
+
         let info = aNotification.userInfo
         let kbSize = info![UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size
-        originalPoint = userPhone.origin
+        userPasswordOriginalPoint = userPassword.origin
+        userPhoneOriginalPoint = userPhone.origin
         
         let kbTop = self.height - (kbSize?.height)!
-        userPhone.bottom = kbTop - 15
+        userPassword.bottom = kbTop - 15
+        userPhone.bottom = userPassword.top - 5
         remindLabel.bottom = userPhone.top - 5
     }
     
     //hiddenKeyboard
     @objc private func keyboardWillBeHidden(aNotification:NSNotification){
-        userPhone.origin = originalPoint!
+        userPhone.origin = userPhoneOriginalPoint!
+        userPassword.origin = userPasswordOriginalPoint!
         remindLabel.bottom = userPhone.top - 5
     }
     
@@ -69,6 +73,8 @@ class BBInputMessageView: UIView {
             self.backgroundImage.alpha = 1
             self.userPhone.alpha = 1
             self.userPhone.left = (self.width - self.userPhone.width) * 0.5
+            self.userPassword.alpha = 1
+            self.userPassword.left = self.userPhone.left
             self.iOSMan.left = (self.width - self.iOSMan.width) * 0.5
             self.pythonMan.left = (self.width - self.pythonMan.width) * 0.5
         }
@@ -83,6 +89,7 @@ class BBInputMessageView: UIView {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         userPhone.textField.resignFirstResponder()
+        userPassword.textField.resignFirstResponder()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -97,6 +104,16 @@ class BBInputMessageView: UIView {
         userPhone.iconString = "phoneIcon"
         userPhone.alpha = 0
         return userPhone
+    }()
+    
+    //用户密码cell
+    private lazy var userPassword : BBTextField = {
+        
+        let userPassword = BBTextField.init(frame: CGRectMake(0, self.userPhone.bottom + 5, self.userPhone.width, self.userPhone.height))
+        userPassword.textField.placeholder = "Passwordk"
+        userPassword.iconString = "passwordIcon"
+        userPassword.alpha = 0
+        return userPassword
     }()
     
     //输入错时hidden为false
