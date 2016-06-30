@@ -82,6 +82,7 @@ extension BBNewRestaurantController{
         BBDeliveryService.addNewRestaurant(addNewRestaurantItem, success: { (result) in
             
             print(result)
+            self.dismissViewControllerAnimated(true, completion: nil)
             
             }) { (error) in
          
