@@ -16,6 +16,7 @@ let kSelectedSpicyLevelKey = "selectedSpicyLevelKey"
 
 //notificationName
 let kSelectedSpicyLevelNotification = "selectedSpicyLevelNotification"
+let kSelectedTakePhotoCollectionViewCellNotification = "selectedTakePhotoCollectionViewCellNotification"
 
 //NSUserDefaultsKey
 let kIsSelectedSettingsLogout = "isSelectedSettingsLogout"

@@ -18,6 +18,8 @@
 		40DE80B71D24FF7E00D660E3 /* BBHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80B61D24FF7E00D660E3 /* BBHud.swift */; };
 		40DE80B91D2504CE00D660E3 /* BBLogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80B81D2504CD00D660E3 /* BBLogoutCell.swift */; };
 		40DE80BB1D25143800D660E3 /* BBSelectedSpicyLevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80BA1D25143800D660E3 /* BBSelectedSpicyLevelCell.swift */; };
+		40DE81031D2575EC00D660E3 /* BBTakePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE81021D2575EC00D660E3 /* BBTakePhotoCell.swift */; };
+		40DE81051D25763700D660E3 /* BBTakePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE81041D25763700D660E3 /* BBTakePhotoCollectionViewCell.swift */; };
 		40E0A6151D23A23F00CC74AE /* BBDeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */; };
 		40E0A61B1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A61A1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift */; };
 		40E0A61D1D23AE9700CC74AE /* BBRestaurantCuisineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A61C1D23AE9700CC74AE /* BBRestaurantCuisineCell.swift */; };
@@ -80,6 +82,8 @@
 		40DE80B61D24FF7E00D660E3 /* BBHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBHud.swift; sourceTree = "<group>"; };
 		40DE80B81D2504CD00D660E3 /* BBLogoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBLogoutCell.swift; sourceTree = "<group>"; };
 		40DE80BA1D25143800D660E3 /* BBSelectedSpicyLevelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSelectedSpicyLevelCell.swift; sourceTree = "<group>"; };
+		40DE81021D2575EC00D660E3 /* BBTakePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBTakePhotoCell.swift; sourceTree = "<group>"; };
+		40DE81041D25763700D660E3 /* BBTakePhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBTakePhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDeliveryService.swift; sourceTree = "<group>"; };
 		40E0A61A1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBNewRestaurantInfoCell.swift; sourceTree = "<group>"; };
 		40E0A61C1D23AE9700CC74AE /* BBRestaurantCuisineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantCuisineCell.swift; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 				40E0A61C1D23AE9700CC74AE /* BBRestaurantCuisineCell.swift */,
 				40DE80B81D2504CD00D660E3 /* BBLogoutCell.swift */,
 				40DE80BA1D25143800D660E3 /* BBSelectedSpicyLevelCell.swift */,
+				40DE81021D2575EC00D660E3 /* BBTakePhotoCell.swift */,
+				40DE81041D25763700D660E3 /* BBTakePhotoCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -543,6 +549,8 @@
 				40EC1B9A1D236F7700D4817D /* BBSettingsView.swift in Sources */,
 				40E1D30D1D222666003970C6 /* UIColor+Category.swift in Sources */,
 				40E1D31B1D2228F6003970C6 /* BBInputMessageView.swift in Sources */,
+				40DE81031D2575EC00D660E3 /* BBTakePhotoCell.swift in Sources */,
+				40DE81051D25763700D660E3 /* BBTakePhotoCollectionViewCell.swift in Sources */,
 				40E0A6291D23CEFF00CC74AE /* BBSelectedRestaurantCuisineView.swift in Sources */,
 				401E255C1D225D2700C9C5E8 /* BBTextField.swift in Sources */,
 				40EC1BA61D237FFA00D4817D /* BBBaseRestaurantView.swift in Sources */,

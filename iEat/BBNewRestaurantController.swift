@@ -46,6 +46,7 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         newRestaurantView.pickerView.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewRestaurantController.acceptSelectedSpicyLevel(_:)), name: kSelectedSpicyLevelNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewRestaurantController.acceptSelectedTakePhotoCell), name: kSelectedTakePhotoCollectionViewCellNotification, object: nil)
     }
     
     @objc private func acceptSelectedSpicyLevel(not:NSNotification){
@@ -54,6 +55,11 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         let selectedSpicyLevel = info![kSelectedSpicyLevelKey] as? String
         let spicyLevelCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
         spicyLevelCell?.selectedSpicyLevelLbl.text = spicyLevelTitleDict[selectedSpicyLevel!]
+    }
+    
+    @objc private func acceptSelectedTakePhotoCell(){
+        
+        print("123")
     }
 
     private lazy var newRestaurantView : BBNewRestaurantView = {
@@ -133,7 +139,7 @@ extension BBNewRestaurantController{
 extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -166,7 +172,7 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             return spicyLevelCell!
             
             //菜系
-        }else{
+        }else if indexPath.row == 4{
             
             var restaurantCuisineCell = tableView.dequeueReusableCellWithIdentifier("restaurantCuisineCell") as? BBRestaurantCuisineCell
             
@@ -178,11 +184,24 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             restaurantCuisineCell?.selectedRestaurantCuisineLbl.text = "请选择"
             
             return restaurantCuisineCell!
+        }else{
+            
+            var takePhotoCell = tableView.dequeueReusableCellWithIdentifier("takePhotoCell") as? BBTakePhotoCell
+            
+            if takePhotoCell == nil {
+                takePhotoCell = BBTakePhotoCell.init(style: .Default, reuseIdentifier: "takePhotoCell")
+            }
+            
+            return takePhotoCell!
         }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 54
+        if indexPath.row == 5 {
+            return 250
+        }else{
+            return 54
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
