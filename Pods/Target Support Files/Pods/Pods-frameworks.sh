@@ -84,20 +84,26 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/AFViewShaker.framework"
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/FSCalendar.framework"
+  install_framework "Pods/HappyDNS.framework"
   install_framework "Pods/ObjectMapper.framework"
+  install_framework "Pods/Qiniu.framework"
   install_framework "Pods/SDWebImage.framework"
   install_framework "Pods/SVProgressHUD.framework"
   install_framework "Pods/YYImage.framework"
   install_framework "Pods/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/AFViewShaker.framework"
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/FSCalendar.framework"
+  install_framework "Pods/HappyDNS.framework"
   install_framework "Pods/ObjectMapper.framework"
+  install_framework "Pods/Qiniu.framework"
   install_framework "Pods/SDWebImage.framework"
   install_framework "Pods/SVProgressHUD.framework"
   install_framework "Pods/YYImage.framework"

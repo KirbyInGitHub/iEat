@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AFViewShaker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,12 +24,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HappyDNS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Qiniu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,17 +67,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0340648BFF8607F448DCA7F6BAEC983A</key>
+		<key>06905EF6FCB7E6F907BA2BA5A4BEC1D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>324AD94AFCEF1C47FA905C6C02B7B21F</key>
+		<key>181FE0700E20BBBE6A34D71B1AC14A03</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A947F10CFB4F6C470DFA0FCB31CA1EB</key>
+		<key>1B5DCCE8DDA88D6CC47408E3C1497451</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4878C70B21CA37D7CB8A476BF986741B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>551387786A3ACFEC2CE4B3A906E60528</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>68682B4F81FFD29B3C2C34AC953311AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96A6DA3AB1FB63B3A740B9D958D05141</key>
+		<key>A057308A34E455E75B0F0AA743D4DC4F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +117,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8CDFF48401FB7E31D1052E6856D07EB</key>
+		<key>D5E86F391C2ED63CC6D87AEE6610C40C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
