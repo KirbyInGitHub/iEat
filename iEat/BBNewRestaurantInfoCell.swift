@@ -24,6 +24,18 @@ class BBNewRestaurantInfoCell: BBBaseRestaurantCell {
         
         addSubview(textField)
         addSubview(textFieldBottomLine)
+        
+        //给textField添加完成
+        let numberToolbar = UIToolbar.init(frame: CGRectMake(0, 0, self.width, 50))
+        let toolbarConfirmButton = UIBarButtonItem.init(title: "完成", style: .Done, target: self, action: #selector(BBNewRestaurantInfoCell.onClickKeyboardConfirmBtn))
+        numberToolbar.items = [UIBarButtonItem.init(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil),toolbarConfirmButton]
+        numberToolbar.sizeToFit()
+        toolbarConfirmButton.tintColor = UIColor.blackColor()
+        textField.inputAccessoryView = numberToolbar
+    }
+    
+    @objc private func onClickKeyboardConfirmBtn(){
+        textField.resignFirstResponder()
     }
     
     var textFieldStr : String?{
