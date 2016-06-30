@@ -93,13 +93,13 @@ extension BBNewRestaurantController{
         addNewRestaurantItem.restaurantContent = newRestaurantInfoCell?.textFieldStr
         
         newRestaurantInfoCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 2, inSection: 0)) as? BBNewRestaurantInfoCell
-        addNewRestaurantItem.restaurantAddress = spicyLevelTitleDictList[(newRestaurantInfoCell?.textFieldStr)!]
+        addNewRestaurantItem.restaurantAddress = newRestaurantInfoCell?.textFieldStr
         
         let spicyLevelCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
         if spicyLevelCell?.selectedSpicyLevelLbl.text == "请选择" {
             addNewRestaurantItem.restaurantSpicyLevel = ""
         }else{
-            addNewRestaurantItem.restaurantSpicyLevel = spicyLevelCell?.selectedSpicyLevelLbl.text
+            addNewRestaurantItem.restaurantSpicyLevel = spicyLevelTitleDictList[(newRestaurantInfoCell?.textFieldStr)!]
         }
         
         let restaurantCuisineCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 4, inSection: 0)) as? BBRestaurantCuisineCell
