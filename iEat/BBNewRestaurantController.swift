@@ -16,7 +16,7 @@ class BBNewRestaurantController: BBBaseRestaurantController {
     }
     
     var currentSelectedCell : BBRestaurantCuisineCell?
-    var addNewRestaurantItem : BBAddNewRestaurantItem?
+    var addNewRestaurantItem = BBAddNewRestaurantItem()
     var restaurantCuisineArray = [BBRestaurantCuisineItem]()
     
     override func loadView() {
@@ -36,7 +36,6 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         newRestaurantView.tableview.delegate = self
         newRestaurantView.tableview.dataSource = self
         
-        
         let path = NSBundle.mainBundle().pathForResource("restaurantCuisineList.plist", ofType: nil)
         let array = NSArray.init(contentsOfFile: path!)
         for dict in array! {
@@ -49,7 +48,26 @@ class BBNewRestaurantController: BBBaseRestaurantController {
     
     @objc private func onClcikConfirmBtn(){
         
-        print(addNewRestaurantItem)
+        var newRestaurantInfoCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 0, inSection: 0)) as? BBNewRestaurantInfoCell
+        addNewRestaurantItem.restaurantName = newRestaurantInfoCell?.textFieldStr
+        
+        newRestaurantInfoCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 1, inSection: 0)) as? BBNewRestaurantInfoCell
+        addNewRestaurantItem.restaurantContent = newRestaurantInfoCell?.textFieldStr
+        
+        newRestaurantInfoCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 2, inSection: 0)) as? BBNewRestaurantInfoCell
+        addNewRestaurantItem.restaurantAddress = newRestaurantInfoCell?.textFieldStr
+      
+        let spicyLevelCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
+        addNewRestaurantItem.restaurantSpicyLevel = spicyLevelCell?.selectedSpicyLevelLbl.text
+        
+        let restaurantCuisineCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 4, inSection: 0)) as? BBRestaurantCuisineCell
+        addNewRestaurantItem.restaurantCuisine = restaurantCuisineCell?.selectedRestaurantCuisineLbl.text
+        
+        print(addNewRestaurantItem.restaurantName)
+        print(addNewRestaurantItem.restaurantContent)
+        print(addNewRestaurantItem.restaurantAddress)
+        print(addNewRestaurantItem.restaurantSpicyLevel)
+        print(addNewRestaurantItem.restaurantCuisine)
     }
     
     @objc private func onClickSelectedConfirmBtn(){

@@ -26,6 +26,12 @@ class BBNewRestaurantInfoCell: BBBaseRestaurantCell {
         addSubview(textFieldBottomLine)
     }
     
+    var textFieldStr : String?{
+        get{
+            return self.textField.text
+        }
+    }
+    
     private lazy var textField : UITextField = {
         
         let textField = UITextField()
