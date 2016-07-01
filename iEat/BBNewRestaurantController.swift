@@ -130,6 +130,9 @@ extension BBNewRestaurantController{
         let restaurantCuisineCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 4, inSection: 0)) as? BBRestaurantCuisineCell
         addNewRestaurantItem.restaurantCuisine = restaurantCuisineCell?.selectedRestaurantCuisineLbl.text
         
+        //图片
+        addNewRestaurantItem.restaurantImages = photoIdArray
+        
         if addNewRestaurantItem.restaurantName == "" {
             
             BBHud.defaultHud.showMessage("请务必填写饭店名称")

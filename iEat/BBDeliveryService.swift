@@ -70,6 +70,8 @@ class BBDeliveryService: NSObject {
             params["cuisine"] = restaurantItem.restaurantCuisine
         }
         
+        params["images"] = restaurantItem.restaurantImages
+        
         print(params)
         
         BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
