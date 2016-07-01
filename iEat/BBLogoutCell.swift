@@ -25,7 +25,7 @@ class BBLogoutCell: UITableViewCell {
     lazy var titleLbl : UILabel = {
         
         let titleLbl = UILabel()
-        titleLbl.frame = CGRectMake(0, (self.height - 30) * 0.5, self.width, 30)
+        titleLbl.frame = CGRectMake(0, (self.height - 30) * 0.5, screenWidth, 30)
         titleLbl.textAlignment = .Center
         titleLbl.textColor = UIColor.blackColor()
         return titleLbl
@@ -33,7 +33,7 @@ class BBLogoutCell: UITableViewCell {
     
     private lazy var bottomLine : UIView = {
         
-        let bottomLine = UIView.init(frame: CGRectMake(0, self.bottom - 1, self.width, 1))
+        let bottomLine = UIView.init(frame: CGRectMake(0, self.bottom - 1, screenWidth, 1))
         bottomLine.backgroundColor = UIColor.blackColor()
         return bottomLine
     }()

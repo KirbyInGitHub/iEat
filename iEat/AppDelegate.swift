@@ -19,15 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let vc : UIViewController;
         
-        if BBSettings.defaultSettings.userId != nil{
+//        if BBSettings.defaultSettings.userId != nil{
             vc = BBMainController()
             let nav = UINavigationController.init(rootViewController: vc)
             window?.rootViewController = nav
-        }else{
-            BBSettings.defaultSettings.isSelectedSettingsLogout = false
-            vc = BBInputMessageController()
-            window?.rootViewController = vc
-        }
+//        }else{
+//            BBSettings.defaultSettings.isSelectedSettingsLogout = false
+//            vc = BBInputMessageController()
+//            window?.rootViewController = vc
+//        }
         
         window?.makeKeyAndVisible()
         
