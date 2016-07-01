@@ -4,3 +4,4 @@
 
 
 #import "UIView+Frame.h"
+#import "UIImage+UIImageExt.h"

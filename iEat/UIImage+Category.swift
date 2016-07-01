@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
 
-    func scaleImage(image:UIImage,scale:CGFloat) -> UIImage{
+    class func scaleImage(image:UIImage,scale:CGFloat) -> UIImage{
         
         UIGraphicsBeginImageContext(CGSizeMake(image.size.width * scale , image.size.height * scale))
         image .drawInRect(CGRectMake(0, 0, image.size.width * scale, image.size.height * scale))

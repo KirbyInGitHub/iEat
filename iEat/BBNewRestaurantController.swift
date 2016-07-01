@@ -8,6 +8,7 @@
 
 import UIKit
 import pop
+import Qiniu
 
 class BBNewRestaurantController: BBBaseRestaurantController {
     
@@ -101,6 +102,12 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         
         let titleArray = ["餐厅名称:","餐厅简介:","餐厅地址:"]
         return titleArray
+    }()
+    
+    //七牛云图片ID数组
+    private lazy var photoIdArray : [String] = {
+        let photoIdArray = [String]()
+        return photoIdArray
     }()
 }
 
@@ -268,8 +275,20 @@ extension BBNewRestaurantController : UIImagePickerControllerDelegate,UINavigati
         
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
-        NSNotificationCenter.defaultCenter().postNotificationName(kTakePhotoDataNotificationName, object: nil, userInfo: {[kTakePhotoDataKey:image!]}())
-        
+        let resultImage = image?.imageByWidth(200)
+        let resultData = UIImagePNGRepresentation(resultImage!)
+        BBDeliveryService.putImageToQiNiu(resultData!) { (info, key, dict) in
+            
+            if dict == nil{
+                BBHud.defaultHud.showMessage("添加图片失败")
+            }else{
+                let imageId = dict["hash"] as? String
+                self.photoIdArray.insert(imageId!, atIndex: 0)
+                print(self.photoIdArray)
+                NSNotificationCenter.defaultCenter().postNotificationName(kTakePhotoDataNotificationName, object: nil, userInfo: {[kTakePhotoDataKey:image!]}())
+            }
+        }
+
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

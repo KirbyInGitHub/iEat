@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Qiniu
 
 //BaseUrl
 let API_BASE_URL          = "http://123.57.132.228:8800/api/"
@@ -74,11 +75,18 @@ class BBDeliveryService: NSObject {
         BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
     }
     
+    //获取信息
     class func getRestaurantInfo(success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
         
         let api = NSURL(string: API_BASE_URL + API_GETRESTAURANTINFO_URL + BBSettings.defaultSettings.userId!)
         BBNetworkManager.sharedNetworkTools.requestJSON(.GET, URLString: api, parameters: nil, success: success, failure: failure)
     }
     
+    //上传拍照到七牛云,返回个字段
+    class func putImageToQiNiu(imageData:NSData,success:(info:QNResponseInfo!,key:String?,dict:[NSObject:AnyObject]!) -> ()){
+        
+        let upManager = QNUploadManager()
+        upManager.putData(imageData, key: nil, token: BBSettings.defaultSettings.qiniuToken!, complete: success, option: nil)
+    }
     
 }
