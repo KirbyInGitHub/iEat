@@ -22,8 +22,8 @@ class BBOldRestaurantController: BBBaseRestaurantController {
         
         view = oldRestaurantView
         
-        oldRestaurantView.tableview.delegate = self
-        oldRestaurantView.tableview.dataSource = self
+        oldRestaurantView.oldRestaurantCollectionView.delegate = self
+        oldRestaurantView.oldRestaurantCollectionView.dataSource = self
     }
     
     override func viewDidLoad() {
@@ -33,14 +33,14 @@ class BBOldRestaurantController: BBBaseRestaurantController {
         
         BBDeliveryService.getRestaurantInfo({ (result) in
             
-            print(result)
-            
             if result != nil{
 
                 let oldRestaurant = Mapper<BBOldRestaurantModel>().map(result)
                 self.oldRestaurantData = oldRestaurant
                 
-                self.oldRestaurantView.tableview.reloadData()
+                print(self.oldRestaurantData?.result?.count)
+                
+                self.oldRestaurantView.oldRestaurantCollectionView.reloadData()
                 
             }else{
                 
@@ -59,24 +59,30 @@ class BBOldRestaurantController: BBBaseRestaurantController {
     }()
 }
 
-extension BBOldRestaurantController : UITableViewDelegate,UITableViewDataSource{
+extension BBOldRestaurantController : UICollectionViewDelegate,UICollectionViewDataSource{
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if oldRestaurantData?.result?.count == nil {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if self.oldRestaurantData?.result?.count == nil {
             return 0
         }else{
-            return (oldRestaurantData?.result?.count)!
+            return (self.oldRestaurantData?.result?.count)!
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        var oldRestaurantCell = tableView.dequeueReusableCellWithIdentifier("oldRestaurantCell") as? BBOldRestaurantCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("oldRestaurantCell", forIndexPath: indexPath) as? BBOldRestaurantCell
         
-        if oldRestaurantCell == nil {
-            oldRestaurantCell = BBOldRestaurantCell.init(style: .Default, reuseIdentifier: "oldRestaurantCell")
-        }
+        cell?.restaurantInfoItem = oldRestaurantData?.result![indexPath.row]
         
-        return oldRestaurantCell!
+        return cell!
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath.row)
+        
+        let detailVC = BBDetailOldRestaurantController()
+        detailVC.modalTransitionStyle = .CrossDissolve
+        self.presentViewController(detailVC, animated: true, completion: nil)
     }
 }

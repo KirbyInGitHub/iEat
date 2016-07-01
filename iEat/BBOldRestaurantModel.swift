@@ -33,6 +33,8 @@ class Result: Mappable {
     var name: String?
 
     var address: String?
+    
+    var images : [String]?
 
     required init?(_ map: Map) {
         mapping(map)
@@ -44,6 +46,7 @@ class Result: Mappable {
         cuisine <- map["cuisine"]
         name <- map["name"]
         address <- map["address"]
+        images <- map["images"]
     }
 }
 

@@ -14,7 +14,7 @@ class BBOldRestaurantView: BBBaseRestaurantView {
         super.init(frame: frame)
         
         backgroundColor = UIColor.kBasis_Purple_Color()
-        addSubview(tableview)
+
         
     }
     
@@ -26,11 +26,29 @@ class BBOldRestaurantView: BBBaseRestaurantView {
         return "查看餐厅"
     }
     
-    lazy var tableview : UITableView = {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        let tableview = UITableView.init(frame: CGRectMake(0, self.headerLine.bottom, self.width, self.height - self.headerLine.bottom))
-        tableview.backgroundColor = UIColor.kBasis_Purple_Color()
-        tableview.tableFooterView = UIView()
-        return tableview
+        addSubview(oldRestaurantCollectionView)
+    }
+    
+    lazy var oldRestaurantCollectionView : UICollectionView = {
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .Vertical
+        flowLayout.minimumLineSpacing = 5
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.itemSize = CGSizeMake((screenWidth - 20) * 0.5 + 5, 180)
+
+        let oldRestaurantCollectionView = UICollectionView.init(frame: CGRectMake(3, self.headerLine.bottom, self.width, self.height - self.headerLine.bottom), collectionViewLayout: flowLayout)
+        oldRestaurantCollectionView.backgroundColor = UIColor.whiteColor()
+        oldRestaurantCollectionView.registerClass(BBOldRestaurantCell.self, forCellWithReuseIdentifier: "oldRestaurantCell")
+        
+        oldRestaurantCollectionView.backgroundColor = UIColor.kBasis_Purple_Color()
+        return oldRestaurantCollectionView
     }()
+
+    
+    
+    
 }
