@@ -70,12 +70,15 @@ extension BBInputMessageController{
             
             BBDeliveryService.userSignup(inputMessageView.phoneStr, userPassword: inputMessageView.passwordStr, success: { (result) in
                 
+                print(result)
+                
                 let userInfo = Mapper<BBSignupModel>().map(result)
                 
                 if userInfo?.userId != nil{
                     
                     BBSettings.defaultSettings.userId = userInfo?.userId
-
+                    BBSettings.defaultSettings.qiniuToken = userInfo?.qiniu_token
+                    
                     //这里判断是否是从设置里边退出登录
                     if BBSettings.defaultSettings.isSelectedSettingsLogout == true{
                         
@@ -109,12 +112,15 @@ extension BBInputMessageController{
             
             BBDeliveryService.userLogin(inputMessageView.phoneStr, userPassword: inputMessageView.passwordStr, success: { (result) in
                 
+                print(result)
+                
                 let userInfo = Mapper<BBLoginModel>().map(result)
                 
                 if userInfo?.userId != nil{
                     
                     BBSettings.defaultSettings.userId = userInfo?.userId
-
+                    BBSettings.defaultSettings.qiniuToken = userInfo?.qiniu_token
+                    
                     //这里判断是否是从设置里边退出登录
                     if BBSettings.defaultSettings.isSelectedSettingsLogout == true{
                     

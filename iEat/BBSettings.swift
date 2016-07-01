@@ -24,7 +24,7 @@ let kTakePhotoDataNotificationName                   = "takePhotoDataNotificatio
 //NSUserDefaultsKey
 let kIsSelectedSettingsLogout = "isSelectedSettingsLogout"
 let kUserId                   = "userId"
-let kToekn                    = "toekn"
+let kQiniuToken               = "qiniuToken"
 
 
 class BBSettings: NSObject {
@@ -42,12 +42,12 @@ class BBSettings: NSObject {
     }
     
     //token
-    var token : String?{
+    var qiniuToken : String?{
         get{
-            return NSUserDefaults.standardUserDefaults().stringForKey(kToekn)
+            return NSUserDefaults.standardUserDefaults().stringForKey(kQiniuToken)
         }
         set{
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kToekn)
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kQiniuToken)
         }
     }
     

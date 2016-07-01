@@ -19,6 +19,8 @@ class BBSignupModel: Mappable {
     
     var phone : String?
     
+    var qiniu_token : String?
+    
     required init?(_ map: Map) {
         mapping(map)
     }
@@ -28,5 +30,6 @@ class BBSignupModel: Mappable {
         content <- map["content"]
         name <- map["name"]
         phone <- map["phone"]
+        qiniu_token <- map["qiniu_token"]
     }
 }
