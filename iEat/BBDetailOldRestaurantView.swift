@@ -8,16 +8,19 @@
 
 import UIKit
 
-class BBDetailOldRestaurantView: UIView {
+class BBDetailOldRestaurantView: BBBaseRestaurantView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.kBasis_Purple_Color()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func showHeadTitle() -> String {
+        return "详细信息"
+    }
 }

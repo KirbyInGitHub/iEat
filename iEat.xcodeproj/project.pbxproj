@@ -283,8 +283,8 @@
 		40E1D3041D22241B003970C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				40DE80B21D24C22300D660E3 /* BBSignupModel.swift */,
 				40DE80B41D24CCA200D660E3 /* BBLoginModel.swift */,
+				40DE80B21D24C22300D660E3 /* BBSignupModel.swift */,
 				405CDF6D1D23FF2800A12BB0 /* BBAddNewRestaurantItem.swift */,
 				405CDF711D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift */,
 				40DE81141D26522200D660E3 /* BBOldRestaurantModel.swift */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBDetailOldRestaurantController: UIViewController {
+class BBDetailOldRestaurantController: BBBaseRestaurantController {
 
     override func loadView() {
         super.loadView()
@@ -19,11 +19,7 @@ class BBDetailOldRestaurantController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-    }
-
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        detailOldRestaurantView.closeBtn.addTarget(self, action: #selector(BBBaseRestaurantController.onClickCloseBtn), forControlEvents: .TouchUpInside)
     }
     
     private lazy var detailOldRestaurantView : BBDetailOldRestaurantView = {
