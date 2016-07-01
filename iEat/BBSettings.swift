@@ -12,11 +12,14 @@ let screenWidth = UIScreen.mainScreen().bounds.size.width
 let screenHeight = UIScreen.mainScreen().bounds.size.height
 
 //notificationKey
-let kSelectedSpicyLevelKey = "selectedSpicyLevelKey"
+let kSelectedSpicyLevelKey              = "selectedSpicyLevelKey"
+let kSelectedPhotoCollectionViewCellKey = "selectedPhotoCollectionViewCellKey"
+let kTakePhotoDataKey                   = "takePhotoDataKey"
 
 //notificationName
-let kSelectedSpicyLevelNotification = "selectedSpicyLevelNotification"
+let kSelectedSpicyLevelNotification                  = "selectedSpicyLevelNotification"
 let kSelectedTakePhotoCollectionViewCellNotification = "selectedTakePhotoCollectionViewCellNotification"
+let kTakePhotoDataNotificationName                   = "takePhotoDataNotificationName"
 
 //NSUserDefaultsKey
 let kIsSelectedSettingsLogout = "isSelectedSettingsLogout"

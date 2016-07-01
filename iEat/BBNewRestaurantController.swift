@@ -46,7 +46,7 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         newRestaurantView.pickerView.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewRestaurantController.acceptSelectedSpicyLevel(_:)), name: kSelectedSpicyLevelNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewRestaurantController.acceptSelectedTakePhotoCell), name: kSelectedTakePhotoCollectionViewCellNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewRestaurantController.acceptSelectedTakePhotoCell(_:)), name: kSelectedTakePhotoCollectionViewCellNotification, object: nil)
     }
     
     @objc private func acceptSelectedSpicyLevel(not:NSNotification){
@@ -57,11 +57,28 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         spicyLevelCell?.selectedSpicyLevelLbl.text = spicyLevelTitleDict[selectedSpicyLevel!]
     }
     
-    @objc private func acceptSelectedTakePhotoCell(){
+    @objc private func acceptSelectedTakePhotoCell(not:NSNotification){
         
-        print("123")
+        let info = not.userInfo
+        let selectedCell = info![kSelectedPhotoCollectionViewCellKey] as? String
+        
+        if selectedCell == "0" {
+            
+            openCamera()
+        }else{
+
+        }
     }
 
+    private func openCamera(){
+    
+        let photoPicker = UIImagePickerController()
+        photoPicker.sourceType = .Camera
+        photoPicker.delegate = self
+        photoPicker.cameraDevice = .Rear
+        self.presentViewController(photoPicker, animated: true, completion: nil)
+    }
+    
     private lazy var newRestaurantView : BBNewRestaurantView = {
         
         let addNewRestaurantView = BBNewRestaurantView.init(frame: self.view.bounds)
@@ -242,6 +259,18 @@ extension BBNewRestaurantController : UIPickerViewDelegate,UIPickerViewDataSourc
       
         let restaurantCuisineItem = restaurantCuisineArray[row]
         currentSelectedCell?.selectedRestaurantCuisineLbl.text = restaurantCuisineItem.name
+    }
+}
+
+extension BBNewRestaurantController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(kTakePhotoDataNotificationName, object: nil, userInfo: {[kTakePhotoDataKey:image!]}())
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
