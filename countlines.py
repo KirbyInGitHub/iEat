@@ -7,13 +7,17 @@ def count_one_file(filename):
 
 
 def count_files(path, ftype):
-	ans = 0
-	for root, dirnames, filenames in os.walk(path):
-	    for filename in fnmatch.filter(filenames, '*.'+ftype):
-	        ans += count_one_file(os.path.join(root, filename))
-	return ans
+	res = {}
+	for ft in ftype:
+		ans = 0
+		for root, dirnames, filenames in os.walk(path):
+		    for filename in fnmatch.filter(filenames, '*.'+ft):
+		        ans += count_one_file(os.path.join(root, filename))
+		res.update({ft: ans})
+	return res
 
 
 if __name__ == '__main__':
-	path, ftype = raw_input('input folder path and file type separate with a comma:\n').split(',')
+	path = raw_input('folder path please:\n')
+	ftype = raw_input('file type separate with a comma:\n').split(',')
 	print count_files(path, ftype)
