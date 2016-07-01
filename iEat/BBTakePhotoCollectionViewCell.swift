@@ -12,8 +12,15 @@ class BBTakePhotoCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.backgroundColor = UIColor.blueColor()
+
+        backgroundColor = UIColor.kBasis_LightGray_COLOR()
+        addSubview(addPhotoIcon)
     }
 
+    private lazy var addPhotoIcon : UIImageView = {
+        
+        let addPhotoIcon = UIImageView.init(frame: CGRectMake((self.width - 30) * 0.5, (self.height - 30) * 0.5, 30, 30))
+        addPhotoIcon.image = UIImage.init(named: "takePhotoIcon")
+        return addPhotoIcon
+    }()
 }

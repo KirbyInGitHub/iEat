@@ -40,7 +40,6 @@ class BBTakePhotoCell: UITableViewCell,UICollectionViewDelegate,UICollectionView
         
         takePhotoCollectionView.delegate = self
         takePhotoCollectionView.dataSource = self
-        
     }
     
     @objc private func acceptTakePhotoData(not:NSNotification){
@@ -48,7 +47,7 @@ class BBTakePhotoCell: UITableViewCell,UICollectionViewDelegate,UICollectionView
         let info = not.userInfo
         let photo = info![kTakePhotoDataKey] as? UIImage
         
-        photoArray.append(photo!)
+        photoArray.insert(photo!, atIndex: 0)
         
         takePhotoCollectionView.reloadData()
     }
@@ -74,8 +73,6 @@ class BBTakePhotoCell: UITableViewCell,UICollectionViewDelegate,UICollectionView
         if indexPath.row == 0{
         
             let takePhotoCell = collectionView.dequeueReusableCellWithReuseIdentifier("takePhotoCollectionViewCell", forIndexPath: indexPath) as? BBTakePhotoCollectionViewCell
-            
-            takePhotoCell?.backgroundColor = UIColor.blueColor()
             
             return takePhotoCell!
         }else{
