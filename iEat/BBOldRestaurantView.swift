@@ -36,13 +36,13 @@ class BBOldRestaurantView: BBBaseRestaurantView {
         flowLayout.scrollDirection = .Vertical
         flowLayout.minimumLineSpacing = 5
         flowLayout.minimumInteritemSpacing = 0
-        flowLayout.itemSize = CGSizeMake((screenWidth - 20) * 0.5 + 5, 180)
+        flowLayout.itemSize = CGSizeMake(screenWidth * 0.5, 200)
 
-        let oldRestaurantCollectionView = UICollectionView.init(frame: CGRectMake(3, self.headerLine.bottom, self.width, self.height - self.headerLine.bottom), collectionViewLayout: flowLayout)
+        let oldRestaurantCollectionView = UICollectionView.init(frame: CGRectMake(0, self.headerLine.bottom, self.width, self.height - self.headerLine.bottom), collectionViewLayout: flowLayout)
         oldRestaurantCollectionView.backgroundColor = UIColor.whiteColor()
         oldRestaurantCollectionView.registerClass(BBOldRestaurantCell.self, forCellWithReuseIdentifier: "oldRestaurantCell")
         
-        oldRestaurantCollectionView.backgroundColor = UIColor.kBasis_Purple_Color()
+        oldRestaurantCollectionView.backgroundColor = UIColor.kBasis_LightGray_COLOR()
         return oldRestaurantCollectionView
     }()
 
