@@ -181,7 +181,7 @@ class BBInputMessageView: UIView {
         
         let signupBtn = UIButton.init(frame: CGRectMake(0, self.height, self.width, 50))
         signupBtn.setTitle("Signup", forState:.Normal)
-        signupBtn.backgroundColor = UIColor.kBasis_Blue_Color()
+        signupBtn.backgroundColor = UIColor.kBasis_Orange_COLOR()
         return signupBtn
     }()
     

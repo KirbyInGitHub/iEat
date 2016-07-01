@@ -45,8 +45,7 @@ class BBMainController: BBBaseController {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         let touch = (touches as NSSet).anyObject()
-        
-        if touch?.view.tag == 1 {
+        if touch?.view.tag == 1 || (touch?.view.isKindOfClass(BBAddView))!{
             
             let vc = BBNewRestaurantController()
             self.presentViewController(vc, animated: true, completion: nil)

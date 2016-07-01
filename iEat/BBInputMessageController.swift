@@ -34,7 +34,6 @@ class BBInputMessageController: BBBaseController {
         let inputMessageView = BBInputMessageView.init(frame: self.view.bounds)
         return inputMessageView
     }()
-    
 }
 
 //点击创建账户
@@ -47,11 +46,13 @@ extension BBInputMessageController{
             if self.isLoginStatus == true{
                 
                 self.inputMessageView.createAccountBtn.setTitle("Create Account", forState: .Normal)
+                self.inputMessageView.createAccountBtn.setTitleColor(UIColor.kBasis_Orange_COLOR(), forState: .Normal)
                 self.inputMessageView.signupBtn.top = screenHeight
                 self.isLoginStatus = false
             }else{
                 
                 self.inputMessageView.createAccountBtn.setTitle("Login Account", forState: .Normal)
+                self.inputMessageView.createAccountBtn.setTitleColor(UIColor.kBasis_Blue_Color(), forState: .Normal)
                 self.inputMessageView.signupBtn.top = screenHeight - 50
                 self.isLoginStatus = true
             }
