@@ -67,7 +67,7 @@ class BBNewRestaurantController: BBBaseRestaurantController {
             
             openCamera()
         }else{
-
+            
         }
     }
 
@@ -268,6 +268,7 @@ extension BBNewRestaurantController : UIPickerViewDelegate,UIPickerViewDataSourc
     }
 }
 
+// MARK: - UIImagePickerControllerDelegate,UINavigationControllerDelegate
 extension BBNewRestaurantController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
