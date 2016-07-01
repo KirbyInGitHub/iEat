@@ -15,29 +15,44 @@ class BBMainView: UIView {
         
         backgroundColor = UIColor.kBasis_Purple_Color()
         
-        addSubview(addNewFoodView)
-        addSubview(addOldFoodView)
+        addSubview(addNewRestaurantView)
+        addSubview(oldRestaurantView)
+       
+        addSubview(addBtnView)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var addNewFoodView : UIView = {
+    private lazy var addNewRestaurantView : UIView = {
         
         let h = (screenHeight - 80 - 20) * 0.5
-        let addNewFoodView = UIView.init(frame: CGRectMake(10, 10, self.width - 20, h))
-        addNewFoodView.backgroundColor = UIColor.whiteColor()
-        addNewFoodView.tag = 1
-        return addNewFoodView
+        let addNewRestaurantView = UIView.init(frame: CGRectMake(10, 10, self.width - 20, h))
+        addNewRestaurantView.backgroundColor = UIColor.whiteColor()
+        addNewRestaurantView.tag = 1
+        addNewRestaurantView.layer.cornerRadius = 10
+        addNewRestaurantView.layer.masksToBounds = true
+        return addNewRestaurantView
     }()
     
-    private lazy var addOldFoodView : UIView = {
+    private lazy var oldRestaurantView : UIView = {
         
-        let addOldFoodView = UIView.init(frame: CGRectMake(self.addNewFoodView.left, self.addNewFoodView.bottom + 10, self.addNewFoodView.width, self.addNewFoodView.height))
-        addOldFoodView.backgroundColor = UIColor.whiteColor()
-        addOldFoodView.tag = 2
-        return addOldFoodView
+        let oldRestaurantView = UIView.init(frame: CGRectMake(self.addNewRestaurantView.left, self.addNewRestaurantView.bottom + 10, self.addNewRestaurantView.width, self.addNewRestaurantView.height))
+        oldRestaurantView.backgroundColor = UIColor.whiteColor()
+        oldRestaurantView.tag = 2
+        oldRestaurantView.layer.cornerRadius = 10
+        oldRestaurantView.layer.masksToBounds = true
+        return oldRestaurantView
     }()
-    
+ 
+    private lazy var addBtnView : BBAddView = {
+        
+        let w = 40
+        let h = 40
+        let addBtnView = BBAddView.init(frame:CGRectMake((screenWidth - CGFloat(w)) * 0.5, (self.addNewRestaurantView.height - CGFloat(h)) * 0.5, CGFloat(w), CGFloat(h)))
+        addBtnView.layer.cornerRadius = CGFloat(w) * 0.5
+        addBtnView.layer.masksToBounds = true
+        return addBtnView
+    }()
 }

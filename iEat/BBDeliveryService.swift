@@ -76,8 +76,8 @@ class BBDeliveryService: NSObject {
     
     class func getRestaurantInfo(success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
         
-        let api = NSURL(string: API_BASE_URL + API_GETRESTAURANTINFO_URL + BBSettings.defaultSettings.userId!)
-        BBNetworkManager.sharedNetworkTools.requestJSON(.GET, URLString: api, parameters: nil, success: success, failure: failure)
+//        let api = NSURL(string: API_BASE_URL + API_GETRESTAURANTINFO_URL + BBSettings.defaultSettings.userId!)
+//        BBNetworkManager.sharedNetworkTools.requestJSON(.GET, URLString: api, parameters: nil, success: success, failure: failure)
     }
     
     
