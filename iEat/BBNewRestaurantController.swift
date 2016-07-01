@@ -76,7 +76,6 @@ class BBNewRestaurantController: BBBaseRestaurantController {
         let photoPicker = UIImagePickerController()
         photoPicker.sourceType = .Camera
         photoPicker.delegate = self
-        photoPicker.cameraDevice = .Rear
         self.presentViewController(photoPicker, animated: true, completion: nil)
     }
     
