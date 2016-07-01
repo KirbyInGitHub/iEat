@@ -42,7 +42,7 @@ class BBOldRestaurantView: BBBaseRestaurantView {
         oldRestaurantCollectionView.backgroundColor = UIColor.whiteColor()
         oldRestaurantCollectionView.registerClass(BBOldRestaurantCell.self, forCellWithReuseIdentifier: "oldRestaurantCell")
         
-        oldRestaurantCollectionView.backgroundColor = UIColor.kBasis_LightGray_COLOR()
+        oldRestaurantCollectionView.backgroundColor = UIColor.kBasis_LightLightGray_COLOR()
         return oldRestaurantCollectionView
     }()
 
