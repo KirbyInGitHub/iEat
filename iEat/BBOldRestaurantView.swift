@@ -13,7 +13,6 @@ class BBOldRestaurantView: BBBaseRestaurantView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.kBasis_Purple_Color()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,7 +41,7 @@ class BBOldRestaurantView: BBBaseRestaurantView {
         oldRestaurantCollectionView.backgroundColor = UIColor.whiteColor()
         oldRestaurantCollectionView.registerClass(BBOldRestaurantCell.self, forCellWithReuseIdentifier: "oldRestaurantCell")
         
-        oldRestaurantCollectionView.backgroundColor = UIColor.kBasis_LightLightGray_COLOR()
+        oldRestaurantCollectionView.backgroundColor = UIColor.kBasis_lightLightOrange_Color()
         return oldRestaurantCollectionView
     }()
 

@@ -13,7 +13,6 @@ class BBDetailOldRestaurantView: BBBaseRestaurantView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.kBasis_Purple_Color()
     }
     
     required init?(coder aDecoder: NSCoder) {

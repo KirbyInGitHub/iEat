@@ -28,7 +28,7 @@ class BBSpicyLevelCell: BBBaseRestaurantCell {
     lazy var selectedSpicyLevelLbl : UILabel = {
         
         let selectedSpicyLevelLbl = UILabel()
-        selectedSpicyLevelLbl.textColor = UIColor.whiteColor()
+        selectedSpicyLevelLbl.textColor = UIColor.kBasis_DeepGray_COLOR()
         selectedSpicyLevelLbl.frame = CGRectMake(self.width - 110, (self.height - 30) * 0.5, 100, 30)
         selectedSpicyLevelLbl.textAlignment = .Center
         return selectedSpicyLevelLbl

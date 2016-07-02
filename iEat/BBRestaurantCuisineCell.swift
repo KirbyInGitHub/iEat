@@ -19,7 +19,7 @@ class BBRestaurantCuisineCell: BBBaseRestaurantCell {
     lazy var selectedRestaurantCuisineLbl : UILabel = {
         
         let selectedRestaurantCuisineLbl = UILabel()
-        selectedRestaurantCuisineLbl.textColor = UIColor.whiteColor()
+        selectedRestaurantCuisineLbl.textColor = UIColor.kBasis_DeepGray_COLOR()
         selectedRestaurantCuisineLbl.frame = CGRectMake(self.width - 110, (self.height - 30) * 0.5, 100, 30)
         selectedRestaurantCuisineLbl.textAlignment = .Center
         return selectedRestaurantCuisineLbl

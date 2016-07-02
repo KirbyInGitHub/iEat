@@ -48,7 +48,7 @@ class BBNewRestaurantInfoCell: BBBaseRestaurantCell {
         
         let textField = UITextField()
         textField.tintColor = UIColor.redColor()
-        textField.textColor = UIColor.whiteColor()
+        textField.textColor = UIColor.kBasis_Black_COLOR()
         textField.frame = CGRectMake(self.titleLbl.right + 0, self.titleLbl.top, self.width - self.titleLbl.right - 10, 30)
         textField.clearButtonMode = .WhileEditing;
         return textField

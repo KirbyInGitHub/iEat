@@ -30,7 +30,7 @@ class BBMainController: BBBaseController {
         
         removeNavigationBarShadow()
         navigationController?.navigationBar.translucent = false
-        navigationController?.navigationBar.barTintColor = UIColor.kBasis_Purple_Color()
+        navigationController?.navigationBar.barTintColor = UIColor.kBasis_lightOrange_Color()
         
         let rightItem = UIBarButtonItem(image: UIImage.init(named: "btn_settings"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(BBMainController.onClickSettingsBtn))
         rightItem.image = UIImage(named: "btn_settings")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)

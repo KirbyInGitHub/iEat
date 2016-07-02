@@ -33,7 +33,7 @@ class BBTakePhotoCell: UITableViewCell,UICollectionViewDelegate,UICollectionView
         flowLayout.itemSize = CGSizeMake(150, 250)
         
         takePhotoCollectionView = UICollectionView.init(frame: CGRectMake(0, 0, self.frame.size.width, 250), collectionViewLayout: flowLayout)
-        takePhotoCollectionView.backgroundColor = UIColor.whiteColor()
+        takePhotoCollectionView.backgroundColor = UIColor.kBasis_lightLightOrange_Color()
         takePhotoCollectionView.registerClass(BBTakePhotoCollectionViewCell.self, forCellWithReuseIdentifier: "takePhotoCollectionViewCell")
         takePhotoCollectionView.registerClass(BBPhotoCollectionViewCell.self, forCellWithReuseIdentifier: "photoCollectionViewCell")
         self.addSubview(takePhotoCollectionView)

@@ -46,19 +46,18 @@ extension BBInputMessageController{
             if self.isLoginStatus == true{
                 
                 self.inputMessageView.createAccountBtn.setTitle("Create Account", forState: .Normal)
-                self.inputMessageView.createAccountBtn.setTitleColor(UIColor.kBasis_Orange_COLOR(), forState: .Normal)
+                self.inputMessageView.createAccountBtn.setTitleColor(UIColor.kBasis_deepOrange_Color(), forState: .Normal)
                 self.inputMessageView.signupBtn.top = screenHeight
                 self.isLoginStatus = false
             }else{
                 
                 self.inputMessageView.createAccountBtn.setTitle("Login Account", forState: .Normal)
-                self.inputMessageView.createAccountBtn.setTitleColor(UIColor.kBasis_Blue_Color(), forState: .Normal)
+                self.inputMessageView.createAccountBtn.setTitleColor(UIColor.kBasis_deepBlue_Color(), forState: .Normal)
                 self.inputMessageView.signupBtn.top = screenHeight - 50
                 self.isLoginStatus = true
             }
         }, completion: nil)
     }
-
 }
 
 //注册
