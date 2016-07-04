@@ -20,8 +20,6 @@ class BBDetailOldRestaurantController: BBBaseRestaurantController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(resultItem?.images)
         
         detailOldRestaurantView.closeBtn.addTarget(self, action: #selector(BBBaseRestaurantController.onClickCloseBtn), forControlEvents: .TouchUpInside)
         
@@ -66,6 +64,5 @@ extension BBDetailOldRestaurantController:UICollectionViewDelegate,UICollectionV
         }
         
         return cell!
-        
     }
 }

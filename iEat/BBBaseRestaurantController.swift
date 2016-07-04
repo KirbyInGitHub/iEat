@@ -31,5 +31,5 @@ class BBBaseRestaurantController: BBBaseController {
         let baseFoodView = BBBaseRestaurantView.init(frame: self.view.bounds)
         return baseFoodView
     }()
-
 }
+
