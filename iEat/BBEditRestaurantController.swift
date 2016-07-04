@@ -8,28 +8,24 @@
 
 import UIKit
 
-class BBEditRestaurantController: BBBaseRestaurantController {
+class BBEditRestaurantController: BBBaseRestaurantInfoController {
 
+    override func loadView() {
+        super.loadView()
+        
+        view = editRestaurantView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        editRestaurantView.closeBtn.addTarget(self, action: #selector(BBBaseRestaurantController.onClickCloseBtn), forControlEvents: .TouchUpInside)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    private lazy var editRestaurantView : BBEditRestaurantView = {
+        
+        let editRestaurantView = BBEditRestaurantView.init(frame: self.view.bounds)
+        return editRestaurantView
+    }()
 
 }

@@ -40,7 +40,8 @@ class BBDetailOldRestaurantController: BBBaseRestaurantController {
     
     @objc private func onClickEditBtnAction(){
         
-        print("11")
+        let vc = BBEditRestaurantController()
+        self.wxs_presentViewController(vc, animationType: .Cover, completion: nil)
     }
     
     private lazy var detailOldRestaurantView : BBDetailOldRestaurantView = {

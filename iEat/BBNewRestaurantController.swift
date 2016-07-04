@@ -10,7 +10,7 @@ import UIKit
 import pop
 import Qiniu
 
-class BBNewRestaurantController: BBBaseRestaurantController {
+class BBNewRestaurantController: BBBaseRestaurantInfoController {
     
     deinit{
         print("BBNewRestaurantController释放了")
