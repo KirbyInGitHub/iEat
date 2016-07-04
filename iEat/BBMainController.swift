@@ -47,7 +47,8 @@ class BBMainController: BBBaseController {
         let touch = (touches as NSSet).anyObject()
         if touch?.view.tag == 1 || (touch?.view.isKindOfClass(BBAddView))!{
             
-            let vc = BBNewRestaurantController()
+            let vc = BBNewOrEditRestaurantController()
+            BBSettings.defaultSettings.currentShowView = "newRestaurant"
             self.wxs_presentViewController(vc, animationType: .PointSpreadPresent, completion: nil)
         }else if touch?.view.tag == 2{
             

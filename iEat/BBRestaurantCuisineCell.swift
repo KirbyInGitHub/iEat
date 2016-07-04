@@ -10,9 +10,14 @@ import UIKit
 
 class BBRestaurantCuisineCell: BBBaseRestaurantCell {
 
+    //编辑菜系数据
+    var restaurantCuisineStr : String?
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        selectedRestaurantCuisineLbl.text = restaurantCuisineStr == nil ? "请选择" : restaurantCuisineStr
+            
         addSubview(selectedRestaurantCuisineLbl)
     }
     

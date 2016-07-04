@@ -10,6 +10,9 @@ import UIKit
 
 class BBNewRestaurantInfoCell: BBBaseRestaurantCell {
     
+    //编辑餐厅基本信息
+    var editRestaurant : String?
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -21,6 +24,8 @@ class BBNewRestaurantInfoCell: BBBaseRestaurantCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        textField.text = editRestaurant == nil ? "" : editRestaurant
         
         addSubview(textField)
         addSubview(textFieldBottomLine)

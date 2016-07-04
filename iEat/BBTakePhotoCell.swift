@@ -9,7 +9,6 @@
 import UIKit
 
 class BBTakePhotoCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource {
-
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,7 +22,7 @@ class BBTakePhotoCell: UITableViewCell,UICollectionViewDelegate,UICollectionView
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         backgroundColor = UIColor.whiteColor()
         
         let flowLayout = UICollectionViewFlowLayout()
@@ -58,7 +57,7 @@ class BBTakePhotoCell: UITableViewCell,UICollectionViewDelegate,UICollectionView
         return takePhotoCollectionView
     }()
     
-    private lazy var photoArray : [UIImage] = {
+    lazy var photoArray : [UIImage] = {
         
         let photoArray = [UIImage]()
         return photoArray
@@ -78,7 +77,12 @@ class BBTakePhotoCell: UITableViewCell,UICollectionViewDelegate,UICollectionView
         }else{
             
             let photoCell = collectionView.dequeueReusableCellWithReuseIdentifier("photoCollectionViewCell", forIndexPath: indexPath) as? BBPhotoCollectionViewCell
-            
+
+            if BBSettings.defaultSettings.currentShowView == "editRestaurant" {
+                
+            }else{
+                
+            }
             photoCell?.photoView.image = photoArray[indexPath.row - 1]
             
             return photoCell!

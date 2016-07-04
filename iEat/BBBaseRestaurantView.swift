@@ -15,7 +15,7 @@ class BBBaseRestaurantView: UIView {
         
         backgroundColor = UIColor.kBasis_lightOrange_Color()
         addSubview(closeBtn)
-        if self.isKindOfClass(BBNewRestaurantView) {
+        if self.isKindOfClass(BBNewOrEditRestaurantView) {
             addSubview(confirmBtn)
         }
         addSubview(headerLine)

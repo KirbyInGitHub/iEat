@@ -6,3 +6,4 @@
 #import "UIView+Frame.h"
 #import "UIImage+UIImageExt.h"
 #import "UINavigationController+WXSTransition.h"
+#import "UIWindow+Category.h"

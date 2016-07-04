@@ -10,6 +10,9 @@ import UIKit
 
 class BBSpicyLevelCell: BBBaseRestaurantCell {
 
+    //编辑辛辣程度数据
+    var spicyLevelStr : String?
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -21,6 +24,8 @@ class BBSpicyLevelCell: BBBaseRestaurantCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        selectedSpicyLevelLbl.text = spicyLevelStr == nil ? "请选择" : spicyLevelStr
         
         addSubview(selectedSpicyLevelLbl)
     }

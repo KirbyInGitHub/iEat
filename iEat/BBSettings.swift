@@ -25,6 +25,7 @@ let kTakePhotoDataNotificationName                   = "takePhotoDataNotificatio
 let kIsSelectedSettingsLogout = "isSelectedSettingsLogout"
 let kUserId                   = "userId"
 let kQiniuToken               = "qiniuToken"
+let kCurrentShowView          = "currentShowView"
 
 
 class BBSettings: NSObject {
@@ -58,6 +59,16 @@ class BBSettings: NSObject {
         }
         set{
             NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kUserId)
+        }
+    }
+    
+    //判断用户是在添加还是编辑界面
+    var currentShowView : String?{
+        get{
+            return NSUserDefaults.standardUserDefaults().stringForKey(kCurrentShowView)
+        }
+        set{
+            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kCurrentShowView)
         }
     }
     

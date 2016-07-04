@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBNewRestaurantView: BBBaseRestaurantView {
+class BBNewOrEditRestaurantView: BBBaseRestaurantView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +23,11 @@ class BBNewRestaurantView: BBBaseRestaurantView {
     }
     
     override func showHeadTitle() -> String {
-        return "添加新餐厅"
+        if BBSettings.defaultSettings.currentShowView == "editRestaurant"{
+            return "编辑餐厅"
+        }else{
+            return "添加新餐厅"
+        }
     }
     
     override func layoutSubviews() {

@@ -40,7 +40,9 @@ class BBDetailOldRestaurantController: BBBaseRestaurantController {
     
     @objc private func onClickEditBtnAction(){
         
-        let vc = BBEditRestaurantController()
+        let vc = BBNewOrEditRestaurantController()
+        BBSettings.defaultSettings.currentShowView = "editRestaurant"
+        vc.resultItem = resultItem
         self.wxs_presentViewController(vc, animationType: .Cover, completion: nil)
     }
     

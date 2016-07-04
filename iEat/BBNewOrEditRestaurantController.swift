@@ -10,10 +10,13 @@ import UIKit
 import pop
 import Qiniu
 
-class BBNewRestaurantController: BBBaseRestaurantInfoController {
+class BBNewOrEditRestaurantController: BBBaseRestaurantInfoController {
+    
+    //编辑餐厅的数据
+    var resultItem : Result?
     
     deinit{
-        print("BBNewRestaurantController释放了")
+        print("BBNewOrEditRestaurantController释放了")
     }
     
     var currentSelectedCell : BBRestaurantCuisineCell?
@@ -23,19 +26,19 @@ class BBNewRestaurantController: BBBaseRestaurantInfoController {
     override func loadView() {
         super.loadView()
         
-        view = newRestaurantView
+        view = newOrEditRestaurantView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newRestaurantView.closeBtn.addTarget(self, action: #selector(BBBaseRestaurantController.onClickCloseBtn), forControlEvents: .TouchUpInside)
-        newRestaurantView.confirmBtn.addTarget(self, action: #selector(BBNewRestaurantController.onClcikConfirmBtn), forControlEvents: .TouchUpInside)
+        newOrEditRestaurantView.closeBtn.addTarget(self, action: #selector(BBBaseRestaurantController.onClickCloseBtn), forControlEvents: .TouchUpInside)
+        newOrEditRestaurantView.confirmBtn.addTarget(self, action: #selector(BBNewOrEditRestaurantController.onClcikConfirmBtn), forControlEvents: .TouchUpInside)
         
-        newRestaurantView.selectedSpicyLeveView.selectedConfirmBtn.addTarget(self, action: #selector(BBNewRestaurantController.onClickSelectedConfirmBtn), forControlEvents: .TouchUpInside)
+        newOrEditRestaurantView.selectedSpicyLeveView.selectedConfirmBtn.addTarget(self, action: #selector(BBNewOrEditRestaurantController.onClickSelectedConfirmBtn), forControlEvents: .TouchUpInside)
         
-        newRestaurantView.tableview.delegate = self
-        newRestaurantView.tableview.dataSource = self
+        newOrEditRestaurantView.tableview.delegate = self
+        newOrEditRestaurantView.tableview.dataSource = self
         
         let path = NSBundle.mainBundle().pathForResource("restaurantCuisineList.plist", ofType: nil)
         let array = NSArray.init(contentsOfFile: path!)
@@ -43,18 +46,18 @@ class BBNewRestaurantController: BBBaseRestaurantInfoController {
             let item = BBRestaurantCuisineItem.init(dict: dict as! [String : AnyObject])
             restaurantCuisineArray.append(item)
         }
-        newRestaurantView.pickerView.dataSource = self
-        newRestaurantView.pickerView.delegate = self
+        newOrEditRestaurantView.pickerView.dataSource = self
+        newOrEditRestaurantView.pickerView.delegate = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewRestaurantController.acceptSelectedSpicyLevel(_:)), name: kSelectedSpicyLevelNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewRestaurantController.acceptSelectedTakePhotoCell(_:)), name: kSelectedTakePhotoCollectionViewCellNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewOrEditRestaurantController.acceptSelectedSpicyLevel(_:)), name: kSelectedSpicyLevelNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewOrEditRestaurantController.acceptSelectedTakePhotoCell(_:)), name: kSelectedTakePhotoCollectionViewCellNotification, object: nil)
     }
     
     @objc private func acceptSelectedSpicyLevel(not:NSNotification){
         
         let info = not.userInfo
         let selectedSpicyLevel = info![kSelectedSpicyLevelKey] as? String
-        let spicyLevelCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
+        let spicyLevelCell = newOrEditRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
         spicyLevelCell?.selectedSpicyLevelLbl.text = spicyLevelTitleDict[selectedSpicyLevel!]
     }
     
@@ -79,10 +82,10 @@ class BBNewRestaurantController: BBBaseRestaurantInfoController {
         self.presentViewController(photoPicker, animated: true, completion: nil)
     }
     
-    private lazy var newRestaurantView : BBNewRestaurantView = {
+    private lazy var newOrEditRestaurantView : BBNewOrEditRestaurantView = {
         
-        let addNewRestaurantView = BBNewRestaurantView.init(frame: self.view.bounds)
-        return addNewRestaurantView
+        let newOrEditRestaurantView = BBNewOrEditRestaurantView.init(frame: self.view.bounds)
+        return newOrEditRestaurantView
     }()
 
     private lazy var spicyLevelTitleDict : [String:String] = {
@@ -111,23 +114,23 @@ class BBNewRestaurantController: BBBaseRestaurantInfoController {
 }
 
 // MARK: - 点击事件
-extension BBNewRestaurantController{
+extension BBNewOrEditRestaurantController{
     
     @objc private func onClcikConfirmBtn(){
         
-        var newRestaurantInfoCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 0, inSection: 0)) as? BBNewRestaurantInfoCell
+        var newRestaurantInfoCell = newOrEditRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 0, inSection: 0)) as? BBNewRestaurantInfoCell
         addNewRestaurantItem.restaurantName = newRestaurantInfoCell?.textFieldStr
         
-        newRestaurantInfoCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 1, inSection: 0)) as? BBNewRestaurantInfoCell
+        newRestaurantInfoCell = newOrEditRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 1, inSection: 0)) as? BBNewRestaurantInfoCell
         addNewRestaurantItem.restaurantContent = newRestaurantInfoCell?.textFieldStr
         
-        newRestaurantInfoCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 2, inSection: 0)) as? BBNewRestaurantInfoCell
+        newRestaurantInfoCell = newOrEditRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 2, inSection: 0)) as? BBNewRestaurantInfoCell
         addNewRestaurantItem.restaurantAddress = newRestaurantInfoCell?.textFieldStr
         
-        let spicyLevelCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
+        let spicyLevelCell = newOrEditRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 3, inSection: 0)) as? BBSpicyLevelCell
         addNewRestaurantItem.restaurantSpicyLevel = spicyLevelTitleDictList[spicyLevelCell!.selectedSpicyLevelLbl.text!]
         
-        let restaurantCuisineCell = newRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 4, inSection: 0)) as? BBRestaurantCuisineCell
+        let restaurantCuisineCell = newOrEditRestaurantView.tableview.cellForRowAtIndexPath(NSIndexPath.init(forItem: 4, inSection: 0)) as? BBRestaurantCuisineCell
         addNewRestaurantItem.restaurantCuisine = restaurantCuisineCell?.selectedRestaurantCuisineLbl.text
         
         //图片
@@ -138,31 +141,36 @@ extension BBNewRestaurantController{
             BBHud.defaultHud.showMessage("请务必填写饭店名称")
         }else{
             
-            BBDeliveryService.addNewRestaurant(addNewRestaurantItem, success: { (result) in
-                
-                if result == nil{
-                    BBHud.defaultHud.showMessage("添加失败")
-                }else{
-                    BBHud.defaultHud.showMessage("添加成功")
-                    self.dismissViewControllerAnimated(true, completion: nil)
+            if BBSettings.defaultSettings.currentShowView == "newRestaurant" {
+                BBDeliveryService.addNewRestaurant(addNewRestaurantItem, success: { (result) in
+                    
+                    if result == nil{
+                        BBHud.defaultHud.showMessage("添加失败")
+                    }else{
+                        BBHud.defaultHud.showMessage("添加成功")
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    
+                }) { (error) in
+                    
+                    print(error)
                 }
+            }else if BBSettings.defaultSettings.currentShowView == "editRestaurant" {
                 
-            }) { (error) in
-                
-                print(error)
+                print("发送编辑请求")
             }
         }
     }
 
     @objc private func onClickSelectedConfirmBtn(){
         
-        newRestaurantView.maskTempView.hidden = true
-        BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newRestaurantView.selectedSpicyLeveView)
+        newOrEditRestaurantView.maskTempView.hidden = true
+        BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newOrEditRestaurantView.selectedSpicyLeveView)
     }
 }
 
 // MARK: - UITableViewDelegate,UITableViewDataSource
-extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
+extension BBNewOrEditRestaurantController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
@@ -179,6 +187,25 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
                 newRestaurantInfoCell = BBNewRestaurantInfoCell(style: .Default,reuseIdentifier: "newRestaurantInfoCell")
             }
             
+            //传递编辑餐厅的信息
+            switch indexPath.row {
+                
+            case 0:
+                newRestaurantInfoCell?.editRestaurant = resultItem?.name
+                break
+            
+            case 1:
+                newRestaurantInfoCell?.editRestaurant = resultItem?.content
+                break
+          
+            case 2:
+                newRestaurantInfoCell?.editRestaurant = resultItem?.address
+                break
+            
+            default:
+                break
+            }
+            
             newRestaurantInfoCell?.titleLbl.text = titleArray[indexPath.row]
             
             return newRestaurantInfoCell!
@@ -193,7 +220,9 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             }
             
             spicyLevelCell?.titleLbl.text = "辛辣程度:"
-            spicyLevelCell?.selectedSpicyLevelLbl.text = "请选择"
+            
+            //传递辛辣程度数据
+            spicyLevelCell?.spicyLevelStr = resultItem?.spicy_level
             
             return spicyLevelCell!
             
@@ -207,7 +236,8 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
             }
             
             restaurantCuisineCell?.titleLbl.text = "餐厅菜系:"
-            restaurantCuisineCell?.selectedRestaurantCuisineLbl.text = "请选择"
+            
+            restaurantCuisineCell?.restaurantCuisineStr = resultItem?.cuisine
             
             return restaurantCuisineCell!
         }else{
@@ -234,21 +264,21 @@ extension BBNewRestaurantController : UITableViewDelegate,UITableViewDataSource{
         
         if indexPath.row == 3 {
             
-            newRestaurantView.maskTempView.hidden = false
-            BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newRestaurantView.selectedSpicyLeveView)
-            if newRestaurantView.pickerView.top != screenHeight {
-               BBUseAnimation.defaultUseAnimation.changePickerViewInPosition(newRestaurantView.pickerView)
+            newOrEditRestaurantView.maskTempView.hidden = false
+            BBUseAnimation.defaultUseAnimation.changeSelectedStatusViewInPositionAnimation(newOrEditRestaurantView.selectedSpicyLeveView)
+            if newOrEditRestaurantView.pickerView.top != screenHeight {
+               BBUseAnimation.defaultUseAnimation.changePickerViewInPosition(newOrEditRestaurantView.pickerView)
             }
         }else if indexPath.row == 4{
             
             currentSelectedCell = tableView.cellForRowAtIndexPath(indexPath) as? BBRestaurantCuisineCell
-            BBUseAnimation.defaultUseAnimation.changePickerViewInPosition(newRestaurantView.pickerView)
+            BBUseAnimation.defaultUseAnimation.changePickerViewInPosition(newOrEditRestaurantView.pickerView)
         }
     }
 }
 
 // MARK: - UIPickerViewDelegate,UIPickerViewDataSource
-extension BBNewRestaurantController : UIPickerViewDelegate,UIPickerViewDataSource{
+extension BBNewOrEditRestaurantController : UIPickerViewDelegate,UIPickerViewDataSource{
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -272,7 +302,7 @@ extension BBNewRestaurantController : UIPickerViewDelegate,UIPickerViewDataSourc
 }
 
 // MARK: - UIImagePickerControllerDelegate,UINavigationControllerDelegate
-extension BBNewRestaurantController : UIImagePickerControllerDelegate{
+extension BBNewOrEditRestaurantController : UIImagePickerControllerDelegate{
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
