@@ -51,7 +51,6 @@
 		40E923D71D29FD3000A11034 /* UIViewController+WXSTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E923D11D29FD3000A11034 /* UIViewController+WXSTransition.m */; };
 		40E923D81D29FD3000A11034 /* WXSTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E923D31D29FD3000A11034 /* WXSTransitionManager.m */; };
 		40E923DA1D2A028F00A11034 /* BBDetailPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E923D91D2A028F00A11034 /* BBDetailPhotoCell.swift */; };
-		40E923DE1D2A486400A11034 /* BBBaseRestaurantInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E923DD1D2A486400A11034 /* BBBaseRestaurantInfoController.swift */; };
 		40E923F11D2A4EBA00A11034 /* UIWindow+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E923F01D2A4EBA00A11034 /* UIWindow+Category.m */; };
 		40EC1B821D227BD600D4817D /* UIFont+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC1B811D227BD600D4817D /* UIFont+Category.swift */; };
 		40EC1B961D236AD200D4817D /* BBBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC1B951D236AD200D4817D /* BBBaseController.swift */; };
@@ -142,7 +141,6 @@
 		40E923D31D29FD3000A11034 /* WXSTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSTransitionManager.m; sourceTree = "<group>"; };
 		40E923D41D29FD3000A11034 /* WXSTypedefConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSTypedefConfig.h; sourceTree = "<group>"; };
 		40E923D91D2A028F00A11034 /* BBDetailPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDetailPhotoCell.swift; sourceTree = "<group>"; };
-		40E923DD1D2A486400A11034 /* BBBaseRestaurantInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBaseRestaurantInfoController.swift; sourceTree = "<group>"; };
 		40E923EF1D2A4EBA00A11034 /* UIWindow+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Category.h"; sourceTree = "<group>"; };
 		40E923F01D2A4EBA00A11034 /* UIWindow+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Category.m"; sourceTree = "<group>"; };
 		40EC1B811D227BD600D4817D /* UIFont+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Category.swift"; sourceTree = "<group>"; };
@@ -390,7 +388,6 @@
 			isa = PBXGroup;
 			children = (
 				40EC1B9F1D237FBB00D4817D /* BBBaseRestaurantController.swift */,
-				40E923DD1D2A486400A11034 /* BBBaseRestaurantInfoController.swift */,
 				40EC1B9B1D237F9F00D4817D /* BBNewOrEditRestaurantController.swift */,
 				40EC1B9D1D237FB100D4817D /* BBOldRestaurantController.swift */,
 				40DE81161D266AA900D660E3 /* BBDetailOldRestaurantController.swift */,
@@ -624,7 +621,6 @@
 				40E923D81D29FD3000A11034 /* WXSTransitionManager.m in Sources */,
 				40DE81051D25763700D660E3 /* BBTakePhotoCollectionViewCell.swift in Sources */,
 				40E0A6291D23CEFF00CC74AE /* BBSelectedRestaurantCuisineView.swift in Sources */,
-				40E923DE1D2A486400A11034 /* BBBaseRestaurantInfoController.swift in Sources */,
 				40DE810E1D26211B00D660E3 /* BBAddView.swift in Sources */,
 				40DE81111D2644C000D660E3 /* UIImage+UIImageExt.m in Sources */,
 				401E255C1D225D2700C9C5E8 /* BBTextField.swift in Sources */,

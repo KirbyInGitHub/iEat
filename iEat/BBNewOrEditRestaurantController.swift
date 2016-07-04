@@ -10,7 +10,7 @@ import UIKit
 import pop
 import Qiniu
 
-class BBNewOrEditRestaurantController: BBBaseRestaurantInfoController {
+class BBNewOrEditRestaurantController: BBBaseRestaurantController {
     
     //编辑餐厅的数据
     var resultItem : Result?
@@ -169,7 +169,7 @@ extension BBNewOrEditRestaurantController{
                         BBHud.defaultHud.showMessage("更新失败")
                     }else{
                         BBHud.defaultHud.showMessage("更新成功")
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                        self.presentationController?.presentingViewController.dismissViewControllerAnimated(true, completion: nil)
                     }
                     
                     }, failure: { (error) in
