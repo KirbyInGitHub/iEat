@@ -149,7 +149,7 @@ class BBInputMessageView: UIView {
     private lazy var backgroundImage : UIImageView = {
         
         let backgroundImage = UIImageView.init(frame: self.bounds)
-        backgroundImage.backgroundColor = UIColor.kBasis_lightLightOrange_Color()
+        backgroundImage.backgroundColor = UIColor.kBasis_lightOrange_Color()
         backgroundImage.alpha = 0
         backgroundImage.userInteractionEnabled = true
         return backgroundImage
