@@ -27,6 +27,16 @@ class BBDetailOldRestaurantController: BBBaseRestaurantController {
         
         detailOldRestaurantView.detailImageCollectionView.delegate = self
         detailOldRestaurantView.detailImageCollectionView.dataSource = self
+        
+        if resultItem!.cuisine == nil {
+            detailOldRestaurantView.restaurantName.text = resultItem!.name!
+        }else{
+            let str = resultItem!.name! + " (" + resultItem!.cuisine! + ")"
+            detailOldRestaurantView.restaurantName.text = str
+        }
+        
+        detailOldRestaurantView.restaurantAddress.text = resultItem?.address == nil ? "" : resultItem?.address
+        detailOldRestaurantView.restaurantContent.text = resultItem?.content == nil ? "" : resultItem?.content
     }
     
     private lazy var detailOldRestaurantView : BBDetailOldRestaurantView = {
