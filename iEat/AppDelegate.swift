@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+        
         return true
     }
 
