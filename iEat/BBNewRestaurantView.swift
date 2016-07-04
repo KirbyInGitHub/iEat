@@ -34,10 +34,10 @@ class BBNewRestaurantView: BBBaseRestaurantView {
     
     lazy var tableview : UITableView = {
         
-        let tableview = UITableView.init(frame: CGRectMake(0, self.headerLine.bottom + 5, self.width, self.height - 60))
+        let tableview = UITableView.init(frame: CGRectMake(0, self.headerLine.bottom, self.width, self.height - 60))
         tableview.tableFooterView = UIView()
         tableview.separatorStyle = .None
-        tableview.backgroundColor = UIColor.kBasis_Purple_Color()
+        tableview.backgroundColor = UIColor.kBasis_lightLightOrange_Color()
         return tableview
     }()
     

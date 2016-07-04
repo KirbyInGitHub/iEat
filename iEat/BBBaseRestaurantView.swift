@@ -13,7 +13,7 @@ class BBBaseRestaurantView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.kBasis_Purple_Color()
+        backgroundColor = UIColor.kBasis_deepOrange_Color()
         addSubview(closeBtn)
         if self.isKindOfClass(BBNewRestaurantView) {
             addSubview(confirmBtn)

@@ -30,7 +30,7 @@ class BBMainController: BBBaseController {
         
         removeNavigationBarShadow()
         navigationController?.navigationBar.translucent = false
-        navigationController?.navigationBar.barTintColor = UIColor.kBasis_Purple_Color()
+        navigationController?.navigationBar.barTintColor = UIColor.kBasis_lightOrange_Color()
         
         let rightItem = UIBarButtonItem(image: UIImage.init(named: "btn_settings"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(BBMainController.onClickSettingsBtn))
         rightItem.image = UIImage(named: "btn_settings")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
@@ -48,11 +48,11 @@ class BBMainController: BBBaseController {
         if touch?.view.tag == 1 || (touch?.view.isKindOfClass(BBAddView))!{
             
             let vc = BBNewRestaurantController()
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.wxs_presentViewController(vc, animationType: .PointSpreadPresent, completion: nil)
         }else if touch?.view.tag == 2{
             
             let vc = BBOldRestaurantController()
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.wxs_presentViewController(vc, animationType: .PointSpreadPresent, completion: nil)
         }
     }
 

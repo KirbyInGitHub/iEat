@@ -69,7 +69,7 @@ extension BBSettingsController: UITableViewDelegate,UITableViewDataSource{
         let vc = BBInputMessageController()
         BBSettings.defaultSettings.userId = nil
         vc.modalTransitionStyle = .CoverVertical
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.wxs_presentViewController(vc, animationType: .FragmentShowFromTop, completion: nil)
         BBSettings.defaultSettings.isSelectedSettingsLogout = true
     }
 

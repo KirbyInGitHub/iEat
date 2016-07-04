@@ -15,19 +15,33 @@ extension UIColor{
     class func kRandomColor() -> UIColor{
         return UIColor(red:CGFloat(arc4random_uniform(256))/255.0, green: CGFloat(arc4random_uniform(256))/255.0, blue: CGFloat(arc4random_uniform(256))/255.0, alpha: 1.0)
     }
-
-    //ios WaveColor
-    class func kBasis_Wave_Color() -> UIColor{
-        return UIColor(red: 0/255.0, green: 171/255.0, blue: 165/255.0, alpha: 1.0)
-    }
     
     //let颜色
     class func kBasis_Let_Color() -> UIColor{
         return UIColor(red: 180/255.0, green: 60/255.0, blue: 147/255.0, alpha: 1.0)
     }
 
+    //深橘黄色
+    class func kBasis_deepOrange_Color() -> UIColor{
+        return UIColor(red: 253/255.0, green: 122/255.0, blue: 35/255.0, alpha: 1.0)
+    }
+
+    //浅浅橘黄色
+    class func kBasis_lightLightOrange_Color() -> UIColor{
+        return UIColor(red: 255/255.0, green: 250/255.0, blue: 240/255.0, alpha: 1.0)
+    }
     
-    //基本紫色
+    //浅橘黄色
+    class func kBasis_lightOrange_Color() -> UIColor{
+        return UIColor(red: 253/255.0, green: 166/255.0, blue: 41/255.0, alpha: 1.0)
+    }
+    
+    //深蓝色
+    class func kBasis_deepBlue_Color() -> UIColor{
+        return UIColor(red: 0/255.0, green: 191/255.0, blue: 255/255.0, alpha: 1.0)
+    }
+    
+    //紫色
     class func kBasis_Purple_Color() -> UIColor{
         return UIColor(red: 67/255.0, green: 46/255.0, blue: 94/255.0, alpha: 1.0)
     }

@@ -13,7 +13,7 @@ class BBAddView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        backgroundColor = UIColor.kBasis_Purple_Color()
+        backgroundColor = UIColor.kBasis_deepOrange_Color()
     }
     
     override func drawRect(rect: CGRect) {

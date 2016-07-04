@@ -13,11 +13,11 @@ class BBBaseRestaurantCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        backgroundColor = UIColor.kBasis_Purple_Color()
+        backgroundColor = UIColor.kBasis_lightLightOrange_Color()
         selectionStyle = .None
         
         addSubview(titleLbl)
-        titleLbl.textColor = UIColor.whiteColor()
+        titleLbl.textColor = UIColor.kBasis_DeepGray_COLOR()
     }
     
     lazy var titleLbl : UILabel = {

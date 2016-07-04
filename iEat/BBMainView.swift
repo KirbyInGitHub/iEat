@@ -13,7 +13,7 @@ class BBMainView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.kBasis_Purple_Color()
+        backgroundColor = UIColor.kBasis_lightOrange_Color()
         
         addSubview(addNewRestaurantView)
         addSubview(oldRestaurantView)

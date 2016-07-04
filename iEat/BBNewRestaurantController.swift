@@ -272,7 +272,7 @@ extension BBNewRestaurantController : UIPickerViewDelegate,UIPickerViewDataSourc
 }
 
 // MARK: - UIImagePickerControllerDelegate,UINavigationControllerDelegate
-extension BBNewRestaurantController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+extension BBNewRestaurantController : UIImagePickerControllerDelegate{
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         

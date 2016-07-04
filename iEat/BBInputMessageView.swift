@@ -149,7 +149,7 @@ class BBInputMessageView: UIView {
     private lazy var backgroundImage : UIImageView = {
         
         let backgroundImage = UIImageView.init(frame: self.bounds)
-        backgroundImage.backgroundColor = UIColor.kBasis_Purple_Color()
+        backgroundImage.backgroundColor = UIColor.kBasis_lightOrange_Color()
         backgroundImage.alpha = 0
         backgroundImage.userInteractionEnabled = true
         return backgroundImage
@@ -160,7 +160,7 @@ class BBInputMessageView: UIView {
         
         let createAccountBtn = UIButton()
         createAccountBtn.setTitle("Create Account", forState: .Normal)
-        createAccountBtn.setTitleColor(UIColor.kBasis_Orange_COLOR(), forState: .Normal)
+        createAccountBtn.setTitleColor(UIColor.kBasis_deepOrange_Color(), forState: .Normal)
         createAccountBtn.sizeToFit()
         createAccountBtn.left = (self.width - createAccountBtn.width) * 0.5
         createAccountBtn.top = self.userPassword.bottom + 5
@@ -172,7 +172,7 @@ class BBInputMessageView: UIView {
         
         let loginBtn = UIButton.init(frame: CGRectMake(0, self.height - 50, self.width, 50))
         loginBtn.setTitle("Login", forState:.Normal)
-        loginBtn.backgroundColor = UIColor.kBasis_Blue_Color()
+        loginBtn.backgroundColor = UIColor.kBasis_deepBlue_Color()
         return loginBtn
     }()
     
@@ -181,7 +181,7 @@ class BBInputMessageView: UIView {
         
         let signupBtn = UIButton.init(frame: CGRectMake(0, self.height, self.width, 50))
         signupBtn.setTitle("Signup", forState:.Normal)
-        signupBtn.backgroundColor = UIColor.kBasis_Orange_COLOR()
+        signupBtn.backgroundColor = UIColor.kBasis_deepOrange_Color()
         return signupBtn
     }()
     
@@ -197,7 +197,7 @@ class BBInputMessageView: UIView {
         let str = NSMutableAttributedString.init(string: iOSMan.text!)
         str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_Let_Color(), range: NSMakeRange(0, 3))
         str.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor(), range: NSMakeRange(4, 8))
-        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_Wave_Color(), range: NSMakeRange(12,5))
+        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_deepBlue_Color(), range: NSMakeRange(12,5))
         //        [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Courier-BoldOblique" size:20.0] range:NSMakeRange(10, 6)];
         iOSMan.attributedText = str
         
@@ -216,7 +216,7 @@ class BBInputMessageView: UIView {
         let str = NSMutableAttributedString.init(string: pythonMan.text!)
         str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_Let_Color(), range: NSMakeRange(0, 3))
         str.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor(), range: NSMakeRange(4, 11))
-        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_Orange_COLOR(), range: NSMakeRange(16, 4))
+        str.addAttribute(NSForegroundColorAttributeName, value: UIColor.kBasis_deepOrange_Color(), range: NSMakeRange(16, 4))
         pythonMan.attributedText = str
         
         return pythonMan
