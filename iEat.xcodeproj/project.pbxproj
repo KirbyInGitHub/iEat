@@ -50,6 +50,7 @@
 		40E923D61D29FD3000A11034 /* UINavigationController+WXSTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E923CF1D29FD3000A11034 /* UINavigationController+WXSTransition.m */; };
 		40E923D71D29FD3000A11034 /* UIViewController+WXSTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E923D11D29FD3000A11034 /* UIViewController+WXSTransition.m */; };
 		40E923D81D29FD3000A11034 /* WXSTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E923D31D29FD3000A11034 /* WXSTransitionManager.m */; };
+		40E923DA1D2A028F00A11034 /* BBDetailPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E923D91D2A028F00A11034 /* BBDetailPhotoCell.swift */; };
 		40EC1B821D227BD600D4817D /* UIFont+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC1B811D227BD600D4817D /* UIFont+Category.swift */; };
 		40EC1B961D236AD200D4817D /* BBBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC1B951D236AD200D4817D /* BBBaseController.swift */; };
 		40EC1B981D236F5700D4817D /* BBSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EC1B971D236F5700D4817D /* BBSettingsController.swift */; };
@@ -138,6 +139,7 @@
 		40E923D21D29FD3000A11034 /* WXSTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSTransitionManager.h; sourceTree = "<group>"; };
 		40E923D31D29FD3000A11034 /* WXSTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSTransitionManager.m; sourceTree = "<group>"; };
 		40E923D41D29FD3000A11034 /* WXSTypedefConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSTypedefConfig.h; sourceTree = "<group>"; };
+		40E923D91D2A028F00A11034 /* BBDetailPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDetailPhotoCell.swift; sourceTree = "<group>"; };
 		40EC1B811D227BD600D4817D /* UIFont+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Category.swift"; sourceTree = "<group>"; };
 		40EC1B951D236AD200D4817D /* BBBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBBaseController.swift; sourceTree = "<group>"; };
 		40EC1B971D236F5700D4817D /* BBSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSettingsController.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				40DE81041D25763700D660E3 /* BBTakePhotoCollectionViewCell.swift */,
 				40DE81061D260A3900D660E3 /* BBPhotoCollectionViewCell.swift */,
 				40DE81121D26511500D660E3 /* BBOldRestaurantCell.swift */,
+				40E923D91D2A028F00A11034 /* BBDetailPhotoCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				401E255C1D225D2700C9C5E8 /* BBTextField.swift in Sources */,
 				40EC1BA61D237FFA00D4817D /* BBBaseRestaurantView.swift in Sources */,
 				40EC1B961D236AD200D4817D /* BBBaseController.swift in Sources */,
+				40E923DA1D2A028F00A11034 /* BBDetailPhotoCell.swift in Sources */,
 				40DE81191D266AB600D660E3 /* BBDetailOldRestaurantView.swift in Sources */,
 				40DE810C1D2618C300D660E3 /* UIImage+Category.swift in Sources */,
 				40EC1BA21D237FE800D4817D /* BBOldRestaurantView.swift in Sources */,

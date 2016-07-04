@@ -79,10 +79,12 @@ extension BBOldRestaurantController : UICollectionViewDelegate,UICollectionViewD
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
+        
+        let resultItem = oldRestaurantData?.result![indexPath.row]
         
         let detailVC = BBDetailOldRestaurantController()
         detailVC.modalTransitionStyle = .CrossDissolve
-        self.presentViewController(detailVC, animated: true, completion: nil)
+        detailVC.resultItem = resultItem
+        self.wxs_presentViewController(detailVC, animationType: .Cover, completion: nil)
     }
 }
