@@ -48,11 +48,11 @@ class BBMainController: BBBaseController {
         if touch?.view.tag == 1 || (touch?.view.isKindOfClass(BBAddView))!{
             
             let vc = BBNewRestaurantController()
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.wxs_presentViewController(vc, animationType: .PointSpreadPresent, completion: nil)
         }else if touch?.view.tag == 2{
             
             let vc = BBOldRestaurantController()
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.wxs_presentViewController(vc, animationType: .PointSpreadPresent, completion: nil)
         }
     }
 
