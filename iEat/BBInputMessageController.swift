@@ -85,8 +85,7 @@ extension BBInputMessageController{
                     }else{
                         let mainVC = BBMainController()
                         let nav = UINavigationController.init(rootViewController: mainVC)
-                        nav.modalTransitionStyle = .FlipHorizontal
-                        self.presentViewController(nav, animated: true, completion: nil)
+                        self.wxs_presentViewController(nav, animationType: .FragmentShowFromBottom, completion: nil)
                     }
                 }
             
@@ -127,8 +126,7 @@ extension BBInputMessageController{
                     }else{
                         let mainVC = BBMainController()
                         let nav = UINavigationController.init(rootViewController: mainVC)
-                        nav.modalTransitionStyle = .FlipHorizontal
-                        self.presentViewController(nav, animated: true, completion: nil)
+                        self.wxs_presentViewController(nav, animationType: .Boom, completion: nil)
                     }
 
                 }else{
