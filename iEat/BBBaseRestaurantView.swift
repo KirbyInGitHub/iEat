@@ -33,7 +33,7 @@ class BBBaseRestaurantView: UIView {
     lazy var closeBtn : UIButton = {
         
         let closeBtn = UIButton()
-        closeBtn.frame = CGRectMake(20, 20, 30, 30)
+        closeBtn.frame = CGRectMake(10, 20, 30, 30)
         closeBtn.setImage(UIImage.init(named: "btn_close"), forState: .Normal)
         return closeBtn
     }()

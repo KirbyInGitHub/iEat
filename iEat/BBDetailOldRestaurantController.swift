@@ -22,6 +22,7 @@ class BBDetailOldRestaurantController: BBBaseRestaurantController {
         super.viewDidLoad()
         
         detailOldRestaurantView.closeBtn.addTarget(self, action: #selector(BBBaseRestaurantController.onClickCloseBtn), forControlEvents: .TouchUpInside)
+        detailOldRestaurantView.editBtn.addTarget(self, action: #selector(BBDetailOldRestaurantController.onClickEditBtnAction), forControlEvents: .TouchUpInside)
         
         detailOldRestaurantView.detailImageCollectionView.delegate = self
         detailOldRestaurantView.detailImageCollectionView.dataSource = self
@@ -37,12 +38,16 @@ class BBDetailOldRestaurantController: BBBaseRestaurantController {
         detailOldRestaurantView.restaurantContent.text = resultItem?.content == nil ? "" : resultItem?.content
     }
     
+    @objc private func onClickEditBtnAction(){
+        
+        print("11")
+    }
+    
     private lazy var detailOldRestaurantView : BBDetailOldRestaurantView = {
         
         let detailOldRestaurantView = BBDetailOldRestaurantView.init(frame: self.view.bounds)
         return detailOldRestaurantView
     }()
-
 }
 
 extension BBDetailOldRestaurantController:UICollectionViewDelegate,UICollectionViewDataSource{

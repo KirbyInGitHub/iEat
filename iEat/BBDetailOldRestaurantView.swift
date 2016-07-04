@@ -13,6 +13,8 @@ class BBDetailOldRestaurantView: BBBaseRestaurantView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        addSubview(editBtn)
+        
         addSubview(backgroundView)
         addSubview(restaurantName)
         addSubview(restaurantContent)
@@ -79,5 +81,12 @@ class BBDetailOldRestaurantView: BBBaseRestaurantView {
         let backgroundView = UIView.init(frame: CGRectMake(0, self.headerLine.bottom, self.width, self.height - self.headerLine.bottom))
         backgroundView.backgroundColor = UIColor.kBasis_lightLightOrange_Color()
         return backgroundView
+    }()
+    
+    lazy var editBtn : UIButton = {
+        
+        let editBtn = UIButton.init(frame: CGRectMake(self.width - 40, 20, 30, 30))
+        editBtn.setImage(UIImage.init(named: "editorIcon"), forState: .Normal)
+        return editBtn
     }()
 }
