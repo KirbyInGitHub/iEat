@@ -136,6 +136,10 @@ extension BBNewOrEditRestaurantController{
         //图片
         addNewRestaurantItem.restaurantImages = photoIdArray
         
+        if resultItem?.restaurantId != nil {
+            addNewRestaurantItem.restaurantId = resultItem?.restaurantId
+        }
+        
         if addNewRestaurantItem.restaurantName == "" {
             
             BBHud.defaultHud.showMessage("请务必填写饭店名称")
@@ -157,7 +161,20 @@ extension BBNewOrEditRestaurantController{
                 }
             }else if BBSettings.defaultSettings.currentShowView == "editRestaurant" {
                 
-                print("发送编辑请求")
+                BBDeliveryService.updateRestaurantInfo(addNewRestaurantItem, success: { (result) in
+                    
+                    print(result)
+                    
+                    if result == nil{
+                        BBHud.defaultHud.showMessage("更新失败")
+                    }else{
+                        BBHud.defaultHud.showMessage("更新成功")
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    
+                    }, failure: { (error) in
+                        print(error)
+                })
             }
         }
     }

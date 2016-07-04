@@ -25,7 +25,7 @@ class BBSpicyLevelCell: BBBaseRestaurantCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        selectedSpicyLevelLbl.text = spicyLevelStr == nil ? "请选择" : spicyLevelStr
+        selectedSpicyLevelLbl.text = spicyLevelStr == "" ? "请选择" : spicyLevelStr
         
         addSubview(selectedSpicyLevelLbl)
     }

@@ -29,13 +29,15 @@ class Result: Mappable {
     var spicy_level: String?
 
     var cuisine: String?
+    
+    var restaurantId : String?
 
     var name: String?
 
     var address: String?
     
     var images : [String]?
-
+    
     required init?(_ map: Map) {
         mapping(map)
     }
@@ -44,6 +46,7 @@ class Result: Mappable {
         content <- map["content"]
         spicy_level <- map["spicy_level"]
         cuisine <- map["cuisine"]
+        restaurantId <- map["id"]
         name <- map["name"]
         address <- map["address"]
         images <- map["images"]

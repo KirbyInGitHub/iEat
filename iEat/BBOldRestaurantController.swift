@@ -33,12 +33,12 @@ class BBOldRestaurantController: BBBaseRestaurantController {
         
         BBDeliveryService.getRestaurantInfo({ (result) in
             
+            print(result)
+            
             if result != nil{
 
                 let oldRestaurant = Mapper<BBOldRestaurantModel>().map(result)
                 self.oldRestaurantData = oldRestaurant
-                
-                print(self.oldRestaurantData?.result?.count)
                 
                 self.oldRestaurantView.oldRestaurantCollectionView.reloadData()
                 
@@ -62,11 +62,7 @@ class BBOldRestaurantController: BBBaseRestaurantController {
 extension BBOldRestaurantController : UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if self.oldRestaurantData?.result?.count == nil {
-            return 0
-        }else{
-            return (self.oldRestaurantData?.result?.count)!
-        }
+        return self.oldRestaurantData?.result?.count == nil ? 0 : (self.oldRestaurantData?.result?.count)!
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

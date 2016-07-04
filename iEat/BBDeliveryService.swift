@@ -27,6 +27,9 @@ let API_ADDRESTAURANT_URL = "newrestaurant?token="
 //getRestaurantInfo
 let API_GETRESTAURANTINFO_URL = "myrestaurants?token="
 
+//updateRestaurantInfo
+let API_UPDATERESTAURANTINFO_URL = "updaterestaurant?token="
+
 class BBDeliveryService: NSObject {
 
     //signup
@@ -91,4 +94,23 @@ class BBDeliveryService: NSObject {
         upManager.putData(imageData, key: nil, token: BBSettings.defaultSettings.qiniuToken!, complete: success, option: nil)
     }
     
+    //编辑信息
+    class func updateRestaurantInfo(restaurantItem:BBAddNewRestaurantItem,success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
+        
+        let api = NSURL(string: API_BASE_URL + API_UPDATERESTAURANTINFO_URL + BBSettings.defaultSettings.userId!)
+        
+        var params         = [String: AnyObject]();
+        params["rid"] = restaurantItem.restaurantId
+        params["name"] = restaurantItem.restaurantName
+        params["content"] = restaurantItem.restaurantContent
+        params["address"] = restaurantItem.restaurantAddress
+        if restaurantItem.restaurantSpicyLevel != "请选择" {
+            params["spicy_level"] = restaurantItem.restaurantSpicyLevel
+        }
+        if restaurantItem.restaurantCuisine != "请选择"{
+            params["cuisine"] = restaurantItem.restaurantCuisine
+        }
+        params["images"] = restaurantItem.restaurantImages
+        BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
+    }
 }

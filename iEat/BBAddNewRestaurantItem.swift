@@ -22,4 +22,5 @@ class BBAddNewRestaurantItem: NSObject {
     
     var restaurantImages : [String]?
     
+    var restaurantId : String?
 }
