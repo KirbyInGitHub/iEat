@@ -57,9 +57,8 @@ class BBNewOrEditRestaurantController: BBBaseRestaurantController {
         //每次到这个界面都获取一个七牛token
         BBDeliveryService.getQiNiuToken({ (result) in
             
-            //这里只是暂时使用BBSignupModel模型
+            //这里只是暂时使用BBSignupModel模型 //这里可能是个bug
             let userInfo = Mapper<BBSignupModel>().map(result)
-            
             BBSettings.defaultSettings.qiniuToken = userInfo?.qiniu_token
             
         }) { (error) in
