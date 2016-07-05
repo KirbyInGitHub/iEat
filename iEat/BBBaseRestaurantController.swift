@@ -23,6 +23,7 @@ class BBBaseRestaurantController: BBBaseController {
     
     @objc func onClickCloseBtn(){
         
+        self.transitioningDelegate = self
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
