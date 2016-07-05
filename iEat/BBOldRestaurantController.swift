@@ -11,7 +11,7 @@ import ObjectMapper
 
 class BBOldRestaurantController: BBBaseRestaurantController {
 
-    var oldRestaurantData : BBOldRestaurantModel?
+    var oldRestaurantData : BBRestaurantDataModel?
     
     deinit{
         print("BBOldRestaurantController释放了")
@@ -37,7 +37,7 @@ class BBOldRestaurantController: BBBaseRestaurantController {
             
             if result != nil{
 
-                let oldRestaurant = Mapper<BBOldRestaurantModel>().map(result)
+                let oldRestaurant = Mapper<BBRestaurantDataModel>().map(result)
                 self.oldRestaurantData = oldRestaurant
                 
                 self.oldRestaurantView.oldRestaurantCollectionView.reloadData()
@@ -79,8 +79,8 @@ extension BBOldRestaurantController : UICollectionViewDelegate,UICollectionViewD
         let resultItem = oldRestaurantData?.result![indexPath.row]
         
         let detailVC = BBDetailRestaurantController()
-        detailVC.modalTransitionStyle = .CrossDissolve
         detailVC.resultItem = resultItem
+        BBSettings.defaultSettings.currentClickMaidanItem = false
         self.wxs_presentViewController(detailVC, animationType: .Cover, completion: nil)
     }
 }

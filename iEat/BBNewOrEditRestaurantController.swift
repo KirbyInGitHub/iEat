@@ -13,7 +13,7 @@ import Qiniu
 class BBNewOrEditRestaurantController: BBBaseRestaurantController {
     
     //编辑餐厅的数据
-    var resultItem : Result?
+    var resultItem : restaurantDataItem?
     
     deinit{
         print("BBNewOrEditRestaurantController释放了")

@@ -15,11 +15,19 @@ class BBRestaurantMaidanView: UIView {
         super.init(frame: frame)
         
         backgroundColor = UIColor.kBasis_lightLightOrange_Color()
-        
+        addSubview(tableview)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    lazy var tableview : UITableView = {
+        
+        let tableview = UITableView.init(frame: self.bounds)
+        tableview.tableFooterView = UIView()
+        tableview.backgroundColor = UIColor.kBasis_lightLightOrange_Color()
+        tableview.separatorStyle = .None
+        return tableview
+    }()
 }

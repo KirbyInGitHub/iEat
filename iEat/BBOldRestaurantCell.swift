@@ -11,7 +11,7 @@ import SDWebImage
 
 class BBOldRestaurantCell: UICollectionViewCell {
 
-    var restaurantInfoItem : Result?{
+    var restaurantInfoItem : restaurantDataItem?{
         didSet{
             
             restaurantNmaeLbl.text = restaurantInfoItem?.name

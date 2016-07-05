@@ -15,7 +15,7 @@
 		405CDF721D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CDF711D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift */; };
 		40CA30D91D2B5C9D00B3FF7A /* BBRestaurantMaidanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA30D81D2B5C9D00B3FF7A /* BBRestaurantMaidanController.swift */; };
 		40CA30DB1D2B5CAE00B3FF7A /* BBRestaurantMaidanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA30DA1D2B5CAE00B3FF7A /* BBRestaurantMaidanView.swift */; };
-		40CA30DD1D2B5FCB00B3FF7A /* BBRestaurantMaidanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA30DC1D2B5FCB00B3FF7A /* BBRestaurantMaidanModel.swift */; };
+		40CA30DF1D2B637D00B3FF7A /* BBRestaurantMaidanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA30DE1D2B637D00B3FF7A /* BBRestaurantMaidanCell.swift */; };
 		40DE80B31D24C22300D660E3 /* BBSignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80B21D24C22300D660E3 /* BBSignupModel.swift */; };
 		40DE80B51D24CCA200D660E3 /* BBLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80B41D24CCA200D660E3 /* BBLoginModel.swift */; };
 		40DE80B71D24FF7E00D660E3 /* BBHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE80B61D24FF7E00D660E3 /* BBHud.swift */; };
@@ -28,7 +28,7 @@
 		40DE810E1D26211B00D660E3 /* BBAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE810D1D26211B00D660E3 /* BBAddView.swift */; };
 		40DE81111D2644C000D660E3 /* UIImage+UIImageExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DE81101D2644C000D660E3 /* UIImage+UIImageExt.m */; };
 		40DE81131D26511500D660E3 /* BBOldRestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE81121D26511500D660E3 /* BBOldRestaurantCell.swift */; };
-		40DE81151D26522200D660E3 /* BBOldRestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE81141D26522200D660E3 /* BBOldRestaurantModel.swift */; };
+		40DE81151D26522200D660E3 /* BBRestaurantDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE81141D26522200D660E3 /* BBRestaurantDataModel.swift */; };
 		40DE81171D266AA900D660E3 /* BBDetailRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE81161D266AA900D660E3 /* BBDetailRestaurantController.swift */; };
 		40DE81191D266AB600D660E3 /* BBDetailRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE81181D266AB600D660E3 /* BBDetailRestaurantView.swift */; };
 		40E0A6151D23A23F00CC74AE /* BBDeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */; };
@@ -95,7 +95,7 @@
 		405CDF711D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantCuisineItem.swift; sourceTree = "<group>"; };
 		40CA30D81D2B5C9D00B3FF7A /* BBRestaurantMaidanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantMaidanController.swift; sourceTree = "<group>"; };
 		40CA30DA1D2B5CAE00B3FF7A /* BBRestaurantMaidanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantMaidanView.swift; sourceTree = "<group>"; };
-		40CA30DC1D2B5FCB00B3FF7A /* BBRestaurantMaidanModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantMaidanModel.swift; sourceTree = "<group>"; };
+		40CA30DE1D2B637D00B3FF7A /* BBRestaurantMaidanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantMaidanCell.swift; sourceTree = "<group>"; };
 		40DE80B21D24C22300D660E3 /* BBSignupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBSignupModel.swift; sourceTree = "<group>"; };
 		40DE80B41D24CCA200D660E3 /* BBLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBLoginModel.swift; sourceTree = "<group>"; };
 		40DE80B61D24FF7E00D660E3 /* BBHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBHud.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		40DE810F1D2644C000D660E3 /* UIImage+UIImageExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageExt.h"; sourceTree = "<group>"; };
 		40DE81101D2644C000D660E3 /* UIImage+UIImageExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageExt.m"; sourceTree = "<group>"; };
 		40DE81121D26511500D660E3 /* BBOldRestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBOldRestaurantCell.swift; sourceTree = "<group>"; };
-		40DE81141D26522200D660E3 /* BBOldRestaurantModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBOldRestaurantModel.swift; sourceTree = "<group>"; };
+		40DE81141D26522200D660E3 /* BBRestaurantDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantDataModel.swift; sourceTree = "<group>"; };
 		40DE81161D266AA900D660E3 /* BBDetailRestaurantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDetailRestaurantController.swift; sourceTree = "<group>"; };
 		40DE81181D266AB600D660E3 /* BBDetailRestaurantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDetailRestaurantView.swift; sourceTree = "<group>"; };
 		40E0A6141D23A23F00CC74AE /* BBDeliveryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBDeliveryService.swift; sourceTree = "<group>"; };
@@ -311,8 +311,7 @@
 				40DE80B21D24C22300D660E3 /* BBSignupModel.swift */,
 				405CDF6D1D23FF2800A12BB0 /* BBAddNewRestaurantItem.swift */,
 				405CDF711D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift */,
-				40DE81141D26522200D660E3 /* BBOldRestaurantModel.swift */,
-				40CA30DC1D2B5FCB00B3FF7A /* BBRestaurantMaidanModel.swift */,
+				40DE81141D26522200D660E3 /* BBRestaurantDataModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -356,6 +355,7 @@
 				40DE81061D260A3900D660E3 /* BBPhotoCollectionViewCell.swift */,
 				40DE81121D26511500D660E3 /* BBOldRestaurantCell.swift */,
 				40E923D91D2A028F00A11034 /* BBDetailPhotoCell.swift */,
+				40CA30DE1D2B637D00B3FF7A /* BBRestaurantMaidanCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -622,6 +622,7 @@
 				40E1D30F1D22268F003970C6 /* BBSettings.swift in Sources */,
 				40E0A61B1D23AC9D00CC74AE /* BBNewRestaurantInfoCell.swift in Sources */,
 				40EC1B981D236F5700D4817D /* BBSettingsController.swift in Sources */,
+				40CA30DF1D2B637D00B3FF7A /* BBRestaurantMaidanCell.swift in Sources */,
 				40EC1B9A1D236F7700D4817D /* BBSettingsView.swift in Sources */,
 				40E1D30D1D222666003970C6 /* UIColor+Category.swift in Sources */,
 				40DE81131D26511500D660E3 /* BBOldRestaurantCell.swift in Sources */,
@@ -633,7 +634,6 @@
 				40DE81051D25763700D660E3 /* BBTakePhotoCollectionViewCell.swift in Sources */,
 				40E0A6291D23CEFF00CC74AE /* BBSelectedRestaurantCuisineView.swift in Sources */,
 				40DE810E1D26211B00D660E3 /* BBAddView.swift in Sources */,
-				40CA30DD1D2B5FCB00B3FF7A /* BBRestaurantMaidanModel.swift in Sources */,
 				40DE81111D2644C000D660E3 /* UIImage+UIImageExt.m in Sources */,
 				401E255C1D225D2700C9C5E8 /* BBTextField.swift in Sources */,
 				40EC1BA61D237FFA00D4817D /* BBBaseRestaurantView.swift in Sources */,
@@ -650,7 +650,7 @@
 				40EC1B821D227BD600D4817D /* UIFont+Category.swift in Sources */,
 				40DE80B91D2504CE00D660E3 /* BBLogoutCell.swift in Sources */,
 				40E1D3151D22281A003970C6 /* BBMainController.swift in Sources */,
-				40DE81151D26522200D660E3 /* BBOldRestaurantModel.swift in Sources */,
+				40DE81151D26522200D660E3 /* BBRestaurantDataModel.swift in Sources */,
 				40EC1B9E1D237FB100D4817D /* BBOldRestaurantController.swift in Sources */,
 				40E0A6211D23B54F00CC74AE /* BBBaseRestaurantCell.swift in Sources */,
 				40DE81171D266AA900D660E3 /* BBDetailRestaurantController.swift in Sources */,

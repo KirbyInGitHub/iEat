@@ -10,7 +10,7 @@ import UIKit
 
 class BBDetailRestaurantController: BBBaseRestaurantController {
 
-    var resultItem : Result?
+    var resultItem : restaurantDataItem?
     
     override func loadView() {
         super.loadView()

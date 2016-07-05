@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class BBRestaurantMaidanController: UIViewController {
 
+    var restaurantMaidanArray = [restaurantDataItem]()
+    
     override func loadView() {
         super.loadView()
         
@@ -26,12 +29,22 @@ class BBRestaurantMaidanController: UIViewController {
         navigationItem.leftBarButtonItem = leftItem
 
         BBDeliveryService.getRestaurantMaidanInfo({ (result) in
+            
             print(result)
+            
+            if result != nil{
+                let restaurantMaidanData = Mapper<BBRestaurantDataModel>().map(result)
+                self.restaurantMaidanArray = (restaurantMaidanData?.result)!
+                self.restaurantMaidanView.tableview.reloadData()
+            }
             
             }) { (error) in
                 
                 print(error)
         }
+        
+        restaurantMaidanView.tableview.delegate = self
+        restaurantMaidanView.tableview.dataSource = self
     }
 
     @objc private func onClickGobackItem(){
@@ -44,4 +57,34 @@ class BBRestaurantMaidanController: UIViewController {
         return restaurantMaidanView
     }()
 
+}
+
+extension BBRestaurantMaidanController : UITableViewDelegate,UITableViewDataSource{
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.restaurantMaidanArray.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("restaurantMaidanCell") as? BBRestaurantMaidanCell
+        if cell == nil {
+            cell = BBRestaurantMaidanCell.init(style: .Default, reuseIdentifier: "restaurantMaidanCell")
+        }
+        
+        cell?.restaurantMaidanDataItem = self.restaurantMaidanArray[indexPath.row]
+        
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailVC = BBDetailRestaurantController()
+        let item = self.restaurantMaidanArray[indexPath.row]
+        detailVC.resultItem = item
+        BBSettings.defaultSettings.currentClickMaidanItem = true
+        self.wxs_presentViewController(detailVC, animationType: .Cover, completion: nil)
+    }
 }

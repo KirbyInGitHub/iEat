@@ -13,7 +13,9 @@ class BBDetailRestaurantView: BBBaseRestaurantView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(editBtn)
+        if BBSettings.defaultSettings.currentClickMaidanItem == false{
+            addSubview(editBtn)
+        }
         
         addSubview(backgroundView)
         addSubview(restaurantName)

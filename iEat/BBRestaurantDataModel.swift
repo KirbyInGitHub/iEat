@@ -1,17 +1,17 @@
 //
-//  BBRestaurantMaidanModel.swift
+//  BBOldRestaurantModel.swift
 //  iEat
 //
-//  Created by wave on 16/7/5.
+//  Created by wave on 16/7/1.
 //  Copyright © 2016年 wave. All rights reserved.
 //
 
 import UIKit
 import ObjectMapper
 
-class BBRestaurantMaidanModel: Mappable {
+class BBRestaurantDataModel: Mappable {
 
-    var result: [restaurantMaidanItem]?
+    var result: [restaurantDataItem]?
     
     required init?(_ map: Map) {
         mapping(map)
@@ -20,25 +20,24 @@ class BBRestaurantMaidanModel: Mappable {
     func mapping(map: Map) {
         result <- map["result"]
     }
-
 }
 
-class restaurantMaidanItem: Mappable {
-
-    var address: String?
+class restaurantDataItem: Mappable {
 
     var content: String?
-
-    var images: [String]?
-
-    var restaurantId: String?
 
     var spicy_level: String?
 
     var cuisine: String?
+    
+    var restaurantId : String?
 
     var name: String?
 
+    var address: String?
+    
+    var images : [String]?
+    
     required init?(_ map: Map) {
         mapping(map)
     }

@@ -26,6 +26,7 @@ let kIsSelectedSettingsLogout = "isSelectedSettingsLogout"
 let kUserId                   = "userId"
 let kQiniuToken               = "qiniuToken"
 let kCurrentShowView          = "currentShowView"
+let kCurrentClickMaidanItem   = "currentClickMaidanItem"
 
 
 class BBSettings: NSObject {
@@ -69,6 +70,16 @@ class BBSettings: NSObject {
         }
         set{
             NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: kCurrentShowView)
+        }
+    }
+    
+    //判断用户点击的广场还是自己列表进入的detail界面
+    var currentClickMaidanItem : Bool{
+        get{
+            return NSUserDefaults.standardUserDefaults().boolForKey(kCurrentClickMaidanItem)
+        }
+        set{
+            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: kCurrentClickMaidanItem)
         }
     }
     
