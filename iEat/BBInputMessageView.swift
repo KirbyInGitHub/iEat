@@ -119,6 +119,7 @@ class BBInputMessageView: UIView {
         userPhone.textField.placeholder = "Phone"
         userPhone.iconString = "phoneIcon"
         userPhone.alpha = 0
+        userPhone.textField.keyboardType = .NumberPad
         return userPhone
     }()
     
@@ -129,6 +130,8 @@ class BBInputMessageView: UIView {
         userPassword.textField.placeholder = "Password"
         userPassword.iconString = "passwordIcon"
         userPassword.alpha = 0
+        userPassword.textField.keyboardType = .Default
+        userPassword.textField.secureTextEntry = true
         return userPassword
     }()
     

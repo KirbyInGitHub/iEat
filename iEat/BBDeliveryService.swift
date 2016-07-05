@@ -33,6 +33,9 @@ let API_UPDATERESTAURANTINFO_URL = "updaterestaurant?token="
 //restaurantMaidan
 let API_RESTAURANTMAIDAN_URL = "restaurantplaza?token="
 
+//getQiNiuToken
+let API_GETQINIUTOKEN_URL = "getqiniutoken?token="
+
 class BBDeliveryService: NSObject {
 
     //signup
@@ -97,6 +100,12 @@ class BBDeliveryService: NSObject {
         upManager.putData(imageData, key: nil, token: BBSettings.defaultSettings.qiniuToken!, complete: success, option: nil)
     }
     
+    //获取qiniuToken
+    class func getQiNiuToken(success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
+        let api = NSURL(string: API_BASE_URL + API_GETQINIUTOKEN_URL + BBSettings.defaultSettings.userId!)
+        BBNetworkManager.sharedNetworkTools.requestJSON(.GET, URLString: api, parameters: nil, success: success, failure: failure)
+    }
+    
     //编辑信息
     class func updateRestaurantInfo(restaurantItem:BBAddNewRestaurantItem,success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
         
@@ -123,4 +132,5 @@ class BBDeliveryService: NSObject {
         let api = NSURL(string: API_BASE_URL + API_RESTAURANTMAIDAN_URL + BBSettings.defaultSettings.userId!)
         BBNetworkManager.sharedNetworkTools.requestJSON(.GET, URLString: api, parameters: nil, success: success, failure: failure)
     }
+    
 }

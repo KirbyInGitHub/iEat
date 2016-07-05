@@ -51,6 +51,14 @@ class BBNewOrEditRestaurantController: BBBaseRestaurantController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewOrEditRestaurantController.acceptSelectedSpicyLevel(_:)), name: kSelectedSpicyLevelNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewOrEditRestaurantController.acceptSelectedTakePhotoCell(_:)), name: kSelectedTakePhotoCollectionViewCellNotification, object: nil)
+        
+        //每次到这个界面都获取一个七牛token
+        BBDeliveryService.getQiNiuToken({ (result) in
+            let qiNiuToken = result!["qiniu_token"]
+            BBSettings.defaultSettings.qiniuToken = String(qiNiuToken)
+            }) { (error) in
+                print(error)
+        }
     }
     
     @objc private func acceptSelectedSpicyLevel(not:NSNotification){

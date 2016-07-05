@@ -506,7 +506,7 @@
 				TargetAttributes = {
 					40E1D2CA1D2222D4003970C6 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 334F27LL3L;
+						DevelopmentTeam = 5745T6MZ43;
 					};
 					40E1D2DE1D2222D4003970C6 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -803,7 +803,7 @@
 				INFOPLIST_FILE = iEat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wave.iEat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wave.lunchMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/wave/Desktop/myGithub/iEat/iEat/iEat-Bridging-Header.h";
@@ -819,12 +819,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: feng zhu (9ZH4BKQEQS)";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = iEat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wave.iEat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wave.lunchMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/wave/Desktop/myGithub/iEat/iEat/iEat-Bridging-Header.h";
