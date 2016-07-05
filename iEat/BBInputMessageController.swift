@@ -85,7 +85,7 @@ extension BBInputMessageController{
                     }else{
                         let mainVC = BBMainController()
                         let nav = UINavigationController.init(rootViewController: mainVC)
-                        self.wxs_presentViewController(nav, animationType: .FragmentShowFromBottom, completion: nil)
+                        self.wxs_presentViewController(nav, animationType: .SysRippleEffect, completion: nil)
                     }
                 }
             
@@ -126,7 +126,7 @@ extension BBInputMessageController{
                     }else{
                         let mainVC = BBMainController()
                         let nav = UINavigationController.init(rootViewController: mainVC)
-                        self.wxs_presentViewController(nav, animationType: .Boom, completion: nil)
+                        self.wxs_presentViewController(nav, animationType: .SysRippleEffect, completion: nil)
                     }
 
                 }else{
