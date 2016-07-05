@@ -13,6 +13,8 @@ class BBLogoutCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        backgroundColor = UIColor.kBasis_lightLightOrange_Color()
+        
         addSubview(titleLbl)
         addSubview(bottomLine)
         self.selectionStyle = .None

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBDetailOldRestaurantController: BBBaseRestaurantController {
+class BBDetailRestaurantController: BBBaseRestaurantController {
 
     var resultItem : Result?
     
@@ -22,7 +22,7 @@ class BBDetailOldRestaurantController: BBBaseRestaurantController {
         super.viewDidLoad()
         
         detailOldRestaurantView.closeBtn.addTarget(self, action: #selector(BBBaseRestaurantController.onClickCloseBtn), forControlEvents: .TouchUpInside)
-        detailOldRestaurantView.editBtn.addTarget(self, action: #selector(BBDetailOldRestaurantController.onClickEditBtnAction), forControlEvents: .TouchUpInside)
+        detailOldRestaurantView.editBtn.addTarget(self, action: #selector(BBDetailRestaurantController.onClickEditBtnAction), forControlEvents: .TouchUpInside)
         
         detailOldRestaurantView.detailImageCollectionView.delegate = self
         detailOldRestaurantView.detailImageCollectionView.dataSource = self
@@ -46,14 +46,14 @@ class BBDetailOldRestaurantController: BBBaseRestaurantController {
         self.wxs_presentViewController(vc, animationType: .Cover, completion: nil)
     }
     
-    private lazy var detailOldRestaurantView : BBDetailOldRestaurantView = {
+    private lazy var detailOldRestaurantView : BBDetailRestaurantView = {
         
-        let detailOldRestaurantView = BBDetailOldRestaurantView.init(frame: self.view.bounds)
+        let detailOldRestaurantView = BBDetailRestaurantView.init(frame: self.view.bounds)
         return detailOldRestaurantView
     }()
 }
 
-extension BBDetailOldRestaurantController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension BBDetailRestaurantController:UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         

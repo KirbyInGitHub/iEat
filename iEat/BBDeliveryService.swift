@@ -30,6 +30,9 @@ let API_GETRESTAURANTINFO_URL = "myrestaurants?token="
 //updateRestaurantInfo
 let API_UPDATERESTAURANTINFO_URL = "updaterestaurant?token="
 
+//restaurantMaidan
+let API_RESTAURANTMAIDAN_URL = "restaurantplaza?token="
+
 class BBDeliveryService: NSObject {
 
     //signup
@@ -112,5 +115,12 @@ class BBDeliveryService: NSObject {
         }
         params["images"] = restaurantItem.restaurantImages
         BBNetworkManager.sharedNetworkTools.requestJSON(.POST, URLString: api, parameters: params, success: success, failure: failure)
+    }
+    
+    //获取餐厅广场数据
+    class func getRestaurantMaidanInfo(success:(result:AnyObject?) -> (),failure:((error:NSError) -> ())? = nil){
+        
+        let api = NSURL(string: API_BASE_URL + API_RESTAURANTMAIDAN_URL + BBSettings.defaultSettings.userId!)
+        BBNetworkManager.sharedNetworkTools.requestJSON(.GET, URLString: api, parameters: nil, success: success, failure: failure)
     }
 }

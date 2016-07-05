@@ -13,7 +13,7 @@ class BBSettingsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.kBasis_lightLightOrange_Color()
         
         addSubview(tableview)
     }
@@ -26,6 +26,7 @@ class BBSettingsView: UIView {
         
         let tableview = UITableView.init(frame: self.bounds)
         tableview.tableFooterView = UIView()
+        tableview.backgroundColor = UIColor.kBasis_lightLightOrange_Color()
         tableview.separatorStyle = .None
         return tableview
     }()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBDetailOldRestaurantView: BBBaseRestaurantView {
+class BBDetailRestaurantView: BBBaseRestaurantView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

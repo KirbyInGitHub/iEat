@@ -32,14 +32,25 @@ class BBMainController: BBBaseController {
         navigationController?.navigationBar.translucent = false
         navigationController?.navigationBar.barTintColor = UIColor.kBasis_lightOrange_Color()
         
-        let rightItem = UIBarButtonItem(image: UIImage.init(named: "btn_settings"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(BBMainController.onClickSettingsBtn))
+        let rightItem = UIBarButtonItem(image: UIImage.init(named: "btn_settings"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(BBMainController.onClickSettingsItem))
         rightItem.image = UIImage(named: "btn_settings")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
+        
+        let leftItem = UIBarButtonItem(image: UIImage.init(named: "restaurantMaidanIcon"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(BBMainController.onClickRestaurantMaidanItem))
+        leftItem.image = UIImage(named: "restaurantMaidanIcon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        self.navigationItem.leftBarButtonItem = leftItem
+
     }
     
-    @objc private func onClickSettingsBtn(){
+    @objc private func onClickSettingsItem(){
         let settingsVC = BBSettingsController()
         self.showViewController(settingsVC, sender: self)
+    }
+    
+    @objc private func onClickRestaurantMaidanItem(){
+        
+        let vc = BBRestaurantMaidanController()
+        self.showViewController(vc, sender: self)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
