@@ -9,6 +9,7 @@
 import UIKit
 import pop
 import Qiniu
+import ObjectMapper
 
 class BBNewOrEditRestaurantController: BBBaseRestaurantController {
     
@@ -52,13 +53,20 @@ class BBNewOrEditRestaurantController: BBBaseRestaurantController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewOrEditRestaurantController.acceptSelectedSpicyLevel(_:)), name: kSelectedSpicyLevelNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BBNewOrEditRestaurantController.acceptSelectedTakePhotoCell(_:)), name: kSelectedTakePhotoCollectionViewCellNotification, object: nil)
         
+        
         //每次到这个界面都获取一个七牛token
         BBDeliveryService.getQiNiuToken({ (result) in
-            let qiNiuToken = result!["qiniu_token"]
-            BBSettings.defaultSettings.qiniuToken = String(qiNiuToken)
-            }) { (error) in
-                print(error)
+            
+            //这里只是暂时使用BBSignupModel模型
+            let userInfo = Mapper<BBSignupModel>().map(result)
+            
+            BBSettings.defaultSettings.qiniuToken = userInfo?.qiniu_token
+            
+        }) { (error) in
+            print(error)
         }
+        
+
     }
     
     @objc private func acceptSelectedSpicyLevel(not:NSNotification){
@@ -77,6 +85,7 @@ class BBNewOrEditRestaurantController: BBBaseRestaurantController {
         if selectedCell == "0" {
             
             openCamera()
+        
         }else{
             
         }
@@ -339,6 +348,7 @@ extension BBNewOrEditRestaurantController : UIImagePickerControllerDelegate{
             
             if dict == nil{
                 BBHud.defaultHud.showMessage("添加图片失败")
+
             }else{
                 let imageId = dict["hash"] as? String
                 self.photoIdArray.insert(imageId!, atIndex: 0)
