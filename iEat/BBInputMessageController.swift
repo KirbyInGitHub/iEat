@@ -37,7 +37,6 @@ class BBInputMessageController: BBBaseController {
         req.scope = "snsapi_userinfo"
         req.state = "123"
         WXApi.sendReq(req)
-        
     }
     
     private lazy var inputMessageView : BBInputMessageView = {

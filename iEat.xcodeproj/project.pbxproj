@@ -21,6 +21,7 @@
 		406EF2C21D2CF8B1007CD36E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EF2C11D2CF8B1007CD36E /* SystemConfiguration.framework */; };
 		406EF2C41D2CF8BC007CD36E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EF2C31D2CF8BC007CD36E /* libz.tbd */; };
 		406EF2C61D2CF8D0007CD36E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EF2C51D2CF8D0007CD36E /* libsqlite3.0.tbd */; };
+		406EF2D81D2D0793007CD36E /* NSURL+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406EF2D71D2D0793007CD36E /* NSURL+Category.swift */; };
 		40CA30D91D2B5C9D00B3FF7A /* BBRestaurantMaidanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA30D81D2B5C9D00B3FF7A /* BBRestaurantMaidanController.swift */; };
 		40CA30DB1D2B5CAE00B3FF7A /* BBRestaurantMaidanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA30DA1D2B5CAE00B3FF7A /* BBRestaurantMaidanView.swift */; };
 		40CA30DF1D2B637D00B3FF7A /* BBRestaurantMaidanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA30DE1D2B637D00B3FF7A /* BBRestaurantMaidanCell.swift */; };
@@ -113,6 +114,7 @@
 		406EF2C11D2CF8B1007CD36E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		406EF2C31D2CF8BC007CD36E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		406EF2C51D2CF8D0007CD36E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		406EF2D71D2D0793007CD36E /* NSURL+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Category.swift"; sourceTree = "<group>"; };
 		40CA30D81D2B5C9D00B3FF7A /* BBRestaurantMaidanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantMaidanController.swift; sourceTree = "<group>"; };
 		40CA30DA1D2B5CAE00B3FF7A /* BBRestaurantMaidanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantMaidanView.swift; sourceTree = "<group>"; };
 		40CA30DE1D2B637D00B3FF7A /* BBRestaurantMaidanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantMaidanCell.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			children = (
 				40E1D30C1D222666003970C6 /* UIColor+Category.swift */,
 				40EC1B811D227BD600D4817D /* UIFont+Category.swift */,
+				406EF2D71D2D0793007CD36E /* NSURL+Category.swift */,
 				40DE810B1D2618C300D660E3 /* UIImage+Category.swift */,
 				40DE810F1D2644C000D660E3 /* UIImage+UIImageExt.h */,
 				40DE81101D2644C000D660E3 /* UIImage+UIImageExt.m */,
@@ -673,6 +676,7 @@
 				40CA30DF1D2B637D00B3FF7A /* BBRestaurantMaidanCell.swift in Sources */,
 				40EC1B9A1D236F7700D4817D /* BBSettingsView.swift in Sources */,
 				40E1D30D1D222666003970C6 /* UIColor+Category.swift in Sources */,
+				406EF2D81D2D0793007CD36E /* NSURL+Category.swift in Sources */,
 				40DE81131D26511500D660E3 /* BBOldRestaurantCell.swift in Sources */,
 				40CA30D91D2B5C9D00B3FF7A /* BBRestaurantMaidanController.swift in Sources */,
 				40E1D31B1D2228F6003970C6 /* BBInputMessageView.swift in Sources */,

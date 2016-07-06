@@ -38,7 +38,9 @@ class BBInputMessageView: UIView {
         
         backgroundImage.addSubview(createAccountBtn)
         
-        backgroundImage.addSubview(weChatLoginBtn)
+//        if WXApi.isWXAppInstalled() && WXApi.isWXAppSupportApi() {
+            backgroundImage.addSubview(weChatLoginBtn)
+//        }
         
         //代码view
         backgroundImage.addSubview(iOSMan)
