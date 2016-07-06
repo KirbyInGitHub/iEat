@@ -27,6 +27,17 @@ class BBInputMessageController: BBBaseController {
         inputMessageView.loginBtn.addTarget(self, action: #selector(BBInputMessageController.onClickLoginAction), forControlEvents: .TouchUpInside)
         
         inputMessageView.createAccountBtn.addTarget(self, action: #selector(BBInputMessageController.onClickCreateAccountAction), forControlEvents: .TouchUpInside)
+        
+        inputMessageView.weChatLoginBtn.addTarget(self, action: #selector(BBInputMessageController.onClickWeChatBtnAction), forControlEvents: .TouchUpInside)
+    }
+    
+    @objc private func onClickWeChatBtnAction(){
+        
+        let req = SendAuthReq()
+        req.scope = "snsapi_userinfo"
+        req.state = "123"
+        WXApi.sendReq(req)
+        
     }
     
     private lazy var inputMessageView : BBInputMessageView = {

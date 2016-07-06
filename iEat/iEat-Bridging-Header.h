@@ -7,3 +7,6 @@
 #import "UIImage+UIImageExt.h"
 #import "UINavigationController+WXSTransition.h"
 #import "UIWindow+Category.h"
+#import "WechatAuthSDK.h"
+#import "WXApi.h"
+#import "WXApiObject.h"
