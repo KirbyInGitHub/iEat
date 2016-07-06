@@ -13,10 +13,8 @@
 		405CDF6E1D23FF2800A12BB0 /* BBAddNewRestaurantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CDF6D1D23FF2800A12BB0 /* BBAddNewRestaurantItem.swift */; };
 		405CDF701D242D1E00A12BB0 /* restaurantCuisineList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 405CDF6F1D242D1E00A12BB0 /* restaurantCuisineList.plist */; };
 		405CDF721D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405CDF711D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift */; };
-		406EF2B81D2CF0DF007CD36E /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 406EF2B31D2CF0DF007CD36E /* README.txt */; };
 		406EF2BA1D2CF674007CD36E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EF2B91D2CF674007CD36E /* libsqlite3.tbd */; };
 		406EF2BC1D2CF67D007CD36E /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EF2BB1D2CF67D007CD36E /* libstdc++.6.tbd */; };
-		406EF2BE1D2CF6D7007CD36E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EF2BD1D2CF6D7007CD36E /* libWeChatSDK.a */; };
 		406EF2C01D2CF88E007CD36E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EF2BF1D2CF88E007CD36E /* CoreTelephony.framework */; };
 		406EF2C21D2CF8B1007CD36E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EF2C11D2CF8B1007CD36E /* SystemConfiguration.framework */; };
 		406EF2C41D2CF8BC007CD36E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EF2C31D2CF8BC007CD36E /* libz.tbd */; };
@@ -101,11 +99,6 @@
 		405CDF6D1D23FF2800A12BB0 /* BBAddNewRestaurantItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBAddNewRestaurantItem.swift; sourceTree = "<group>"; };
 		405CDF6F1D242D1E00A12BB0 /* restaurantCuisineList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurantCuisineList.plist; sourceTree = "<group>"; };
 		405CDF711D2430CE00A12BB0 /* BBRestaurantCuisineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRestaurantCuisineItem.swift; sourceTree = "<group>"; };
-		406EF2B21D2CF0DF007CD36E /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		406EF2B31D2CF0DF007CD36E /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		406EF2B41D2CF0DF007CD36E /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
-		406EF2B51D2CF0DF007CD36E /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		406EF2B61D2CF0DF007CD36E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		406EF2B91D2CF674007CD36E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		406EF2BB1D2CF67D007CD36E /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
 		406EF2BD1D2CF6D7007CD36E /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = ../../../Downloads/OpenSDK1.7.1/libWeChatSDK.a; sourceTree = "<group>"; };
@@ -194,7 +187,6 @@
 				406EF2C41D2CF8BC007CD36E /* libz.tbd in Frameworks */,
 				406EF2C21D2CF8B1007CD36E /* SystemConfiguration.framework in Frameworks */,
 				406EF2C01D2CF88E007CD36E /* CoreTelephony.framework in Frameworks */,
-				406EF2BE1D2CF6D7007CD36E /* libWeChatSDK.a in Frameworks */,
 				406EF2BC1D2CF67D007CD36E /* libstdc++.6.tbd in Frameworks */,
 				406EF2BA1D2CF674007CD36E /* libsqlite3.tbd in Frameworks */,
 				401E25571D2254AC00C9C5E8 /* Pods.framework in Frameworks */,
@@ -226,18 +218,6 @@
 				40DE80B61D24FF7E00D660E3 /* BBHud.swift */,
 			);
 			name = Tools;
-			sourceTree = "<group>";
-		};
-		406EF2B11D2CF0DF007CD36E /* OpenSDK1.7.1 */ = {
-			isa = PBXGroup;
-			children = (
-				406EF2B21D2CF0DF007CD36E /* libWeChatSDK.a */,
-				406EF2B31D2CF0DF007CD36E /* README.txt */,
-				406EF2B41D2CF0DF007CD36E /* WechatAuthSDK.h */,
-				406EF2B51D2CF0DF007CD36E /* WXApi.h */,
-				406EF2B61D2CF0DF007CD36E /* WXApiObject.h */,
-			);
-			path = OpenSDK1.7.1;
 			sourceTree = "<group>";
 		};
 		40E1D2C21D2222D4003970C6 = {
@@ -413,7 +393,6 @@
 		40E923C91D29FCF900A11034 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				406EF2B11D2CF0DF007CD36E /* OpenSDK1.7.1 */,
 				40E923CC1D29FD3000A11034 /* WXSTransition */,
 			);
 			name = ThirdParty;
@@ -592,7 +571,6 @@
 			files = (
 				40EC1BA81D239ED800D4817D /* LaunchScreen.storyboard in Resources */,
 				405CDF701D242D1E00A12BB0 /* restaurantCuisineList.plist in Resources */,
-				406EF2B81D2CF0DF007CD36E /* README.txt in Resources */,
 				40E1D2D61D2222D4003970C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

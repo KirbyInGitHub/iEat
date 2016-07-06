@@ -37,9 +37,7 @@ class BBInputMessageView: UIView {
         backgroundImage.addSubview(remindLabel)
         
         backgroundImage.addSubview(createAccountBtn)
-        
-        backgroundImage.addSubview(weChatLoginBtn)
-        
+                
         //代码view
         backgroundImage.addSubview(iOSMan)
         backgroundImage.addSubview(pythonMan)
@@ -188,19 +186,6 @@ class BBInputMessageView: UIView {
         signupBtn.setTitle("Signup", forState:.Normal)
         signupBtn.backgroundColor = UIColor.kBasis_deepOrange_Color()
         return signupBtn
-    }()
-    
-    //微信登录按钮
-    lazy var weChatLoginBtn : UIButton = {
-        
-        let weChatLoginBtn = UIButton.init(frame: CGRectMake(0, 300, 150, 30))
-        weChatLoginBtn.setImage(UIImage.init(named: "icon-login-wechat"), forState: .Normal)
-        weChatLoginBtn.setTitle("微信登录", forState: .Normal)
-        weChatLoginBtn.backgroundColor = UIColor(red: 126/255.0, green: 222/255.0, blue: 86/255.0, alpha: 1.0)
-        weChatLoginBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
-        weChatLoginBtn.layer.cornerRadius = 15
-        weChatLoginBtn.layer.masksToBounds = true
-        return weChatLoginBtn
     }()
     
     //iOS攻城狮:
