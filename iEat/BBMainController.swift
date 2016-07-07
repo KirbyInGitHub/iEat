@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBMainController: BBBaseController {
+class BBMainController: UIViewController {
 
     override func loadView() {
         super.loadView()
@@ -24,33 +24,28 @@ class BBMainController: BBBaseController {
     
     //navBarStyle
     private func setNavBar(){
-        self.navigationItem.title = "今天吃什么?"
-        let navigationTitleAttribute: NSDictionary = NSDictionary(object: UIColor.whiteColor(), forKey: NSForegroundColorAttributeName)
-        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
+        title = "今天吃什么?"
         
-        removeNavigationBarShadow()
-        navigationController?.navigationBar.translucent = false
-        navigationController?.navigationBar.barTintColor = UIColor.kBasis_lightOrange_Color()
+        navigationController?.navigationBar.applyNavigationBarStyleAppearance()
         
-        let rightItem = UIBarButtonItem(image: UIImage.init(named: "btn_settings"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(BBMainController.onClickSettingsItem))
-        rightItem.image = UIImage(named: "btn_settings")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let rightItem = UIBarButtonItem(image: UIImage(named: "btn_settings"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(BBMainController.onClickSettingsItem))
         self.navigationItem.rightBarButtonItem = rightItem
         
-        let leftItem = UIBarButtonItem(image: UIImage.init(named: "restaurantMaidanIcon"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(BBMainController.onClickRestaurantMaidanItem))
-        leftItem.image = UIImage(named: "restaurantMaidanIcon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let leftItem = UIBarButtonItem(image: UIImage(named: "restaurantMaidanIcon"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(BBMainController.onClickRestaurantMaidanItem))
         self.navigationItem.leftBarButtonItem = leftItem
-
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
     
     @objc private func onClickSettingsItem(){
         let settingsVC = BBSettingsController()
-        self.showViewController(settingsVC, sender: self)
+        navigationController?.pushViewController(settingsVC, animated: true)
     }
     
     @objc private func onClickRestaurantMaidanItem(){
         
         let vc = BBRestaurantMaidanController()
-        self.showViewController(vc, sender: self)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

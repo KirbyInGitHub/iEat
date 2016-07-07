@@ -23,10 +23,6 @@ class BBRestaurantMaidanController: UIViewController {
         super.viewDidLoad()
 
         title = "餐厅广场"
-        
-        let leftItem = UIBarButtonItem.init(image: UIImage.init(named: "btn-back"), style: .Done, target: self, action: #selector(BBRestaurantMaidanController.onClickGobackItem))
-        leftItem.image = UIImage(named: "btn-back")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        navigationItem.leftBarButtonItem = leftItem
 
         BBDeliveryService.getRestaurantMaidanInfo({ (result) in
             
@@ -45,10 +41,6 @@ class BBRestaurantMaidanController: UIViewController {
         
         restaurantMaidanView.tableview.delegate = self
         restaurantMaidanView.tableview.dataSource = self
-    }
-
-    @objc private func onClickGobackItem(){
-        self.navigationController?.popViewControllerAnimated(true)
     }
 
     private lazy var restaurantMaidanView : BBRestaurantMaidanView = {

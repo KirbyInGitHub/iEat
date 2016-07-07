@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBSettingsController: BBBaseController {
+class BBSettingsController: UIViewController {
 
     deinit{
         print("BBSettingsController释放了")
@@ -24,10 +24,6 @@ class BBSettingsController: BBBaseController {
         super.viewDidLoad()
 
         title = "设置"
-        
-        let leftItem = UIBarButtonItem.init(image: UIImage.init(named: "btn-back"), style: .Done, target: self, action: #selector(BBSettingsController.onClickGobackBtn))
-        leftItem.image = UIImage(named: "btn-back")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        navigationItem.leftBarButtonItem = leftItem
         
         settingsView.tableview.delegate = self
         settingsView.tableview.dataSource = self

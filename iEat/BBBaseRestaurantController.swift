@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BBBaseRestaurantController: BBBaseController {
+class BBBaseRestaurantController: UIViewController {
 
     override func loadView() {
         super.loadView()

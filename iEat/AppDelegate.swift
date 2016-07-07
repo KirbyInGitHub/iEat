@@ -15,19 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let vc : UIViewController;
+        let vc: UIViewController
         
         if BBSettings.defaultSettings.userId != nil{
-            vc = BBMainController()
-            let nav = UINavigationController.init(rootViewController: vc)
-            window?.rootViewController = nav
+            vc = UINavigationController(rootViewController: BBMainController())
+            
         }else{
             BBSettings.defaultSettings.isSelectedSettingsLogout = false
             vc = BBInputMessageController()
-            window?.rootViewController = vc
         }
+        
+        window?.rootViewController = vc
         
         window?.makeKeyAndVisible()
         

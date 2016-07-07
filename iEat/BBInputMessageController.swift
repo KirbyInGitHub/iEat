@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class BBInputMessageController: BBBaseController {
+class BBInputMessageController: UIViewController {
 
     var isLoginStatus : Bool?
     
@@ -66,7 +66,7 @@ extension BBInputMessageController{
     
     @objc private func onClickSignupAction(){
         
-        if isTelNumber((inputMessageView.phoneStr)!){
+        if inputMessageView.phoneStr?.isTelNumber() == true {
             
             BBDeliveryService.userSignup(inputMessageView.phoneStr, userPassword: inputMessageView.passwordStr, success: { (result) in
                 
@@ -107,7 +107,7 @@ extension BBInputMessageController{
     
     @objc private func onClickLoginAction(){
     
-        if isTelNumber((inputMessageView.phoneStr)!){
+        if inputMessageView.phoneStr?.isTelNumber() == true {
             
             BBDeliveryService.userLogin(inputMessageView.phoneStr, userPassword: inputMessageView.passwordStr, success: { (result) in
                 
@@ -146,5 +146,50 @@ extension BBInputMessageController{
     }
 }
 
+extension UINavigationBar {
+    
+    func applyNavigationBarStyleAppearance() {
+        
+        translucent = false
+        barTintColor = UIColor.kBasis_lightOrange_Color()
+        tintColor = UIColor.whiteColor()
+        setBackgroundImage(nil, forBarMetrics: .Default)
+        self.shadowImage = UIImage()
+        titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        
+        removeNavigationBarShadow()
+    }
+    
+    func removeNavigationBarShadow(){
+        
+        subviews.forEach { $0.subviews.forEach { $0.isKindOfClass(UIImageView) && $0.frame.size.width == self.width ? $0.removeFromSuperview() : () }}
+    }
+}
 
+
+extension String {
+    
+    func isTelNumber()->Bool
+    {
+        let mobile = "^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$"
+        let  CM = "^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$"
+        let  CU = "^1(3[0-2]|5[256]|8[56])\\d{8}$"
+        let  CT = "^1((33|53|8[09])[0-9]|349)\\d{7}$"
+        let regextestmobile = NSPredicate(format: "SELF MATCHES %@",mobile)
+        let regextestcm = NSPredicate(format: "SELF MATCHES %@",CM )
+        let regextestcu = NSPredicate(format: "SELF MATCHES %@" ,CU)
+        let regextestct = NSPredicate(format: "SELF MATCHES %@" ,CT)
+        if ((regextestmobile.evaluateWithObject(self) == true)
+            || (regextestcm.evaluateWithObject(self)  == true)
+            || (regextestct.evaluateWithObject(self) == true)
+            || (regextestcu.evaluateWithObject(self) == true))
+        {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
+}
 
