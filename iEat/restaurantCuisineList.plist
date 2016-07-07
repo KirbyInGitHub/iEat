@@ -4,6 +4,12 @@
 <array>
 	<dict>
 		<key>idstr</key>
+		<string>0</string>
+		<key>name</key>
+		<string>其他</string>
+	</dict>
+	<dict>
+		<key>idstr</key>
 		<string>1</string>
 		<key>name</key>
 		<string>家常菜</string>

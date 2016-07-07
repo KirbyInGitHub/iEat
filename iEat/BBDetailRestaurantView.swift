@@ -66,7 +66,7 @@ class BBDetailRestaurantView: BBBaseRestaurantView {
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .Horizontal
-        flowLayout.minimumLineSpacing = 5
+        flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.itemSize = CGSizeMake(self.holderView.width, self.holderView.height)
         
